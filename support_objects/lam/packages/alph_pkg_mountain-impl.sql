@@ -1,5 +1,8 @@
 create or replace package body alph_pkg_mountain as
 
+/* suppose we have collected the locations of a bunch of mountains and want to 
+* import these into the staging table 
+*/
 procedure import_mountain_csv (
 	p_csv_content varchar2
 	,p_ignore_csv BOOLEAN DEFAULT FALSE
@@ -114,6 +117,8 @@ begin
 	loginfo( p_text=> 'Rows merged into alph_mountain: '||l_row_cnt );
 end import_mountain_csv;
 
+/* suppose we have found more precise locations for mountains which we have already imported
+*/ 
 procedure update_location_with_csv (
 	p_csv_content_no_header varchar2
 	,p_ignore_csv BOOLEAN DEFAULT FALSE
@@ -289,6 +294,65 @@ BEGIN
           );
         COMMIT;
     END consolidate_mountain;
+
+FUNCTION double_quote ( pi_attribute VARCHAR ) -- internal use only 
+RETURN VARCHAR2 
+AS
+BEGIN 
+    RETURN '"'||pi_attribute||'"';
+END double_quote
+; 
+/* Suppose we have imported a GPX as BLOB into the table TEMP_BLOB and want extract 
+* various attributes of this track. 
+*/
+PROCEDURE extract_track_info ( 
+     pi_blob_id   IN    NUMBER 
+    ,po_info_json OUT   VARCHAR2 
+) AS 
+    c_json_starter CONSTANT VARCHAR2(10) := '{' ;
+BEGIN
+    po_info_json := c_json_starter;
+    FOR lr IN ( 
+        WITH from_blob as ( 
+            select 
+                to_clob( blob_content ) as_clob,
+                b.*
+            from temp_blob b
+            WHERE id = pi_blob_id
+        )
+        select x.track_name, x.link_href 
+        --, f.as_clob
+        from from_blob f
+        CROSS JOIN     XMLTable(
+                 XMLNamespaces(DEFAULT 'http://www.topografix.com/GPX/1/1'),
+                 '/gpx'
+                 PASSING  xmlType ( f.as_clob )
+                 COLUMNS
+                     track_name VARCHAR2(100) PATH 'trk/name'
+                    ,link_href VARCHAR2(100) PATH 'metadata/link/@href' 
+             ) x
+    ) LOOP 
+        IF lr.track_name IS NOT NULL THEN 
+            po_info_json := po_info_json
+                ||CASE WHEN po_info_json != c_json_starter THEN ', '  END 
+                || double_quote( 'track_name' ) ||':'||double_quote( lr.track_name )
+            ;
+        END IF;
+        IF lr.link_href IS NOT NULL THEN 
+            po_info_json := po_info_json
+                ||CASE WHEN po_info_json != c_json_starter THEN ', '  END 
+                || double_quote( 'link_href' ) ||':'||double_quote( lr.link_href )
+            ;
+        END IF;
+
+        EXIT ;
+    END LOOP; -- one_pass_only
+
+    po_info_json := po_info_json ||'}';
+EXCEPTION 
+    WHEN OTHERS THEN
+        logerror ( null, sqlcode, dbms_utility.format_error_backtrace );
+END extract_track_info;
 
 
 end;
