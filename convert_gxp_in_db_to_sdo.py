@@ -42,6 +42,30 @@ def dump_text_to_temp_file ( text_string ):
 
     return temp_file_path
 
+def make_linestring_geojson ( coordinates ):
+    """ example 
+    {
+    "type": "LineString", 
+    "coordinates": [
+        [30.0, 10.0],
+        [10.0, 30.0],
+        [40.0, 40.0]
+    ]
+}
+    """
+    coordinates_value = "["
+    i= 0 
+    for coord in coordinates:
+        if i > 0:  coordinates_value += "," 
+        coordinates_value += "[%f,%f]" % ( coord[0], coord[1] )
+        i+= 1 
+        if ( i % 10 ) == 9:
+            coordinates_value += "\n"
+        # during test: if ( i >= 20 ): break 
+
+    coordinates_value += "\n]"
+
+    return '{ "type": "LineString", \n "coordinates": ' +  coordinates_value + '}'
 
 # Replace the placeholders with your actual values
 wallet_path = '/Users/bmlam/Wallet_bmlamatp2-20230727'
@@ -52,7 +76,7 @@ db_user = 'lam'
 db_password = os.environ['BLOODY_SECRET']
 wallet_secret = os.environ['WALLET_SECRET']
 db_service = 'bmlamatp2_medium'
-print ("sssh: %s" % db_password)
+# print ("sssh: %s" % db_password)
 # Set up the connection
 #oracledb.init_oracle_client( config_dir = wallet_path )
 connection = oracledb.connect(
@@ -68,28 +92,52 @@ connection = oracledb.connect(
 )
 
 # Execute the query
-cursor = connection.cursor()
-query = 'SELECT id, name_display, gpx_data FROM alph_tracks WHERE ts_converted_to_sdo IS NULL AND gpx_data IS NOT NULL ORDER BY id'
-cursor.execute(query)
+cursor_updatable = connection.cursor()
+query = """SELECT id, name_display, gpx_data 
+FROM alph_tracks 
+WHERE ts_converted_to_sdo IS NULL AND gpx_data IS NOT NULL 
+ORDER BY id FETCH FIRST 10 ROWS ONLY
+"""
+cursor_updatable.execute(query)
 
-# Fetch and print the results
-for row in cursor:
-    (id, name_display, gpx_data ) = row 
-    print(id)
-    print(name_display)
+# Fetch the rows
+rows_updatable = cursor_updatable.fetchall()
+cursor_updatable.close()
 
-    if gpx_data:
-        text_string = gpx_data.read()
-        # print(text_string)
-        gpx_file = dump_text_to_temp_file( text_string )
+cursor_do_update = connection.cursor()
+update_stmt = """ UPDATE alph_tracks 
+    SET sdo_geo = sdo_util.from_geojson( :geojson )
+        , ts_converted_to_sdo = sysdate
+    WHERE id = :id
+"""
 
-        coordinates = extract_coordinates( gpx_file )
-        for coordinate in  coordinates[0:3] :
-            print(f"Latitude: {coordinate[0]}, Longitude: {coordinate[1]}")
+try:
+    for row in rows_updatable:
+        (id, name_display, gpx_data ) = row 
+        print(id)
+        print(name_display)
 
-    else:
-        print("gpx_data is empty or NULL")
+        if gpx_data:
+            text_string = gpx_data.read()
+            # print(text_string)
+            gpx_file = dump_text_to_temp_file( text_string )
+
+            coordinates = extract_coordinates( gpx_file )
+            #for coordinate in  coordinates[0:3] :            print(f"Latitude: {coordinate[0]}, Longitude: {coordinate[1]\n}")
+            geojson = make_linestring_geojson ( coordinates )
+            # print( geojson )
+            if True:
+                bind_values = { 'geojson': geojson, 'id': id }
+                cursor_do_update.execute( update_stmt, bind_values )
+
+                connection.commit()
+        else:
+            print("gpx_data is empty or NULL")
+except oracledb.Error as error:
+    print("Error occurred:", error)
+    connection.rollback()  # Rollback changes in case of an error
+
 
 # Close the cursor and connection
-cursor.close()
 connection.close()
+
