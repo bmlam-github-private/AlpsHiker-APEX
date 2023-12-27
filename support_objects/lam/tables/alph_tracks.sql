@@ -12,3 +12,7 @@ create table alph_tracks (
 	,remarks  varchar2(1000 char)
 )
 ;
+alter table alph_tracks add crypto_hash_typ1 raw ( 100 )
+;
+alter table alph_tracks add constraint alph_track_gpx_uk1 unique( crypto_hash_typ1 )
+;

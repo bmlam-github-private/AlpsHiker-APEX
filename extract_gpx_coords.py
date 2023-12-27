@@ -5,7 +5,7 @@ import gpxpy
 def extract_coordinates(file_path):
     # Parse the GPX file
     with open(file_path, 'r') as gpx_file:
-        gpx = gpxpy.parse(gpx_file)
+        gpx = gpxpy.parse(gpx_file) # gpxpy only has API to deal with a file handle opened for read, no API for parsing a string! 
 
         # Initialize a list to store coordinates
         coordinates = []

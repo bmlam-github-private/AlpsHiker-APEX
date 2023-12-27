@@ -15,29 +15,34 @@ TIMESTAMP_COLUMN="TS_CONVERTED_TO_SDO"
 
 import oracledb # cx_Oracle requires instant client which we do not want to bother with!
 #import cx_Oracle 
+import gpxpy
 import os
+import tempfile 
 
-"""
-try something like this (from linked in )
+def extract_coordinates(file_path):
+    # Parse the GPX file
+    with open(file_path, 'r') as gpx_file:
+        gpx = gpxpy.parse(gpx_file) # gpxpy only has API to deal with a file handle opened for read, no API for parsing a string! 
 
-from __future__ import print_function
+        # Initialize a list to store coordinates
+        coordinates = []
 
-import cx_Oracle
-import sys
-import getpass
+        # Iterate through GPX track segments, points, and extract coordinates
+        for track in gpx.tracks:
+            for segment in track.segments:
+                for point in segment.points:
+                    coordinates.append((point.latitude, point.longitude))
 
-try:
-    cx_Oracle.init_oracle_client(config_dir="/home/opc/wallet")
-except Exception as err:
-    print(err);
-    sys.exit(1);
+    return coordinates
 
- 
-password = getpass.getpass()
-connection = cx_Oracle.connect('admin',password,'msatp_low')
- 
-this still needs instant client: current link for Mac Os x : https://www.oracle.com/database/technologies/instant-client/macos-intel-x86-downloads.html 
-"""
+def dump_text_to_temp_file ( text_string ): 
+    with tempfile.NamedTemporaryFile(mode='w', delete=False) as temp_file:
+        temp_file.write(text_string)
+        temp_file_path = temp_file.name  # Get the path of the temporary file
+
+    return temp_file_path
+
+
 # Replace the placeholders with your actual values
 wallet_path = '/Users/bmlam/Wallet_bmlamatp2-20230727'
 if not os.path.exists( wallet_path ):
@@ -64,12 +69,26 @@ connection = oracledb.connect(
 
 # Execute the query
 cursor = connection.cursor()
-query = 'SELECT sysdate FROM dual'
+query = 'SELECT id, name_display, gpx_data FROM alph_tracks WHERE ts_converted_to_sdo IS NULL AND gpx_data IS NOT NULL ORDER BY id'
 cursor.execute(query)
 
 # Fetch and print the results
 for row in cursor:
-    print(row)
+    (id, name_display, gpx_data ) = row 
+    print(id)
+    print(name_display)
+
+    if gpx_data:
+        text_string = gpx_data.read()
+        # print(text_string)
+        gpx_file = dump_text_to_temp_file( text_string )
+
+        coordinates = extract_coordinates( gpx_file )
+        for coordinate in  coordinates[0:3] :
+            print(f"Latitude: {coordinate[0]}, Longitude: {coordinate[1]}")
+
+    else:
+        print("gpx_data is empty or NULL")
 
 # Close the cursor and connection
 cursor.close()
