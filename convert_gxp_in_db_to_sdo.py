@@ -57,7 +57,7 @@ def make_linestring_geojson ( coordinates ):
     i= 0 
     for coord in coordinates:
         if i > 0:  coordinates_value += "," 
-        coordinates_value += "[%f,%f]" % ( coord[0], coord[1] )
+        coordinates_value += "[%f,%f]" % ( coord[1], coord[0] ) # geojson has longitute first, latitude second
         i+= 1 
         if ( i % 10 ) == 9:
             coordinates_value += "\n"
