@@ -354,9 +354,65 @@ EXCEPTION
         logerror ( null, sqlcode, dbms_utility.format_error_backtrace );
 END extract_track_info;
 
+PROCEDURE init_application_items 
+AS 
+BEGIN 
+    NULL;
+    -- we may not need c_selected_tracks_appl_item_name if we reference the collection name using the package constant directly in APEX! 
+    --apex_util.set_session_state(  c_selected_tracks_appl_item_name , c_selected_tracks_appl_item_value );
+END init_application_items;
 
+PROCEDURE switch_track_selection_status 
+    ( p_track_id    NUMBER 
+    , p_on          BOOLEAN 
+    )
+AS 
+    v_col_exists SIMPLE_INTEGER := 0;
+    v_seq NUMBER; 
+BEGIN
+    select count(1)
+    INTO v_col_exists
+    FROM apex_collections
+    WHERE collection_name = c_selected_tracks_collection_name 
+    ;
+    BEGIN 
+            SELECT seq_id
+            INTO v_seq 
+            FROM apex_collections
+            WHERE n01 = p_track_id
+              AND collection_name = c_selected_tracks_collection_name
+            ; 
+            apex_collection.delete_member ( c_selected_tracks_collection_name, p_seq => v_seq );
+    EXCEPTION 
+        WHEN no_data_found then  null;
+    END;
+    IF v_col_exists = 0 AND p_on = FALSE 
+    -- very weird if we are supposed to delete a member of a collection does not exist yet
+    THEN 
+        raise_application_error( -20001, 'Collection '||c_selected_tracks_collection_name || ' is non-existent!');
+    END IF;
+    IF p_on 
+    THEN 
+        IF v_col_exists = 0
+        THEN
+            apex_collection.create_collection( c_selected_tracks_collection_name );
+        END IF; -- v_col_exists 
+
+        IF v_seq IS NULL 
+        THEN
+            apex_collection.add_member( c_selected_tracks_collection_name
+                        , p_n001 => p_track_id
+                );
+        END IF;
+    ELSE -- switch OFF
+        IF v_seq IS NOT NULL 
+            apex_collection.delete_member( c_selected_tracks_collection_name, p_seq_id => v_seq );
+        END IF;
+    END IF;
+
+END switch_track_selection_status;
 end;
 /
 
-show errors
+show errors package body 
 
