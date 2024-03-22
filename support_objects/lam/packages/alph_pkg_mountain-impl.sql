@@ -367,46 +367,50 @@ PROCEDURE switch_track_selection_status
     , p_on          BOOLEAN 
     )
 AS 
-    v_col_exists SIMPLE_INTEGER := 0;
+    v_col_exists BOOLEAN;
     v_seq NUMBER; 
 BEGIN
-    select count(1)
-    INTO v_col_exists
-    FROM apex_collections
-    WHERE collection_name = c_selected_tracks_collection_name 
-    ;
+    v_col_exists := apex_collection.collection_exists( c_selected_tracks_collection_name );
+    dbms_output.put_line ( 'Ln'||$$plsql_line || ' v_col_exists:'||sys.diutil.bool_to_int( v_col_exists ) );
     BEGIN 
             SELECT seq_id
             INTO v_seq 
             FROM apex_collections
-            WHERE n01 = p_track_id
+            WHERE n001 = p_track_id
               AND collection_name = c_selected_tracks_collection_name
             ; 
-            apex_collection.delete_member ( c_selected_tracks_collection_name, p_seq => v_seq );
     EXCEPTION 
         WHEN no_data_found then  null;
     END;
-    IF v_col_exists = 0 AND p_on = FALSE 
+    dbms_output.put_line ( 'Ln'||$$plsql_line || ' v_seq:'||v_seq );
+    IF  NOT v_col_exists  AND p_on = FALSE 
     -- very weird if we are supposed to delete a member of a collection does not exist yet
     THEN 
         raise_application_error( -20001, 'Collection '||c_selected_tracks_collection_name || ' is non-existent!');
     END IF;
+
     IF p_on 
     THEN 
-        IF v_col_exists = 0
+    dbms_output.put_line ( 'Ln'||$$plsql_line);
+        IF NOT v_col_exists 
         THEN
+    dbms_output.put_line ( 'Ln'||$$plsql_line);
             apex_collection.create_collection( c_selected_tracks_collection_name );
         END IF; -- v_col_exists 
 
         IF v_seq IS NULL 
         THEN
+    dbms_output.put_line ( 'Ln'||$$plsql_line);
             apex_collection.add_member( c_selected_tracks_collection_name
                         , p_n001 => p_track_id
                 );
         END IF;
     ELSE -- switch OFF
+    dbms_output.put_line ( 'Ln'||$$plsql_line);
         IF v_seq IS NOT NULL 
-            apex_collection.delete_member( c_selected_tracks_collection_name, p_seq_id => v_seq );
+        THEN 
+    dbms_output.put_line ( 'Ln'||$$plsql_line);
+            apex_collection.delete_member( c_selected_tracks_collection_name, p_seq => v_seq );
         END IF;
     END IF;
 
