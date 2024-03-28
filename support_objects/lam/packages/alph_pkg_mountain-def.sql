@@ -30,7 +30,13 @@ as
 	( p_track_id  	NUMBER 
 	, p_on 			BOOLEAN 
 	);
-	
+
+	PROCEDURE mark_selected_tracks 
+	( p_json_data VARCHAR2 
+	);
+	FUNCTION get_selected_tracks_collection_name 
+	RETURN VARCHAR2 
+	;
 end;
 /
 

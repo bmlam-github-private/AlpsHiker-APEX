@@ -1,5 +1,7 @@
 create or replace package body alph_pkg_mountain as
 
+    c_nl CONSTANT VARCHAR2(10) := chr(10);
+    
 /* suppose we have collected the locations of a bunch of mountains and want to 
 * import these into the staging table 
 */
@@ -415,6 +417,39 @@ BEGIN
     END IF;
 
 END switch_track_selection_status;
+
+PROCEDURE mark_selected_tracks 
+( p_json_data VARCHAR2 
+)
+AS 
+BEGIN 
+    loginfo( p_text=> 'p_json_data: ' || p_json_data );
+    FOR rec IN (
+        WITH json_data AS (
+            SELECT track_id 
+                , selected 
+            FROM JSON_TABLE( p_json_data , '$[*]'
+                    COLUMNS(track_id,  selected )
+                    )
+        )
+        SELECT *
+        FROM json_data
+    ) LOOP 
+       -- pck_std_log.inf ( ' track_id: '|| rec.track_id|| ' selected: '|| rec.selected );
+        switch_track_selection_status( p_track_id=> rec.track_id , p_on => TRUE );
+    END LOOP;
+EXCEPTION
+    WHEN OTHERS THEN
+        pck_std_log.err( a_errno=> sqlcode, a_text=>  sqlerrm ||c_nl||dbms_utility.format_call_stack );
+        RAISE;
+END mark_selected_tracks;
+
+FUNCTION get_selected_tracks_collection_name 
+RETURN VARCHAR2 
+AS 
+BEGIN return c_selected_tracks_collection_name;
+END get_selected_tracks_collection_name;
+
 end;
 /
 

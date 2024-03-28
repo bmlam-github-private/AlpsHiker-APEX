@@ -65,21 +65,9 @@ FROM    JSON_TABLE(
 SELECT * FROM apex_collections
 ;
 
-
-
--- test code from trigger that caused error;
-declare 
-        v_temp RAW (32767);
-        v_hash alph_tracks.crypto_hash_typ1%type;
-BEGIN
-    for rec in ( 
-        select gpx_data
-        from alph_tracks
-        where gpx_data is not null 
-    ) loop
-            v_temp := DBMS_CRYPTO.HASH(UTL_RAW.CAST_TO_RAW(rec.gpx_data), 1 ) ;
-          dbms_output.put ( 'Ln'||$$PLSQL_LINE|| ' len of v_temp: '|| length( v_temp ) );
-          v_hash := substr( v_temp, 1, 100);
-    end loop;
-END;
-/
+desc alph_tracks
+;
+update alph_tracks set crypto_hash_typ1= null where crypto_hash_typ1 is null and gpx_data is not null
+;
+create or replace view v_alph_tracks as select * from alph_tracks where gpx_data is not null
+;
