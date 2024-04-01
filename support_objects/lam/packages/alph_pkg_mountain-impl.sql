@@ -423,7 +423,7 @@ PROCEDURE mark_selected_tracks
 )
 AS 
 BEGIN 
-    loginfo( p_text=> 'p_json_data: ' || p_json_data );
+    loginfo( $$PLSQL_UNIT||';'||$$PLSQL_LINE, p_text=> 'p_json_data: ' || p_json_data );
     FOR rec IN (
         WITH json_data AS (
             SELECT track_id 

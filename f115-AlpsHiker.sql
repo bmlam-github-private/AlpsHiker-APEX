@@ -33,15 +33,15 @@ prompt APPLICATION 115 - Alps Hiker
 -- Application Export:
 --   Application:     115
 --   Name:            Alps Hiker
---   Date and Time:   08:28 Monday April 1, 2024
+--   Date and Time:   09:07 Monday April 1, 2024
 --   Exported By:     LAM_DEV
 --   Flashback:       0
 --   Export Type:     Application Export
 --     Pages:                     16
 --       Items:                   21
---       Processes:               14
+--       Processes:               13
 --       Regions:                 35
---       Buttons:                 14
+--       Buttons:                 15
 --       Dynamic Actions:          4
 --     Shared Components:
 --       Logic:
@@ -120,7 +120,7 @@ wwv_imp_workspace.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'Alps Hiker'
 ,p_last_updated_by=>'LAM_DEV'
-,p_last_upd_yyyymmddhh24miss=>'20240401080813'
+,p_last_upd_yyyymmddhh24miss=>'20240401085714'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>6
 ,p_print_server_type=>'NATIVE'
@@ -18495,7 +18495,7 @@ wwv_flow_imp_page.create_page(
 ,p_protection_level=>'C'
 ,p_page_component_map=>'21'
 ,p_last_updated_by=>'LAM_DEV'
-,p_last_upd_yyyymmddhh24miss=>'20240401080813'
+,p_last_upd_yyyymmddhh24miss=>'20240401085714'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(11801284583604265)
@@ -18878,7 +18878,18 @@ wwv_flow_imp_page.create_page_button(
 ,p_button_action=>'SUBMIT'
 ,p_button_template_options=>'#DEFAULT#'
 ,p_button_template_id=>wwv_flow_imp.id(38384520835343189)
-,p_button_image_alt=>'Show Tracks'
+,p_button_image_alt=>'Mark Tracks'
+,p_grid_new_row=>'Y'
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(26415389059474003)
+,p_button_sequence=>20
+,p_button_plug_id=>wwv_flow_imp.id(11801981432604275)
+,p_button_name=>'go_to_map'
+,p_button_action=>'SUBMIT'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(38384520835343189)
+,p_button_image_alt=>'View tracks on Map'
 ,p_grid_new_row=>'Y'
 );
 wwv_flow_imp_page.create_page_branch(
@@ -18887,8 +18898,8 @@ wwv_flow_imp_page.create_page_branch(
 ,p_branch_action=>'f?p=&APP_ID.:3:&SESSION.::&DEBUG.:::&success_msg=#SUCCESS_MSG#'
 ,p_branch_point=>'BEFORE_COMPUTATION'
 ,p_branch_type=>'REDIRECT_URL'
-,p_branch_when_button_id=>wwv_flow_imp.id(37009475735439641)
-,p_branch_sequence=>10
+,p_branch_when_button_id=>wwv_flow_imp.id(26415389059474003)
+,p_branch_sequence=>90
 );
 wwv_flow_imp_page.create_page_item(
  p_id=>wwv_flow_imp.id(37008895635439635)
@@ -18937,7 +18948,7 @@ wwv_flow_imp_page.create_page_process(
 wwv_flow_imp_page.create_page_process(
  p_id=>wwv_flow_imp.id(37009760102439644)
 ,p_process_sequence=>30
-,p_process_point=>'AFTER_SUBMIT'
+,p_process_point=>'ON_SUBMIT_BEFORE_COMPUTATION'
 ,p_process_type=>'NATIVE_PLSQL'
 ,p_process_name=>'submit_json'
 ,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -18945,25 +18956,12 @@ wwv_flow_imp_page.create_page_process(
 '    alph_pkg_mountain.mark_selected_tracks( ',
 '        p_json_data => ''[''|| :P7_JSON_ASSEMBLED ||'']'' ',
 '    );',
+'    :P7_JSON_ASSEMBLED := '''';',
 'END;'))
 ,p_process_clob_language=>'PLSQL'
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
 ,p_process_when_button_id=>wwv_flow_imp.id(37009475735439641)
 ,p_internal_uid=>37009760102439644
-);
-wwv_flow_imp_page.create_page_process(
- p_id=>wwv_flow_imp.id(37009668654439643)
-,p_process_sequence=>10
-,p_process_point=>'BEFORE_BOX_BODY'
-,p_process_type=>'NATIVE_PLSQL'
-,p_process_name=>'reset_assembly'
-,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'BEGIN',
-'    loginfo( ''pg7: process'', ''reset :P7_JSON_ASSEMBLED'');',
-'    :P7_JSON_ASSEMBLED := NULL;',
-'END;'))
-,p_process_clob_language=>'PLSQL'
-,p_internal_uid=>37009668654439643
 );
 end;
 /
