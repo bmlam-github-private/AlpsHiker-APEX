@@ -420,10 +420,21 @@ END switch_track_selection_status;
 
 PROCEDURE mark_selected_tracks 
 ( p_json_data VARCHAR2 
+ ,p_replace_current_selected BOOLEAN DEFAULT FALSE   
 )
 AS 
 BEGIN 
-    loginfo( $$PLSQL_UNIT||';'||$$PLSQL_LINE, p_text=> 'p_json_data: ' || p_json_data );
+    loginfo( $$PLSQL_UNIT||';'||$$PLSQL_LINE, p_text=> 'p_json_data: ' || p_json_data ||' p_replace_current_selected:' ||sys.diutil.bool_to_int(p_replace_current_selected) );
+    IF p_replace_current_selected 
+    THEN 
+        FOR rec_sel IN (
+            SELECT track_id
+            FROM v_alph_selected_tracks
+        ) LOOP   
+            switch_track_selection_status( p_track_id=> rec_sel.track_id , p_on => FALSE );
+        END LOOP;
+    END IF;
+
     FOR rec IN (
         WITH json_data AS (
             SELECT track_id 

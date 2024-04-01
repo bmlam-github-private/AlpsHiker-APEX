@@ -33,6 +33,7 @@ as
 
 	PROCEDURE mark_selected_tracks 
 	( p_json_data VARCHAR2 
+	 ,p_replace_current_selected BOOLEAN DEFAULT FALSE   
 	);
 	FUNCTION get_selected_tracks_collection_name 
 	RETURN VARCHAR2 

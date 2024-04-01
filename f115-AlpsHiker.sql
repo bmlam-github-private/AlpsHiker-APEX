@@ -33,15 +33,15 @@ prompt APPLICATION 115 - Alps Hiker
 -- Application Export:
 --   Application:     115
 --   Name:            Alps Hiker
---   Date and Time:   09:07 Monday April 1, 2024
+--   Date and Time:   10:18 Monday April 1, 2024
 --   Exported By:     LAM_DEV
 --   Flashback:       0
 --   Export Type:     Application Export
 --     Pages:                     16
 --       Items:                   21
---       Processes:               13
+--       Processes:               14
 --       Regions:                 35
---       Buttons:                 15
+--       Buttons:                 16
 --       Dynamic Actions:          4
 --     Shared Components:
 --       Logic:
@@ -120,7 +120,7 @@ wwv_imp_workspace.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'Alps Hiker'
 ,p_last_updated_by=>'LAM_DEV'
-,p_last_upd_yyyymmddhh24miss=>'20240401085714'
+,p_last_upd_yyyymmddhh24miss=>'20240401101242'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>6
 ,p_print_server_type=>'NATIVE'
@@ -18076,7 +18076,7 @@ wwv_flow_imp_page.create_page(
 ,p_protection_level=>'C'
 ,p_page_component_map=>'16'
 ,p_last_updated_by=>'LAM_DEV'
-,p_last_upd_yyyymmddhh24miss=>'20240401075350'
+,p_last_upd_yyyymmddhh24miss=>'20240401094519'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(37007476773439621)
@@ -18114,7 +18114,7 @@ wwv_flow_imp_page.create_map_region_layer(
  p_id=>wwv_flow_imp.id(37007608828439623)
 ,p_map_region_id=>wwv_flow_imp.id(37007588660439622)
 ,p_name=>'layer_1_blue'
-,p_label=>'layer 1'
+,p_label=>'1st track order by name alphabetically'
 ,p_layer_type=>'LINE'
 ,p_display_sequence=>10
 ,p_location=>'REGION_SOURCE'
@@ -18125,7 +18125,7 @@ wwv_flow_imp_page.create_map_region_layer(
 ,p_geometry_column_data_type=>'SDO_GEOMETRY'
 ,p_geometry_column=>'SDO_GEO'
 ,p_stroke_color=>'#5856d6'
-,p_stroke_style=>'SOLID'
+,p_stroke_style=>'DOTTED'
 ,p_tooltip_adv_formatting=>false
 ,p_tooltip_column=>'TOOL_TIP'
 ,p_info_window_adv_formatting=>false
@@ -18135,7 +18135,7 @@ wwv_flow_imp_page.create_map_region_layer(
  p_id=>wwv_flow_imp.id(37007728308439624)
 ,p_map_region_id=>wwv_flow_imp.id(37007588660439622)
 ,p_name=>'layer_2_red_blood'
-,p_label=>'layer 2'
+,p_label=>'2nd  track order by name alphabetically'
 ,p_layer_type=>'LINE'
 ,p_display_sequence=>20
 ,p_location=>'REGION_SOURCE'
@@ -18146,7 +18146,28 @@ wwv_flow_imp_page.create_map_region_layer(
 ,p_geometry_column_data_type=>'SDO_GEOMETRY'
 ,p_geometry_column=>'SDO_GEO'
 ,p_stroke_color=>'#ff2d55'
-,p_stroke_style=>'SOLID'
+,p_stroke_style=>'DOTTED'
+,p_tooltip_adv_formatting=>false
+,p_tooltip_column=>'TOOL_TIP'
+,p_info_window_adv_formatting=>false
+,p_allow_hide=>true
+);
+wwv_flow_imp_page.create_map_region_layer(
+ p_id=>wwv_flow_imp.id(26415698247474006)
+,p_map_region_id=>wwv_flow_imp.id(37007588660439622)
+,p_name=>'layer_3_green'
+,p_label=>'3rd  track order by name alphabetically'
+,p_layer_type=>'LINE'
+,p_display_sequence=>30
+,p_location=>'REGION_SOURCE'
+,p_has_spatial_index=>false
+,p_row_assignment_column=>'LAYER_ID'
+,p_row_assignment_value=>'3'
+,p_pk_column=>'ID'
+,p_geometry_column_data_type=>'SDO_GEOMETRY'
+,p_geometry_column=>'SDO_GEO'
+,p_stroke_color=>'#2dff8b'
+,p_stroke_style=>'DOTTED'
 ,p_tooltip_adv_formatting=>false
 ,p_tooltip_column=>'TOOL_TIP'
 ,p_info_window_adv_formatting=>false
@@ -18223,9 +18244,8 @@ wwv_flow_imp_page.create_page_process(
 '    FROM alph_tracks tr',
 '    JOIN v_alph_selected_tracks sl ON sl.track_id = tr.id',
 '    WHERE tr.sdo_geo IS NOT NULL ',
-'    and rownum <= 5',
 '    ;',
-'    loginfo ( ''apex process'', ''tracks selected: ''|| v_cnt );',
+'    loginfo ( ''pg'' ||to_char(:APP_PAGE_ID)||'' process'', ''tracks selected: ''|| v_cnt );',
 'end;'))
 ,p_process_clob_language=>'PLSQL'
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
@@ -18495,7 +18515,7 @@ wwv_flow_imp_page.create_page(
 ,p_protection_level=>'C'
 ,p_page_component_map=>'21'
 ,p_last_updated_by=>'LAM_DEV'
-,p_last_upd_yyyymmddhh24miss=>'20240401085714'
+,p_last_upd_yyyymmddhh24miss=>'20240401101242'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(11801284583604265)
@@ -18518,16 +18538,18 @@ wwv_flow_imp_page.create_page_plug(
 ,p_query_type=>'SQL'
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'select tr.ID AS track_id,',
-'       NAME_DISPLAY,',
+'       tr.NAME_DISPLAY,',
 '       --NAME_NORMED,',
 '       -- GPX_DATA,',
 '       --SDO_GEO,',
-'       DATE_STARTED,',
+'       tr.DATE_STARTED,',
 '       tr.INS_USER,',
 '       tr.INS_DATE,',
 '       tr.REMARKS,',
-'       '' '' AS SELECTED',
-'  from V_ALPH_TRACKS tr'))
+'       '' '' --CASE WHEN ( SELECT sel.track_id  FROM v_alph_selected_tracks sel  WHERE sel.track_id = tr.id ) IS NOT NULL THEN ''Y'' ELSE ''N'' END ',
+'       AS SELECTED',
+'  from V_ALPH_TRACKS tr',
+''))
 ,p_plug_source_type=>'NATIVE_IG'
 ,p_prn_page_header=>'all_tracks_IG'
 );
@@ -18541,7 +18563,7 @@ wwv_flow_imp_page.create_region_column(
 ,p_item_type=>'NATIVE_TEXT_FIELD'
 ,p_heading=>'Name Display'
 ,p_heading_alignment=>'LEFT'
-,p_display_sequence=>40
+,p_display_sequence=>50
 ,p_value_alignment=>'LEFT'
 ,p_attribute_05=>'BOTH'
 ,p_is_required=>true
@@ -18571,7 +18593,7 @@ wwv_flow_imp_page.create_region_column(
 ,p_item_type=>'NATIVE_DATE_PICKER_APEX'
 ,p_heading=>'Date Started'
 ,p_heading_alignment=>'LEFT'
-,p_display_sequence=>50
+,p_display_sequence=>60
 ,p_value_alignment=>'LEFT'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'POPUP'
@@ -18603,7 +18625,7 @@ wwv_flow_imp_page.create_region_column(
 ,p_item_type=>'NATIVE_TEXT_FIELD'
 ,p_heading=>'Ins User'
 ,p_heading_alignment=>'LEFT'
-,p_display_sequence=>60
+,p_display_sequence=>70
 ,p_value_alignment=>'LEFT'
 ,p_attribute_05=>'BOTH'
 ,p_is_required=>false
@@ -18633,7 +18655,7 @@ wwv_flow_imp_page.create_region_column(
 ,p_item_type=>'NATIVE_DATE_PICKER_APEX'
 ,p_heading=>'Ins Date'
 ,p_heading_alignment=>'LEFT'
-,p_display_sequence=>70
+,p_display_sequence=>80
 ,p_value_alignment=>'LEFT'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'POPUP'
@@ -18666,7 +18688,7 @@ wwv_flow_imp_page.create_region_column(
 ,p_item_type=>'NATIVE_TEXTAREA'
 ,p_heading=>'Remarks'
 ,p_heading_alignment=>'LEFT'
-,p_display_sequence=>80
+,p_display_sequence=>90
 ,p_value_alignment=>'LEFT'
 ,p_attribute_01=>'Y'
 ,p_attribute_02=>'N'
@@ -18736,7 +18758,7 @@ wwv_flow_imp_page.create_region_column(
 ,p_item_type=>'NATIVE_YES_NO'
 ,p_heading=>'Selected'
 ,p_heading_alignment=>'LEFT'
-,p_display_sequence=>100
+,p_display_sequence=>40
 ,p_value_alignment=>'LEFT'
 ,p_attribute_01=>'Y'
 ,p_is_required=>false
@@ -18878,12 +18900,23 @@ wwv_flow_imp_page.create_page_button(
 ,p_button_action=>'SUBMIT'
 ,p_button_template_options=>'#DEFAULT#'
 ,p_button_template_id=>wwv_flow_imp.id(38384520835343189)
-,p_button_image_alt=>'Mark Tracks'
+,p_button_image_alt=>'Add to Selected Tracks'
+,p_grid_new_row=>'Y'
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(26415466322474004)
+,p_button_sequence=>20
+,p_button_plug_id=>wwv_flow_imp.id(11801981432604275)
+,p_button_name=>'replace_prev_tracks'
+,p_button_action=>'SUBMIT'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(38384520835343189)
+,p_button_image_alt=>'Replace previous selected tracks'
 ,p_grid_new_row=>'Y'
 );
 wwv_flow_imp_page.create_page_button(
  p_id=>wwv_flow_imp.id(26415389059474003)
-,p_button_sequence=>20
+,p_button_sequence=>30
 ,p_button_plug_id=>wwv_flow_imp.id(11801981432604275)
 ,p_button_name=>'go_to_map'
 ,p_button_action=>'SUBMIT'
@@ -18955,6 +18988,7 @@ wwv_flow_imp_page.create_page_process(
 'BEGIN ',
 '    alph_pkg_mountain.mark_selected_tracks( ',
 '        p_json_data => ''[''|| :P7_JSON_ASSEMBLED ||'']'' ',
+'        , p_replace_current_selected => FALSE',
 '    );',
 '    :P7_JSON_ASSEMBLED := '''';',
 'END;'))
@@ -18962,6 +18996,25 @@ wwv_flow_imp_page.create_page_process(
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
 ,p_process_when_button_id=>wwv_flow_imp.id(37009475735439641)
 ,p_internal_uid=>37009760102439644
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(26415535163474005)
+,p_process_sequence=>40
+,p_process_point=>'ON_SUBMIT_BEFORE_COMPUTATION'
+,p_process_type=>'NATIVE_PLSQL'
+,p_process_name=>'submit_json_as_replacement'
+,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'BEGIN ',
+'    alph_pkg_mountain.mark_selected_tracks( ',
+'        p_json_data => ''[''|| :P7_JSON_ASSEMBLED ||'']'' ',
+'        , p_replace_current_selected => TRUE',
+'    );',
+'    :P7_JSON_ASSEMBLED := '''';',
+'END;'))
+,p_process_clob_language=>'PLSQL'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_when_button_id=>wwv_flow_imp.id(26415466322474004)
+,p_internal_uid=>26415535163474005
 );
 end;
 /
