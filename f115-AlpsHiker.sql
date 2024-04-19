@@ -33,15 +33,15 @@ prompt APPLICATION 115 - Alps Hiker
 -- Application Export:
 --   Application:     115
 --   Name:            Alps Hiker
---   Date and Time:   10:18 Monday April 1, 2024
+--   Date and Time:   14:43 Friday April 19, 2024
 --   Exported By:     LAM_DEV
 --   Flashback:       0
 --   Export Type:     Application Export
 --     Pages:                     16
 --       Items:                   21
---       Processes:               14
+--       Processes:               12
 --       Regions:                 35
---       Buttons:                 16
+--       Buttons:                 14
 --       Dynamic Actions:          4
 --     Shared Components:
 --       Logic:
@@ -120,7 +120,7 @@ wwv_imp_workspace.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'Alps Hiker'
 ,p_last_updated_by=>'LAM_DEV'
-,p_last_upd_yyyymmddhh24miss=>'20240401101242'
+,p_last_upd_yyyymmddhh24miss=>'20240419144044'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>6
 ,p_print_server_type=>'NATIVE'
@@ -18076,7 +18076,7 @@ wwv_flow_imp_page.create_page(
 ,p_protection_level=>'C'
 ,p_page_component_map=>'16'
 ,p_last_updated_by=>'LAM_DEV'
-,p_last_upd_yyyymmddhh24miss=>'20240401094519'
+,p_last_upd_yyyymmddhh24miss=>'20240419144044'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(37007476773439621)
@@ -18105,7 +18105,17 @@ wwv_flow_imp_page.create_map_region(
 ,p_height=>640
 ,p_navigation_bar_type=>'FULL'
 ,p_navigation_bar_position=>'END'
-,p_init_position_zoom_type=>'QUERY_RESULTS'
+,p_init_position_zoom_type=>'SQL'
+,p_init_position_zoom_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'SELECT ',
+'    45.777 AS lati ',
+'    , 10.888 AS longi ',
+'    , 9 as zoom_lev',
+'FROM dual'))
+,p_init_position_geometry_type=>'LONLAT_COLUMNS'
+,p_init_position_lon_column=>'LONGI'
+,p_init_position_lat_column=>'LATI'
+,p_init_zoomlevel_column=>'ZOOM_LEV'
 ,p_layer_messages_position=>'BELOW'
 ,p_legend_position=>'END'
 ,p_features=>'SCALE_BAR:INFINITE_MAP:RECTANGLE_ZOOM'
@@ -18208,25 +18218,6 @@ wwv_flow_imp_page.create_page_item(
 ,p_attribute_02=>'N'
 ,p_attribute_04=>'TEXT'
 ,p_attribute_05=>'BOTH'
-);
-wwv_flow_imp_page.create_page_process(
- p_id=>wwv_flow_imp.id(37010246120439649)
-,p_process_sequence=>10
-,p_process_point=>'AFTER_HEADER'
-,p_process_type=>'NATIVE_PLSQL'
-,p_process_name=>'server_log_tracks'
-,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'declare ',
-'    v_cnt NUMBER;',
-'BEGIN ',
-'    SELECT count(1)',
-'    INTO v_cnt ',
-'    FROM v_alph_selected_tracks',
-'    ;',
-'    loginfo ( null, ''tracks selected: '' || v_cnt|| '' P3_SELECTED_TRACKS:''|| :P3_SELECTED_TRACKS);',
-' END;'))
-,p_process_clob_language=>'PLSQL'
-,p_internal_uid=>37010246120439649
 );
 wwv_flow_imp_page.create_page_process(
  p_id=>wwv_flow_imp.id(37010369056439650)
@@ -18515,7 +18506,7 @@ wwv_flow_imp_page.create_page(
 ,p_protection_level=>'C'
 ,p_page_component_map=>'21'
 ,p_last_updated_by=>'LAM_DEV'
-,p_last_upd_yyyymmddhh24miss=>'20240401101242'
+,p_last_upd_yyyymmddhh24miss=>'20240419142342'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(11801284583604265)
@@ -18903,37 +18894,6 @@ wwv_flow_imp_page.create_page_button(
 ,p_button_image_alt=>'Add to Selected Tracks'
 ,p_grid_new_row=>'Y'
 );
-wwv_flow_imp_page.create_page_button(
- p_id=>wwv_flow_imp.id(26415466322474004)
-,p_button_sequence=>20
-,p_button_plug_id=>wwv_flow_imp.id(11801981432604275)
-,p_button_name=>'replace_prev_tracks'
-,p_button_action=>'SUBMIT'
-,p_button_template_options=>'#DEFAULT#'
-,p_button_template_id=>wwv_flow_imp.id(38384520835343189)
-,p_button_image_alt=>'Replace previous selected tracks'
-,p_grid_new_row=>'Y'
-);
-wwv_flow_imp_page.create_page_button(
- p_id=>wwv_flow_imp.id(26415389059474003)
-,p_button_sequence=>30
-,p_button_plug_id=>wwv_flow_imp.id(11801981432604275)
-,p_button_name=>'go_to_map'
-,p_button_action=>'SUBMIT'
-,p_button_template_options=>'#DEFAULT#'
-,p_button_template_id=>wwv_flow_imp.id(38384520835343189)
-,p_button_image_alt=>'View tracks on Map'
-,p_grid_new_row=>'Y'
-);
-wwv_flow_imp_page.create_page_branch(
- p_id=>wwv_flow_imp.id(26415235498474002)
-,p_branch_name=>'go_to_maps_page'
-,p_branch_action=>'f?p=&APP_ID.:3:&SESSION.::&DEBUG.:::&success_msg=#SUCCESS_MSG#'
-,p_branch_point=>'BEFORE_COMPUTATION'
-,p_branch_type=>'REDIRECT_URL'
-,p_branch_when_button_id=>wwv_flow_imp.id(26415389059474003)
-,p_branch_sequence=>90
-);
 wwv_flow_imp_page.create_page_item(
  p_id=>wwv_flow_imp.id(37008895635439635)
 ,p_name=>'P7_JSON_ASSEMBLED'
@@ -18951,7 +18911,7 @@ wwv_flow_imp_page.create_page_item(
 );
 wwv_flow_imp_page.create_page_process(
  p_id=>wwv_flow_imp.id(37008243104439629)
-,p_process_sequence=>20
+,p_process_sequence=>10
 ,p_process_point=>'AFTER_SUBMIT'
 ,p_region_id=>wwv_flow_imp.id(11801981432604275)
 ,p_process_type=>'NATIVE_IG_DML'
@@ -18974,7 +18934,7 @@ wwv_flow_imp_page.create_page_process(
 'end;',
 ''))
 ,p_attribute_05=>'Y'
-,p_attribute_06=>'Y'
+,p_attribute_06=>'N'
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
 ,p_internal_uid=>37008243104439629
 );
@@ -18986,35 +18946,27 @@ wwv_flow_imp_page.create_page_process(
 ,p_process_name=>'submit_json'
 ,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'BEGIN ',
-'    alph_pkg_mountain.mark_selected_tracks( ',
-'        p_json_data => ''[''|| :P7_JSON_ASSEMBLED ||'']'' ',
-'        , p_replace_current_selected => FALSE',
-'    );',
-'    :P7_JSON_ASSEMBLED := '''';',
+'    IF :P7_JSON_ASSEMBLED IS NOT  NULL THEN ',
+'        alph_pkg_mountain.mark_selected_tracks( ',
+'            p_data => ''[''|| :P7_JSON_ASSEMBLED ||'']'' ',
+'            , p_replace_current_selected => FALSE',
+'            , p_input_format => ''JSON''',
+'        );',
+'        :P7_JSON_ASSEMBLED := '''';',
+'        -- branch out ',
+'        --htp.init;',
+'        --owa_util.redirect_url(''f?p=&APP_ID.:3:&APP_SESSION.'');',
+'        --apex_application.stop_apex_engine;',
+'    --ELSE',
+'    --    raise_application_error( -20001, ''P7_JSON_ASSEMBLED is empty!'');',
+'    END IF;',
 'END;'))
 ,p_process_clob_language=>'PLSQL'
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
 ,p_process_when_button_id=>wwv_flow_imp.id(37009475735439641)
+,p_process_when=>'P7_JSON_ASSEMBLED'
+,p_process_when_type=>'ITEM_IS_NOT_NULL'
 ,p_internal_uid=>37009760102439644
-);
-wwv_flow_imp_page.create_page_process(
- p_id=>wwv_flow_imp.id(26415535163474005)
-,p_process_sequence=>40
-,p_process_point=>'ON_SUBMIT_BEFORE_COMPUTATION'
-,p_process_type=>'NATIVE_PLSQL'
-,p_process_name=>'submit_json_as_replacement'
-,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'BEGIN ',
-'    alph_pkg_mountain.mark_selected_tracks( ',
-'        p_json_data => ''[''|| :P7_JSON_ASSEMBLED ||'']'' ',
-'        , p_replace_current_selected => TRUE',
-'    );',
-'    :P7_JSON_ASSEMBLED := '''';',
-'END;'))
-,p_process_clob_language=>'PLSQL'
-,p_error_display_location=>'INLINE_IN_NOTIFICATION'
-,p_process_when_button_id=>wwv_flow_imp.id(26415466322474004)
-,p_internal_uid=>26415535163474005
 );
 end;
 /

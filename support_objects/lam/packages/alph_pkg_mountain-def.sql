@@ -32,8 +32,9 @@ as
 	);
 
 	PROCEDURE mark_selected_tracks 
-	( p_json_data VARCHAR2 
+	( p_data VARCHAR2 
 	 ,p_replace_current_selected BOOLEAN DEFAULT FALSE   
+	 ,p_input_format VARCHAR2 DEFAULT 'BLANK_SEPARATED'
 	);
 	FUNCTION get_selected_tracks_collection_name 
 	RETURN VARCHAR2 

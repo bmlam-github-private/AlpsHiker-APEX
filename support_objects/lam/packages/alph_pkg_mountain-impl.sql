@@ -419,12 +419,13 @@ BEGIN
 END switch_track_selection_status;
 
 PROCEDURE mark_selected_tracks 
-( p_json_data VARCHAR2 
- ,p_replace_current_selected BOOLEAN DEFAULT FALSE   
-)
+    ( p_data VARCHAR2 
+     ,p_replace_current_selected BOOLEAN DEFAULT FALSE   
+     ,p_input_format VARCHAR2 DEFAULT 'BLANK_SEPARATED'
+    )
 AS 
 BEGIN 
-    loginfo( $$PLSQL_UNIT||';'||$$PLSQL_LINE, p_text=> 'p_json_data: ' || p_json_data ||' p_replace_current_selected:' ||sys.diutil.bool_to_int(p_replace_current_selected) );
+    loginfo( $$PLSQL_UNIT||';'||$$PLSQL_LINE, p_text=> 'p_json_data: ' || p_data ||' p_replace_current_selected:' ||sys.diutil.bool_to_int(p_replace_current_selected) );
     IF p_replace_current_selected 
     THEN 
         FOR rec_sel IN (
@@ -435,24 +436,41 @@ BEGIN
         END LOOP;
     END IF;
 
-    FOR rec IN (
-        WITH json_data AS (
-            SELECT track_id 
-                , selected 
-            FROM JSON_TABLE( p_json_data , '$[*]'
-                    COLUMNS(track_id,  selected )
-                    )
-        )
-        SELECT *
-        FROM json_data
-    ) LOOP 
-       -- pck_std_log.inf ( ' track_id: '|| rec.track_id|| ' selected: '|| rec.selected );
-        switch_track_selection_status( p_track_id=> rec.track_id , p_on => TRUE );
-    END LOOP;
-EXCEPTION
-    WHEN OTHERS THEN
-        pck_std_log.err( a_errno=> sqlcode, a_text=>  sqlerrm ||c_nl||dbms_utility.format_call_stack );
-        RAISE;
+    CASE p_input_format  
+    WHEN 'JSON' THEN 
+        FOR rec IN (
+            WITH json_data AS (
+                SELECT track_id 
+                    , selected 
+                FROM JSON_TABLE( p_data , '$[*]'
+                        COLUMNS(track_id,  selected )
+                        )
+            )
+            SELECT *
+            FROM json_data
+        ) LOOP 
+             pck_std_log.inf ( ' track_id: '|| rec.track_id|| ' selected: '|| rec.selected );
+            switch_track_selection_status( p_track_id=> rec.track_id , p_on => TRUE );
+        END LOOP;
+    WHEN 'BLANK_SEPARATED' THEN  
+        FOR rec IN ( 
+            SELECT REGEXP_SUBSTR( p_data, '[^ ]+', 1, LEVEL) AS track_id 
+            FROM dual
+            CONNECT BY REGEXP_SUBSTR( p_data, '[^ ]+', 1, LEVEL) IS NOT NULL
+        ) LOOP 
+             pck_std_log.inf ( ' track_id: '|| rec.track_id );
+            switch_track_selection_status( p_track_id=> rec.track_id , p_on => TRUE );
+        END LOOP;
+
+    ELSE 
+             pck_std_log.inf ( ' input format '|| p_input_format || ' not yet implemented ' );
+    END CASE;
+    pck_std_log.inf ( ' tracks in collection: ' ||  apex_collection.collection_member_count( c_selected_tracks_collection_name ) );
+--EXCEPTION
+--    WHEN OTHERS THEN
+--        pck_std_log.error( a_comp=> $$PLSQL_UNIT, a_subcomp=> 'Ln'||$$plsql_line
+--            , a_err_code=> sqlcode, a_text=>  sqlerrm ||c_nl||dbms_utility.format_call_stack );
+--        RAISE;
 END mark_selected_tracks;
 
 FUNCTION get_selected_tracks_collection_name 
