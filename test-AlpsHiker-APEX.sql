@@ -1,18 +1,30 @@
-start /Users/bmlam/Documents/AlpsHiker-APEX/support_objects/lam/packages/alph_pkg_mountain-def.sql
+start /Users/bmlam/Documents/AlpsHiker-APEX/support_objects/lam/packages/alph_pkg_mountain-impl.sql
 ;
 sta /Users/bmlam/Documents/AlpsHiker-APEX/support_objects/lam/triggers/alph_tracks_compound.sql
 
 sta /Users/bmlam/Library/CloudStorage/Dropbox/git_clones/mailto-git_clones/lam_personal/hotspots/improve_apex/test-apex_collections.sql
 
+alter session set nls_date_format = 'yyyy.mm.dd hh24:mi:ss';
 select * from log_table_v2
+where 1=1
+  AND caller_position not like 'procedure LAM.LOOP_CREATE_USER_REQS:%' 
 order by log_ts desc fetch first 100 rows only
 ;
-
-select 
---sdo_util.to_geojson ( sdo_geo ) geojs,
-t.* 
-from alph_tracks t
-order by ins_date desc
+desc pck_std_log
+;
+SELECT tr.id, tr.name_display, tr.date_started, tr.sdo_geo, tr.remarks 
+ , name_display||' started '||to_char( date_started , 'yyyy.mm.dd hh24:mi') AS tool_tip
+, rownum AS layer_id 
+, sdo_util.to_geojson ( sdo_geo ) geojs
+--, sdo_util.from_geojson ( gpx_data ) sdo_geo
+, gpx_data
+FROM alph_tracks tr
+--JOIN v_alph_selected_tracks sl ON sl.track_id = tr.id
+WHERE 1=1
+--  AND id = 82 
+--  AND tr.sdo_geo IS NOT NULL 
+and rownum <= 5
+order by id desc 
 ;
 update alph_tracks set date_started = null where crypto_hash_typ1 is null
 ;
@@ -21,6 +33,7 @@ select *
 --    , dbms_lob.getlength( gpx_data ) len 
 from alph_tracks
 ;
+
 WITH from_blob as ( 
     select 
     to_clob( blob_content ) as_clob,
@@ -63,6 +76,10 @@ FROM    JSON_TABLE(
 
 -- to view, we may need to attach to a given session!
 SELECT * FROM apex_collections
+;
+SELECT seq_id, n001 AS track_id
+FROM apex_collections
+WHERE collection_name = alph_pkg_mountain.get_selected_tracks_collection_name
 ;
 
 desc alph_tracks
