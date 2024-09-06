@@ -33,15 +33,15 @@ prompt APPLICATION 115 - Alps Hiker
 -- Application Export:
 --   Application:     115
 --   Name:            Alps Hiker
---   Date and Time:   15:26 Sunday August 11, 2024
+--   Date and Time:   14:59 Friday September 6, 2024
 --   Exported By:     LAM_DEV
 --   Flashback:       0
 --   Export Type:     Application Export
 --     Pages:                     22
---       Items:                   36
---       Processes:               20
---       Regions:                 48
---       Buttons:                 20
+--       Items:                   39
+--       Processes:               21
+--       Regions:                 49
+--       Buttons:                 21
 --       Dynamic Actions:          4
 --     Shared Components:
 --       Logic:
@@ -160,7 +160,7 @@ wwv_flow_imp_shared.create_list(
  p_id=>wwv_flow_imp.id(38208581758342982)
 ,p_name=>'Navigation Menu'
 ,p_list_status=>'PUBLIC'
-,p_version_scn=>41472044232275
+,p_version_scn=>41475011071153
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(38503519814343414)
@@ -181,8 +181,8 @@ wwv_flow_imp_shared.create_list_item(
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(38812813469035117)
 ,p_list_item_display_sequence=>30
-,p_list_item_link_text=>'Tracks'
-,p_list_item_link_target=>'f?p=&APP_ID.:3:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_link_text=>'Tracks on Map'
+,p_list_item_link_target=>'f?p=&APP_ID.:3:&SESSION.::&DEBUG.::::'
 ,p_list_item_icon=>'fa-map-marker'
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
 ,p_list_item_current_for_pages=>'3'
@@ -190,8 +190,8 @@ wwv_flow_imp_shared.create_list_item(
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(10000487142666311)
 ,p_list_item_display_sequence=>40
-,p_list_item_link_text=>'All_tracks_ir'
-,p_list_item_link_target=>'f?p=&APP_ID.:4:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_link_text=>'All tracks'
+,p_list_item_link_target=>'f?p=&APP_ID.:4:&SESSION.::&DEBUG.::::'
 ,p_list_item_icon=>'fa-table'
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
 ,p_list_item_current_for_pages=>'4'
@@ -199,8 +199,8 @@ wwv_flow_imp_shared.create_list_item(
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(11800880777604251)
 ,p_list_item_display_sequence=>50
-,p_list_item_link_text=>'all_tracks_IG'
-,p_list_item_link_target=>'f?p=&APP_ID.:7:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_link_text=>'all tracks with geometry'
+,p_list_item_link_target=>'f?p=&APP_ID.:7:&SESSION.::&DEBUG.::::'
 ,p_list_item_icon=>'fa-table-pointer'
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
 ,p_list_item_current_for_pages=>'7'
@@ -17908,9 +17908,9 @@ prompt --application/pages/page_00002
 begin
 wwv_flow_imp_page.create_page(
  p_id=>2
-,p_name=>'12 upload gpx track'
-,p_alias=>'12-UPLOAD-GPX-TRACK'
-,p_step_title=>'12 upload gpx track'
+,p_name=>'upload gpx track'
+,p_alias=>'UPLOAD-GPX-TRACK'
+,p_step_title=>'upload gpx track'
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
@@ -18280,9 +18280,9 @@ wwv_flow_imp_page.create_map_region_layer(
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(37009946474439646)
 ,p_plug_name=>'DBX_ONLY'
-,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_region_template_options=>'#DEFAULT#:t-Region--removeHeader js-removeLandmark:t-Region--scrollBody'
 ,p_plug_template=>wwv_flow_imp.id(38311356292343115)
-,p_plug_display_sequence=>10
+,p_plug_display_sequence=>90
 ,p_location=>null
 ,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
   'expand_shortcuts', 'N',
@@ -18309,7 +18309,8 @@ wwv_flow_imp_page.create_page_button(
 ,p_button_template_options=>'#DEFAULT#'
 ,p_button_template_id=>wwv_flow_imp.id(38384520835343189)
 ,p_button_image_alt=>'Refresh'
-,p_grid_new_row=>'Y'
+,p_grid_new_row=>'N'
+,p_grid_new_column=>'Y'
 );
 wwv_flow_imp_page.create_page_item(
  p_id=>wwv_flow_imp.id(37010020856439647)
@@ -18333,21 +18334,12 @@ wwv_flow_imp_page.create_page_process(
 ,p_process_type=>'NATIVE_PLSQL'
 ,p_process_name=>'server_debug_2'
 ,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'DECLARE',
-'  v_add_info VARCHAR2( 100 );',
 'BEGIN ',
 '    SELECT listagg ( n001, '' '') WITHIN GROUP ( ORDER BY n001 )',
 '    INTO     :P3_SELECTED_TRACKS ',
 '    FROM  apex_collections',
 '    WHERE collection_name = alph_pkg_mountain.get_selected_tracks_collection_name',
 '    ;',
-'    SELECT ''x:''||TO_CHAR( mid_x ) ',
-'        || '' y:''||to_char( mid_y )',
-'        || ''zoom: ''|| to_char( zoom_level )',
-'     INTO v_add_info',
-'    FROM v_alph_selected_tracks_agg',
-'    ;',
-'    :P3_SELECTED_TRACKS := :P3_SELECTED_TRACKS || v_add_info;',
 ' END;',
 ''))
 ,p_process_clob_language=>'PLSQL'
@@ -18568,7 +18560,18 @@ wwv_flow_imp_page.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
-,p_page_component_map=>'19'
+,p_page_component_map=>'17'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(14713457707300701)
+,p_plug_name=>'Filters'
+,p_region_template_options=>'#DEFAULT#:t-Region--removeHeader js-removeLandmark:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_imp.id(38311356292343115)
+,p_plug_display_sequence=>5
+,p_location=>null
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'expand_shortcuts', 'N',
+  'output_as', 'HTML')).to_clob
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(45407932830447446)
@@ -18585,6 +18588,7 @@ wwv_flow_imp_page.create_page_plug(
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(45408611717447438)
 ,p_plug_name=>'Map Mountains'
+,p_title=>'Mountains'
 ,p_region_template_options=>'#DEFAULT#'
 ,p_plug_template=>wwv_flow_imp.id(38246137922343066)
 ,p_plug_display_sequence=>10
@@ -18612,22 +18616,105 @@ wwv_flow_imp_page.create_map_region_layer(
 ,p_location=>'LOCAL'
 ,p_query_type=>'SQL'
 ,p_layer_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'SELECT name_display, longitude, latitude, altitude',
+' SELECT name_display, longitude, latitude, altitude',
 '    , name_normed||'' ''||altitude||''m'' AS tool_tip',
 'FROM alph_mountain',
-'WHERE altitude between 3500 and 4500'))
+'WHERE 1=1',
+'  AND ( :P5_MAX_MOUNTAINS IS NULL OR rownum <= to_number( :P5_MAX_MOUNTAINS) ) ',
+'  AND ( :P5_MIN_ALTI IS NULL OR altitude >= to_number( :P5_MIN_ALTI ) )',
+'  AND ( :P5_MAX_ALTI IS NULL OR altitude <= to_number( :P5_MAX_ALTI ) )  ',
+''))
 ,p_has_spatial_index=>false
 ,p_geometry_column_data_type=>'LONLAT_COLUMNS'
 ,p_longitude_column=>'LONGITUDE'
 ,p_latitude_column=>'LATITUDE'
-,p_fill_color_is_spectrum=>false
-,p_extrude_unit=>'M'
 ,p_point_display_type=>'SVG'
 ,p_point_svg_shape=>'Default'
+,p_feature_clustering=>false
 ,p_tooltip_adv_formatting=>false
 ,p_tooltip_column=>'TOOL_TIP'
 ,p_info_window_adv_formatting=>false
 ,p_allow_hide=>true
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(14713872810300705)
+,p_button_sequence=>40
+,p_button_plug_id=>wwv_flow_imp.id(14713457707300701)
+,p_button_name=>'Refresh_Map'
+,p_button_action=>'SUBMIT'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(38384520835343189)
+,p_button_image_alt=>'Refresh Map'
+,p_show_processing=>'Y'
+,p_grid_new_row=>'Y'
+);
+wwv_flow_imp_page.create_page_branch(
+ p_id=>wwv_flow_imp.id(14713941821300706)
+,p_branch_name=>'Refresh_page_self'
+,p_branch_action=>'f?p=&APP_ID.:5:&SESSION.::&DEBUG.:::&success_msg=#SUCCESS_MSG#'
+,p_branch_point=>'BEFORE_COMPUTATION'
+,p_branch_type=>'REDIRECT_URL'
+,p_branch_sequence=>10
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(14713501869300702)
+,p_name=>'P5_MIN_ALTI'
+,p_item_sequence=>20
+,p_item_plug_id=>wwv_flow_imp.id(14713457707300701)
+,p_prompt=>'Minimum Altitude'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>30
+,p_field_template=>wwv_flow_imp.id(38382094121343180)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'BOTH'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(14713625080300703)
+,p_name=>'P5_MAX_ALTI'
+,p_item_sequence=>30
+,p_item_plug_id=>wwv_flow_imp.id(14713457707300701)
+,p_prompt=>'Maximum Altitude'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>30
+,p_field_template=>wwv_flow_imp.id(38382094121343180)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'BOTH'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(14714065626300707)
+,p_name=>'P5_MAX_MOUNTAINS'
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_imp.id(14713457707300701)
+,p_prompt=>'Max  # OF Mountains'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>30
+,p_field_template=>wwv_flow_imp.id(38382094121343180)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'BOTH'
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(14714264616300709)
+,p_process_sequence=>10
+,p_process_point=>'BEFORE_HEADER'
+,p_process_type=>'NATIVE_PLSQL'
+,p_process_name=>'init_page'
+,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'BEGIN ',
+'    :P5_MAX_ALTI:= 3000;',
+'    :P5_MIN_ALTI:= 2500;',
+'    :P5_MAX_MOUNTAINS:= 50;',
+'END;'))
+,p_process_clob_language=>'PLSQL'
+,p_internal_uid=>14714264616300709
 );
 end;
 /
@@ -18715,7 +18802,7 @@ wwv_flow_imp_page.create_page(
  p_id=>7
 ,p_name=>'all_mappable_tracks_IG'
 ,p_alias=>'ALL-MAPPABLE-TRACKS-IG'
-,p_step_title=>'all mappable tracks'
+,p_step_title=>'all  tracks with geometry'
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
@@ -19180,7 +19267,7 @@ wwv_flow_imp_page.create_page_item(
 ,p_name=>'P7_TRACKS_TO_SHOW_CSV'
 ,p_item_sequence=>10
 ,p_item_plug_id=>wwv_flow_imp.id(67426380775515043)
-,p_prompt=>'Tracks To Show Csv'
+,p_prompt=>'Tracks To Show separated by blanks'
 ,p_display_as=>'NATIVE_TEXT_FIELD'
 ,p_cSize=>30
 ,p_field_template=>wwv_flow_imp.id(38382094121343180)
@@ -19501,7 +19588,8 @@ wwv_flow_imp_page.create_page_plug(
 '    ,  layer_id ',
 'FROM temp_geo_json t',
 'WHERE 1=1 ',
-'and sess_id = apex_custom_auth.get_session_id'))
+'and sess_id = apex_custom_auth.get_session_id',
+'and json_text IS NOT NULL'))
 ,p_lazy_loading=>true
 ,p_plug_source_type=>'NATIVE_MAP_REGION'
 ,p_ai_enabled=>false
@@ -19823,15 +19911,18 @@ wwv_flow_imp_page.create_page_process(
 'DECLARE  ',
 'BEGIN ',
 '    --',
-'    DELETE temp_geo_json WHERE layer_id in (1, 2) AND sess_id = apex_custom_auth.get_session_id',
+'    DELETE temp_geo_json WHERE layer_id BETWEEN 1 and 3 AND sess_id = apex_custom_auth.get_session_id',
 '    ;',
-'    INSERT INTO temp_geo_json ( sess_id, layer_id, json_text ) ',
-'        VALUES ( apex_custom_auth.get_session_id, 1, :P11_LAYER_1 )',
-'    ;',
-'    INSERT INTO temp_geo_json ( sess_id, layer_id, json_text ) ',
-'        VALUES ( apex_custom_auth.get_session_id, 2, :P11_LAYER_2 )',
-'    ;',
-'    ',
+'    IF :P11_LAYER_1 IS NOT NULL THEN ',
+'        INSERT INTO temp_geo_json ( sess_id, layer_id, json_text ) ',
+'            VALUES ( apex_custom_auth.get_session_id, 1, :P11_LAYER_1 )',
+'        ;',
+'    END IF;',
+'    IF :P11_LAYER_2 IS NOT NULL THEN ',
+'        INSERT INTO temp_geo_json ( sess_id, layer_id, json_text ) ',
+'            VALUES ( apex_custom_auth.get_session_id, 2, :P11_LAYER_2 )',
+'        ;',
+'    END IF;',
 'END;'))
 ,p_process_clob_language=>'PLSQL'
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'

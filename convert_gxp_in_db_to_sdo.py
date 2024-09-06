@@ -8,10 +8,10 @@ the gpx data will be read, sent to the  program extract_coords.py which will con
 sdo_util.from_geojson to set/populate the sdo_geometry column. 
 """
 
-DATA_TABLE_NAME="XYZ_TRACKS"
-GPX_COLUMN="GPX_DATA"
-SDO_COLUMN="SDO_GEO"
-TIMESTAMP_COLUMN="TS_CONVERTED_TO_SDO"
+# DATA_TABLE_NAME="XYZ_TRACKS"
+#GPX_COLUMN="GPX_DATA"
+#SDO_COLUMN="SDO_GEO"
+#TIMESTAMP_COLUMN="TS_CONVERTED_TO_SDO"
 
 import oracledb # cx_Oracle requires instant client which we do not want to bother with!
 #import cx_Oracle 
@@ -128,9 +128,15 @@ try:
             # print( geojson )
             if True:
                 bind_values = { 'geojson': geojson, 'id': id }
-                cursor_do_update.execute( update_stmt, bind_values )
 
-                connection.commit()
+                try: 
+                    cursor_do_update.execute( update_stmt, bind_values )
+
+                    connection.commit()
+
+                except oracledb.Error as error:
+                    print("Error occurred:", error)
+                    connection.rollback()  # Rollback changes in case of an error
         else:
             print("gpx_data is empty or NULL")
 except oracledb.Error as error:
