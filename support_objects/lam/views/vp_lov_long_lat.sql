@@ -1,0 +1,3 @@
+CREATE OR REPLACE VIEW vp_lov_long_lat
+AS 
+SELECT 

@@ -4,11 +4,14 @@ CREATE OR REPLACE FUNCTION extract_coordinate_regexp
  ,decimal_point VARCHAR2 DEFAULT '.'
 ) RETURN VARCHAR2 
 AS 
+	v_abs_val VARCHAR2(10);
+	v_direction VARCHAR2(10);
 	v_ret VARCHAR2(10);
 BEGIN 
 	IF upper( lati_or_longi ) NOT IN ( 'LON', 'LAT' ) THEN
 		RAISE_APPLICATION_ERROR ( -20001, 'must be LON or LAT, mixed case allowed');
 	END IF;
+	-- 
 	with rstr AS (
 		SELECT coord_string AS val
 		FROM dual 
@@ -25,15 +28,15 @@ BEGIN
 	    CONNECT BY REGEXP_SUBSTR( val, '[^ ]+', 1, LEVEL) IS NOT NULL
 	)    , geo AS (
 	SELECT
-	max(  case when lev = 1 then ltrim(part, chr(10) ) end ) as lat_major -- first token has newline
-	,max( case when lev = 2 then part end ) as lat_mins
-	,max( case when lev = 3 then part end ) as lat_secs
-	,max( case when lev = 4 then part end ) as n_or_s
-	--
-	,max( case when lev = 5 then part end ) as lon_major
-	,max( case when lev = 6 then part end ) as lon_mins
-	,max( case when lev = 7 then part end ) as lon_secs
-	,max( case when lev = 8 then part end ) as e_or_w
+		max(  case when lev = 1 then ltrim(part, chr(10) ) end ) as lat_major -- first token has newline
+		,max( case when lev = 2 then part end ) as lat_mins
+		,max( case when lev = 3 then part end ) as lat_secs
+		,max( case when lev = 4 then part end ) as n_or_s
+		--
+		,max( case when lev = 5 then part end ) as lon_major
+		,max( case when lev = 6 then part end ) as lon_mins
+		,max( case when lev = 7 then part end ) as lon_secs
+		,max( case when lev = 8 then part end ) as e_or_w
 	from struct
 	), showable AS ( 
 	SELECT 
@@ -55,10 +58,19 @@ BEGIN
 		WHEN upper( lati_or_longi ) = 'LON' THEN longi 
 		WHEN upper( lati_or_longi ) = 'LAT' THEN lati 
 		END 
-		INTO v_ret
+		,CASE 
+		WHEN upper( lati_or_longi ) = 'LON' THEN e_or_w 
+		WHEN upper( lati_or_longi ) = 'LAT' THEN n_or_s 
+		END 
+		INTO v_abs_val
+			,v_direction
 	FROM showable
 	;
-	RETURN  CASE WHEN decimal_point = '.' THEN replace ( v_ret, ',', '.' ) ELSE v_ret END ;
+	v_abs_val :=  CASE WHEN decimal_point = '.' THEN replace ( v_abs_val, ',', '.' ) ELSE v_abs_val END ;
+
+	v_ret := 
+		CASE WHEN upper( v_direction ) IN ( 'S', 'W') THEN '-'||v_abs_val ELSE v_abs_val	END;
+	RETURN v_ret; 
 END;
 /
 
