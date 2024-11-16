@@ -2,8 +2,6 @@ create or replace package body alph_pkg_mountain as
 
     c_nl CONSTANT VARCHAR2(10) := chr(10);
     
-PROCEDURE set_page_items_of_marked_tracks -- forward 
-;     
 /* suppose we have collected the locations of a bunch of mountains and want to 
 * import these into the staging table 
 */
@@ -469,7 +467,6 @@ BEGIN
     END CASE;
     pck_std_log.inf ( ' tracks in collection: ' ||  apex_collection.collection_member_count( c_selected_tracks_collection_name ) );
 
-    set_page_items_of_marked_tracks;
 --EXCEPTION
 --    WHEN OTHERS THEN
 --        pck_std_log.error( a_comp=> $$PLSQL_UNIT, a_subcomp=> 'Ln'||$$plsql_line
@@ -483,26 +480,6 @@ AS
 BEGIN return c_selected_tracks_collection_name;
 END get_selected_tracks_collection_name;
 
-PROCEDURE set_page_items_of_marked_tracks 
-AS 
-BEGIN 
-    FOR rec IN (
-        SELECT mid_x AS longi, mid_y AS lati, zoom_level 
-        FROM v_alph_selected_tracks_agg -- should give only one row 
-    ) LOOP 
-        apex_util.set_session_state ( 'P13_ZOOM_LEVEL', rec.zoom_level);
-        apex_util.set_session_state ( 'P13_CENTER_LONGI', rec.longi);
-        apex_util.set_session_state ( 'P13_CENTER_LATI' , rec.lati);
-
-             pck_std_log.inf ( ' zoom '|| v( 'P13_ZOOM_LEVEL') );
-    END LOOP;
---EXCEPTION
---    WHEN OTHERS THEN
---        pck_std_log.error( a_comp=> $$PLSQL_UNIT, a_subcomp=> 'Ln'||$$plsql_line
---            , a_err_code=> sqlcode, a_text=>  sqlerrm ||c_nl||dbms_utility.format_call_stack );
---        RAISE;
-END set_page_items_of_marked_tracks; 
-  
 
 end; -- PACKAGE 
 /

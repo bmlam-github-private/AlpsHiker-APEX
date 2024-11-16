@@ -30,7 +30,7 @@ JOIN v_alph_selected_tracks sl ON sl.track_id = tr.id
 WHERE 1=1
 --  AND id = 82 
   AND tr.sdo_geo IS NOT NULL 
-and rownum <= 5
+--and rownum <= 5
 order by id desc 
 ;
 SELECT tr.id
@@ -45,14 +45,14 @@ WHERE 1=1
   ;
 
 select '' x
-,sdo_util.to_geojson( sdo_geo ) gj
+--,sdo_util.to_geojson( sdo_geo ) gj
 --    , DBMS_CRYPTO.HASH(UTL_RAW.CAST_TO_RAW(gpx_data), 1 ) digest
 --    , dbms_lob.getlength( gpx_data ) len 
 , tr.*
 from alph_tracks tr
 where 1=1
---  AND sdo_geo IS NOT NULL 
-order by id
+  AND sdo_geo IS NOT NULL 
+order by id desc
 ;
 
 WITH from_blob as ( 
@@ -136,6 +136,8 @@ CREATE TABLE temp_geo_json
  ;
  alter table temp_geo_json add (insert_ts timestamp default systimestamp )
  ;
+-- delete temp_geo_json
+ ;
 -- create a line from a polygone   
  SELECT
  sdo_util.to_geojson ( 
@@ -152,6 +154,7 @@ CREATE TABLE temp_geo_json
 FROM DUAL;
 
 SELECT * FROM temp_geo_json
+order by insert_ts desc
 ;
 SELECT * FROM alph_major_locations
 ;
