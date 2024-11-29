@@ -33,13 +33,13 @@ prompt APPLICATION 115 - Alps Hiker
 -- Application Export:
 --   Application:     115
 --   Name:            Alps Hiker
---   Date and Time:   16:38 Saturday November 16, 2024
+--   Date and Time:   17:16 Friday November 29, 2024
 --   Exported By:     LAM_DEV
 --   Flashback:       0
 --   Export Type:     Application Export
 --     Pages:                     23
---       Items:                   37
---       Processes:               18
+--       Items:                   38
+--       Processes:               17
 --       Regions:                 49
 --       Buttons:                 20
 --       Dynamic Actions:          5
@@ -18256,7 +18256,7 @@ wwv_flow_imp_page.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
-,p_page_component_map=>'16'
+,p_page_component_map=>'17'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(37007476773439621)
@@ -18417,26 +18417,6 @@ wwv_flow_imp_page.create_page_item(
 ,p_attribute_05=>'BOTH'
 );
 wwv_flow_imp_page.create_page_process(
- p_id=>wwv_flow_imp.id(37010369056439650)
-,p_process_sequence=>10
-,p_process_point=>'AFTER_SUBMIT'
-,p_process_type=>'NATIVE_PLSQL'
-,p_process_name=>'server_debug_2'
-,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'BEGIN ',
-'    SELECT listagg ( n001, '' '') WITHIN GROUP ( ORDER BY n001 )',
-'    INTO     :P3_SELECTED_TRACKS ',
-'    FROM  apex_collections',
-'    WHERE collection_name = alph_pkg_mountain.get_selected_tracks_collection_name',
-'    ;',
-' END;',
-''))
-,p_process_clob_language=>'PLSQL'
-,p_error_display_location=>'INLINE_IN_NOTIFICATION'
-,p_process_when_button_id=>wwv_flow_imp.id(42608988835255501)
-,p_internal_uid=>37010369056439650
-);
-wwv_flow_imp_page.create_page_process(
  p_id=>wwv_flow_imp.id(37010108089439648)
 ,p_process_sequence=>10
 ,p_process_point=>'BEFORE_FOOTER'
@@ -18451,6 +18431,25 @@ wwv_flow_imp_page.create_page_process(
 'END;'))
 ,p_process_clob_language=>'PLSQL'
 ,p_internal_uid=>37010108089439648
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(32513926105492705)
+,p_process_sequence=>10
+,p_process_point=>'BEFORE_HEADER'
+,p_process_type=>'NATIVE_PLSQL'
+,p_process_name=>'P3_reveal_track:ids'
+,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'BEGIN ',
+'    SELECT listagg ( n001, '' '') WITHIN GROUP ( ORDER BY n001 )',
+'        ||'' total: ''||count(1)',
+'    INTO     :P3_SELECTED_TRACKS ',
+'    FROM  apex_collections',
+'    WHERE collection_name = alph_pkg_mountain.get_selected_tracks_collection_name',
+'    ;',
+' END;',
+''))
+,p_process_clob_language=>'PLSQL'
+,p_internal_uid=>32513926105492705
 );
 end;
 /
@@ -19642,7 +19641,7 @@ wwv_flow_imp_page.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
-,p_page_component_map=>'19'
+,p_page_component_map=>'17'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(47322114896948469)
@@ -19756,49 +19755,34 @@ wwv_flow_imp_page.create_page_plug(
   'expand_shortcuts', 'N',
   'output_as', 'HTML')).to_clob
 );
-wwv_flow_imp_page.create_page_process(
- p_id=>wwv_flow_imp.id(10320216743508793)
-,p_process_sequence=>10
-,p_process_point=>'AFTER_SUBMIT'
-,p_process_type=>'NATIVE_PLSQL'
-,p_process_name=>'server_debug_2'
-,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'DECLARE',
-'  v_add_info VARCHAR2( 100 );',
-'BEGIN ',
-'    SELECT listagg ( n001, '' '') WITHIN GROUP ( ORDER BY n001 )',
-'    INTO     :P10_SELECTED_TRACKS ',
-'    FROM  apex_collections',
-'    WHERE collection_name = alph_pkg_mountain.get_selected_tracks_collection_name',
-'    ;',
-'    SELECT ''x:''||TO_CHAR( mid_x ) ',
-'        || '' y:''||to_char( mid_y )',
-'        || ''zoom: ''|| to_char( zoom_level )',
-'     INTO v_add_info',
-'    FROM v_alph_selected_tracks_agg',
-'    ;',
-'    :P10_SELECTED_TRACKS := :P10_SELECTED_TRACKS || v_add_info;',
-' END;',
-''))
-,p_process_clob_language=>'PLSQL'
-,p_error_display_location=>'INLINE_IN_NOTIFICATION'
-,p_internal_uid=>10320216743508793
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(32514096433492706)
+,p_name=>'P10_TEMP_IDS'
+,p_item_sequence=>30
+,p_prompt=>'Temp Ids'
+,p_display_as=>'NATIVE_DISPLAY_ONLY'
+,p_field_template=>wwv_flow_imp.id(38382094121343180)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_01=>'Y'
+,p_attribute_02=>'VALUE'
+,p_attribute_04=>'Y'
+,p_attribute_05=>'PLAIN'
 );
 wwv_flow_imp_page.create_page_process(
- p_id=>wwv_flow_imp.id(10319866687508794)
+ p_id=>wwv_flow_imp.id(32514178310492707)
 ,p_process_sequence=>10
-,p_process_point=>'BEFORE_FOOTER'
+,p_process_point=>'BEFORE_HEADER'
 ,p_process_type=>'NATIVE_PLSQL'
-,p_process_name=>'agg_selected_tracks'
+,p_process_name=>'assemble_temp_ids'
 ,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'begin ',
-'    select listagg( track_id, '','') WITHIN GROUP ( order by track_id)',
-'    INTO :P10_SELECTED_TRACKS',
-'    FROM v_alph_selected_tracks',
-'    ;',
-'END;'))
+'SELECT listagg( layer_id, '','') WITHIN GROUP (ORDER BY layer_id) ||'' total: ''||count(1)',
+'INTO :P10_TEMP_IDS ',
+'FROM temp_geo_json t',
+'WHERE 1=1 ',
+'and sess_id = apex_custom_auth.get_session_id',
+'and json_text IS NOT NULL'))
 ,p_process_clob_language=>'PLSQL'
-,p_internal_uid=>10319866687508794
+,p_internal_uid=>32514178310492707
 );
 end;
 /
