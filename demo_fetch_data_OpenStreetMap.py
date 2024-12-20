@@ -33,7 +33,7 @@ def run_query ( query ):
 	print( "first level nodes: %d" % len( result.nodes) )
 	if len( result.nodes ) > 0:
 		print( "Examples:")
-		print_nodes( result.nodes, 11 )
+		print_nodes( result.nodes, 99 )
 
 	print( "ways: %d" % len( result.ways) )
 	if len( result.ways ) > 0:
