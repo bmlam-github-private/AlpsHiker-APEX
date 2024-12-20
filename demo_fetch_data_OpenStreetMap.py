@@ -30,17 +30,24 @@ def run_query ( query ):
 
 	# Execute the query
 	result = api.query(query)
-	print( "nodes: %d" % len( result.nodes) )
+	print( "first level nodes: %d" % len( result.nodes) )
+	if len( result.nodes ) > 0:
+		print( "Examples:")
+		print_nodes( result.nodes, 11 )
+
 	print( "ways: %d" % len( result.ways) )
 	if len( result.ways ) > 0:
-		way_1 = result.ways[0]
-		nodes = way_1.get_nodes( resolve_missing= True)
+		print( "nodes of way 0:" )
+		way_0 = result.ways[0]
+		nodes = way_0.get_nodes( resolve_missing= True)
 		print_nodes( nodes )
 
 
-def print_nodes ( nodes ):  
-	for node in nodes:
+def print_nodes ( nodes, upperBound = 3):  
+	for node in nodes [ 0 : upperBound ]:
 	    print(f"Node ID: {node.id}")
+	    # attribute name does NOT exist 
+	    print( "name: " + node.tags.get("name") )
 	    print(f"Latitude: {node.lat}")
 	    print(f"Longitude: {node.lon}")
 	    print()
@@ -57,7 +64,7 @@ if __name__ == "__main__":
 
     # Call the function to read the file and get the lines
     try:
-        query = extract_query(file_path)
+        query = extract_query( file_path )
         # Print the result
         print( query )
         run_query( query )

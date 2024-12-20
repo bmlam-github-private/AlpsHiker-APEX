@@ -23,3 +23,78 @@
 #Node ID: 269237849
 #Latitude: 50.7409200
 #Longitude: 7.2000756
+
+#
+# Eisenbahn Bayern : this example does not work, probably "Bayern" or index key not being a key-value-pair
+#
+#[out:json];way[railway](area["name"="Bayern"]);out body;
+
+[out:json][timeout:600];
+area[name="Lëtzebuerg"]->.a;
+(
+  node["railway"="station"](area.a);
+  way["railway"="station"](area.a);
+  relation["railway"="station"](area.a);
+);
+out center;
+out tags;
+
+
+#first level nodes: 54
+#Examples:
+#Node ID: 25609667
+#name: Cents-Hamm
+#Latitude: 49.6150126
+#Longitude: 6.1659779
+#
+#Node ID: 25923526
+#name: Noertzange
+#Latitude: 49.5080338
+#Longitude: 6.0508470
+#
+#Node ID: 269302083
+#name: Kayl
+#Latitude: 49.4857436
+#Longitude: 6.0353974
+#
+#Node ID: 364174351
+#name: Train 1900
+#Latitude: 49.5534930
+#Longitude: 5.8770383
+#
+#Node ID: 420756851
+#name: Drauffelt
+#Latitude: 50.0168584
+#Longitude: 6.0072032
+#
+#Node ID: 704409331
+#name: Rodange
+#Latitude: 49.5511046
+#Longitude: 5.8434572
+#
+#Node ID: 1411691251
+#name: Sandweiler-Contern
+#Latitude: 49.5990906
+#Longitude: 6.2117485
+#
+#Node ID: 1573735853
+#name: Diekirch
+#Latitude: 49.8648017
+#Longitude: 6.1540133
+#
+#Node ID: 1676979795
+#name: Belval Lycée
+#Latitude: 49.5014992
+#Longitude: 5.9345046
+#
+#Node ID: 3719706037
+#name: Lamadelaine
+#Latitude: 49.5534157
+#Longitude: 5.8608746
+#
+#Node ID: 3719863646
+#name: Schifflange
+#Latitude: 49.5063925
+#Longitude: 6.0097258
+#
+#ways: 0
