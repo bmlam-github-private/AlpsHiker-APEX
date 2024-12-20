@@ -1,0 +1,25 @@
+### Munich highway
+###
+##[out:json(highway, name) ]; 
+##area[ name="München"]; 
+##out; 
+
+
+### example which works
+#way[ "name"= "Gielgenstraße" ] ( 50.7, 7.1,  50.8, 7.25); 
+#out;
+##
+#result: WITH ONY the first 3 nodes of the first way 
+#nodes: 0
+#ways: 6
+#Node ID: 81953612
+#Latitude: 50.7410694
+#Longitude: 7.2009669
+#
+#Node ID: 269237848
+#Latitude: 50.7410349
+#Longitude: 7.2007939
+#
+#Node ID: 269237849
+#Latitude: 50.7409200
+#Longitude: 7.2000756
