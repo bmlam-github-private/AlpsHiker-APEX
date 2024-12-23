@@ -29,15 +29,15 @@
 #
 #[out:json];way[railway](area["name"="Bayern"]);out body;
 
-[out:json][timeout:600];
-area[name="Lëtzebuerg"]->.a;
-(
-  node["railway"="station"](area.a);
-  way["railway"="station"](area.a);
-  relation["railway"="station"](area.a);
-);
-out center;
-out tags;
+# [out:json][timeout:600];
+# area[name="Lëtzebuerg"]->.a;
+# (
+#   node["railway"="station"](area.a);
+#   way["railway"="station"](area.a);
+#   relation["railway"="station"](area.a);
+# );
+# out center;
+# out tags;
 
 
 #first level nodes: 54
@@ -98,3 +98,13 @@ out tags;
 #Longitude: 6.0097258
 #
 #ways: 0
+
+[out:json][timeout:30];
+area[name="Lëtzebuerg"]->.a;
+(
+  node["railway"="rail"](area.a);
+  way["railway"="rail"](area.a);
+  relation["railway"="track"](area.a);
+);
+out body;
+out tags;

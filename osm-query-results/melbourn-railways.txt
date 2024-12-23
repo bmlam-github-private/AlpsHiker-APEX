@@ -1,0 +1,281 @@
+[out:json][timeout:600];
+area[name="Melbourne"]->.a;
+(
+node["railway"="rail"](area.a);
+way["railway"="rail"](area.a);
+relation["railway"="track"](area.a);
+);
+out body;
+out tags;
+relations: 0
+ways: 3977
+first level nodes: 0
+Way 1: Frankston Line has 4 nodes
+Way 2: Bendigo Line has 11 nodes
+Way 3: Sunbury Line has 19 nodes
+Way 4: Sunbury Line has 2 nodes
+Way 5: Sunbury Line has 31 nodes
+Way 6: ARTC Standard Gauge Line has 12 nodes
+Way 7: Werribee / Williamstown Line has 20 nodes
+Way 8: Glen Waverley Line has 99 nodes
+Way 9: Glen Waverley Line has 14 nodes
+Way 10: Glen Waverley Line has 25 nodes
+Way 11: Glen Waverley Line has 2 nodes
+Way 12: Glen Waverley Line has 26 nodes
+Way 13: Glen Waverley Line has 3 nodes
+Way 14: Glen Waverley Line has 5 nodes
+Way 15: Glen Waverley Line has 3 nodes
+Way 16: Glen Waverley Line has 4 nodes
+Way 17: Glen Waverley Line has 35 nodes
+Way 18: Glen Waverley Line has 28 nodes
+Way 19: Lilydale Line has 2 nodes
+Way 20: Alamein Line has 49 nodes
+Way 21: Frankston Line has 2 nodes
+Way 22: Frankston Line has 22 nodes
+Way 23: Frankston Line has 29 nodes
+Way 24: Craigieburn Line has 55 nodes
+Way 25: Flemington Racecourse Line has 31 nodes
+Way 26: Belgrave / Lilydale Line has 2 nodes
+Way 27: Sunbury Line has 2 nodes
+Way 28: Glen Waverley Line has 3 nodes
+Way 29: Craigieburn Line has 60 nodes
+Way 30: Craigieburn Line has 2 nodes
+Way 31: Lilydale Line has 23 nodes
+Way 32: Lilydale Line has 2 nodes
+Way 33: Warrnambool / Ararat / Maryborough Line has 30 nodes
+Way 34: Clifton Hill/City Circle Line has 30 nodes
+Way 35: Burnley Loop Line has 8 nodes
+Way 36: Glen Waverley Line has 6 nodes
+Way 38: Clifton Hill Loop Line has 38 nodes
+Way 39: City Circle Line has 19 nodes
+Way 40: Through Suburban Line has 8 nodes
+Way 41: Sandringham Line has 9 nodes
+Way 42: Pakenham Line has 2 nodes
+Way 43: Sandringham Line has 4 nodes
+Way 44: Belgrave / Lilydale / Alamein / Glen Waverley Line has 10 nodes
+Way 45: Sandringham Line has 2 nodes
+Way 46: Belgrave / Lilydale / Alamein / Glen Waverley Line has 2 nodes
+Way 47: Frankston Line has 11 nodes
+Way 48: Pakenham Line has 21 nodes
+Way 52: Craigieburn Line has 16 nodes
+Way 53: Craigieburn Line has 5 nodes
+Way 54: North Eastern Standard Gauge Line has 12 nodes
+Way 55: Hurstbridge Line has 9 nodes
+Way 57: Flemington Racecourse Line has 2 nodes
+Way 58: Craigieburn Line has 2 nodes
+Way 59: Craigieburn Line has 2 nodes
+Way 60: Craigieburn Line has 2 nodes
+Way 61: Craigieburn Line has 21 nodes
+Way 62: Craigieburn Line has 3 nodes
+Way 63: Sunbury Line has 2 nodes
+Way 64: Sunbury Line has 2 nodes
+Way 65: Sunbury Line has 2 nodes
+Way 66: Belgrave Line has 19 nodes
+Way 67: Belgrave Line has 2 nodes
+Way 68: Upfield Line has 2 nodes
+Way 69: Upfield Line has 2 nodes
+Way 70: Upfield Line has 2 nodes
+Way 71: Upfield Line has 18 nodes
+Way 72: Craigieburn Line has 2 nodes
+Way 73: Craigieburn Line has 9 nodes
+Way 74: Belgrave Line has 2 nodes
+Way 75: Belgrave Line has 46 nodes
+Way 76: Ringwood Rail Sidings has 22 nodes
+Way 77: Lilydale Line has 27 nodes
+Way 78: Belgrave Line has 2 nodes
+Way 79: Belgrave / Lilydale Line has 2 nodes
+Way 80: Belgrave / Lilydale Line has 10 nodes
+Way 81: Belgrave / Lilydale Line has 2 nodes
+Way 82: Belgrave / Lilydale Line has 3 nodes
+Way 83: Belgrave / Lilydale Line has 2 nodes
+Way 84: Belgrave / Lilydale Line has 19 nodes
+Way 85: Ringwood Rail Sidings has 15 nodes
+Way 86: Western Standard line plus broad gauge link has 11 nodes
+Way 87: Werribee Line has 2 nodes
+Way 88: Werribee Line has 6 nodes
+Way 89: Werribee Line has 2 nodes
+Way 90: Sunbury Line has 2 nodes
+Way 91: Mernda / Hurstbridge Line has 8 nodes
+Way 92: Mernda / Hurstbridge Line has 2 nodes
+Way 93: Craigieburn Line has 2 nodes
+Way 94: Albion - Jacana Line has 18 nodes
+Way 95: Albion - Jacana Line has 2 nodes
+Way 96: Albion - Jacana Line has 7 nodes
+Way 97: Albion - Jacana Line has 8 nodes
+Way 98: Albion - Jacana Line has 2 nodes
+Way 99: Cincinnati Subdivision has 250 nodes
+Way 100: Upfield Line has 2 nodes
+Way 101: Upfield Line has 16 nodes
+Way 107: ARTC Standard Gauge Line has 2 nodes
+Way 108: Flemington Racecourse Line has 13 nodes
+Way 109: Flemington Racecourse Line has 12 nodes
+Way 110: Flemington Racecourse Line has 2 nodes
+Way 111: Flemington Racecourse Line has 2 nodes
+Way 112: Flemington Racecourse Line has 4 nodes
+Way 113: ARTC Standard Gauge Line has 2 nodes
+Way 116: ARTC Standard Gauge Line has 3 nodes
+Way 119: Old Geelong Line has 3 nodes
+Way 120: Werribee / Williamstown Line has 2 nodes
+Way 121: Werribee / Williamstown Line has 3 nodes
+Way 122: Frankston Line has 15 nodes
+Way 123: Hurstbridge Line has 9 nodes
+Way 124: Hurstbridge Line has 22 nodes
+Way 125: Albion - Jacana Line has 31 nodes
+Way 126: Albion - Jacana Line has 5 nodes
+Way 127: Altona Loop Line has 56 nodes
+Way 128: Altona Loop Line has 2 nodes
+Way 129: Werribee / Williamstown Line has 2 nodes
+Way 130: Werribee / Williamstown Line has 44 nodes
+Way 131: Upfield Line has 7 nodes
+Way 132: Pakenham Line has 34 nodes
+Way 133: Alamein Line has 2 nodes
+Way 134: Alamein Line has 15 nodes
+Way 135: Alamein Line has 67 nodes
+Way 136: Alamein Line has 68 nodes
+Way 137: Alamein Line has 13 nodes
+Way 138: Belgrave / Lilydale Line has 33 nodes
+Way 140: Alamein Line has 17 nodes
+Way 142: Siding B has 36 nodes
+Way 143: Siding C has 30 nodes
+Way 144: Siding D has 28 nodes
+Way 145: Siding E has 13 nodes
+Way 146: Mernda Line has 3 nodes
+Way 147: Hurstbridge Line has 2 nodes
+Way 148: Mernda / Hurstbridge Line has 2 nodes
+Way 149: Belgrave / Lilydale Line has 5 nodes
+Way 150: Belgrave / Lilydale Line has 3 nodes
+Way 151: Belgrave / Lilydale Line has 3 nodes
+Way 152: Belgrave / Lilydale Line has 5 nodes
+Way 153: Belgrave / Lilydale Line has 3 nodes
+Way 154: Belgrave / Lilydale Line has 2 nodes
+Way 155: Belgrave / Lilydale Line has 14 nodes
+Way 156: Belgrave Line has 2 nodes
+Way 157: Belgrave Line has 32 nodes
+Way 158: Hurstbridge Line has 17 nodes
+Way 159: Hurstbridge Line has 2 nodes
+Way 160: Glen Waverley Line has 35 nodes
+Way 161: Sunbury Line has 2 nodes
+Way 162: Sunbury Line has 2 nodes
+Way 163: Sunbury Line has 16 nodes
+Way 164: Pakenham Line has 39 nodes
+Way 165: Pakenham Line has 2 nodes
+Way 166: Pakenham Line has 51 nodes
+Way 167: Pakenham Line has 2 nodes
+Way 168: Frankston Line has 2 nodes
+Way 169: Craigieburn Line has 2 nodes
+Way 170: Werribee / Williamstown Line has 2 nodes
+Way 171: Werribee Line has 36 nodes
+Way 172: Werribee Line has 2 nodes
+Way 173: Werribee Line has 32 nodes
+Way 174: Western Standard Gauge Line has 31 nodes
+Way 175: Western Standard Gauge Line has 2 nodes
+Way 176: Western Standard Gauge Line has 42 nodes
+Way 177: Werribee Line has 2 nodes
+Way 178: Mernda / Hurstbridge Line has 3 nodes
+Way 182: Flinders Street Platform 3 has 3 nodes
+Way 184: Flinders Street Platform 5 has 3 nodes
+Way 189: Flinders Street 9A has 4 nodes
+Way 199: Flinders Street Platform 2 has 3 nodes
+Way 200: Northern Loop Line has 13 nodes
+Way 208: Flinders Street Platform 5 Road has 2 nodes
+Way 210: Flinders Street Platform 3 Road has 5 nodes
+Way 213: Northern Loop Line has 2 nodes
+Way 215: Flinders Street Through Road has 2 nodes
+Way 217: City Circle Line has 6 nodes
+Way 218: Mernda / Hurstbridge Line has 8 nodes
+Way 220: Mernda / Hurstbridge Line has 4 nodes
+Way 221: Clifton Hill Loop Line has 6 nodes
+Way 225: Mernda / Hurstbridge Line has 10 nodes
+Way 226: Through Suburban Line has 5 nodes
+Way 227: Warrnambool / Ararat / Maryborough / Swan Hill / Echuca Line has 35 nodes
+Way 228: Frankston Line has 9 nodes
+Way 229: North Eastern Standard Gauge Line has 2 nodes
+Way 230: North Eastern Standard Gauge Line has 28 nodes
+Way 231: Albion - Jacana Line has 19 nodes
+Way 232: Upfield Line has 92 nodes
+Way 233: Upfield Line has 2 nodes
+Way 236: Stony Point Line has 10 nodes
+Way 237: Hurstbridge Line has 3 nodes
+Way 238: Hurstbridge Line has 48 nodes
+Way 239: Belgrave / Lilydale / Alamein / Glen Waverley Line has 11 nodes
+Way 240: Belgrave / Lilydale Line has 3 nodes
+Way 241: Mernda / Hurstbridge Line has 3 nodes
+Way 242: Mernda / Hurstbridge Line has 2 nodes
+Way 243: Sandringham Line has 2 nodes
+Way 244: Sandringham Line has 10 nodes
+Way 245: Sandringham Line has 5 nodes
+Way 246: Sandringham Line has 43 nodes
+Way 247: Mernda / Hurstbridge Line has 11 nodes
+Way 248: Mernda / Hurstbridge Line has 2 nodes
+Way 249: Mernda / Hurstbridge Line has 2 nodes
+Way 250: Mernda / Hurstbridge Line has 5 nodes
+Way 251: Mernda / Hurstbridge Line has 3 nodes
+Way 252: Mernda / Hurstbridge Line has 2 nodes
+Way 253: Mernda / Hurstbridge Line has 2 nodes
+Way 254: Mernda / Hurstbridge Line has 2 nodes
+Way 255: Mernda / Hurstbridge Line has 7 nodes
+Way 256: Mernda / Hurstbridge Line has 5 nodes
+Way 257: Mernda / Hurstbridge Line has 4 nodes
+Way 258: Mernda / Hurstbridge Line has 6 nodes
+Way 259: Mernda / Hurstbridge Line has 2 nodes
+Way 260: Mernda / Hurstbridge Line has 2 nodes
+Way 261: Mernda / Hurstbridge Line has 2 nodes
+Way 262: Mernda / Hurstbridge Line has 2 nodes
+Way 263: Mernda / Hurstbridge Line has 4 nodes
+Way 264: Mernda / Hurstbridge Line has 2 nodes
+Way 265: Mernda / Hurstbridge Line has 3 nodes
+Way 266: Hurstbridge Line has 2 nodes
+Way 267: Hurstbridge Line has 73 nodes
+Way 268: Sandringham Line has 2 nodes
+Way 269: Sandringham Line has 3 nodes
+Way 270: Sandringham Line has 33 nodes
+Way 271: Sandringham Line has 2 nodes
+Way 272: Pakenham Line has 10 nodes
+Way 273: Sandringham Line has 119 nodes
+Way 275: Williamstown Line has 20 nodes
+Way 277: Pakenham Line has 13 nodes
+Way 278: Belgrave Line has 5 nodes
+Way 279: Belgrave Line has 57 nodes
+Way 280: Belgrave Line has 6 nodes
+Way 281: Belgrave Line has 64 nodes
+Way 282: Hurstbridge Line has 15 nodes
+Way 283: Hurstbridge Line has 13 nodes
+Way 284: Hurstbridge Line has 4 nodes
+Way 285: Hurstbridge Line has 7 nodes
+Way 286: Hurstbridge Line has 4 nodes
+Way 287: Hurstbridge Line has 3 nodes
+Way 288: Hurstbridge Line has 4 nodes
+Way 289: Hurstbridge Line has 6 nodes
+Way 290: Hurstbridge Line has 4 nodes
+Way 291: Hurstbridge Line has 4 nodes
+Way 292: Clifton Hill Loop Line has 7 nodes
+Way 293: Mernda / Hurstbridge Line has 2 nodes
+Way 294: Mernda / Hurstbridge Line has 2 nodes
+Way 295: Clifton Hill Loop Line has 2 nodes
+Way 296: Mernda / Hurstbridge Line has 10 nodes
+Way 297: Mernda / Hurstbridge Line has 10 nodes
+Way 298: Pakenham Line has 2 nodes
+Way 299: Frankston Line has 2 nodes
+Way 300: Sandringham Line has 2 nodes
+Way 301: Sandringham Line has 15 nodes
+Way 302: Frankston Line has 14 nodes
+Way 303: Pakenham Line has 12 nodes
+Way 304: Glen Waverley Line has 9 nodes
+Way 305: Glen Waverley Line has 40 nodes
+Way 306: Sunbury Line has 2 nodes
+Way 307: Sunbury Line has 30 nodes
+Way 308: Warrnambool / Ararat / Maryborough Line has 2 nodes
+Way 309: Sandringham Line has 5 nodes
+Way 310: Sandringham Line has 2 nodes
+Way 311: Glen Waverley Line has 25 nodes
+Way 312: Belgrave / Lilydale Line has 2 nodes
+Way 313: Frankston Line has 42 nodes
+Way 314: Alamein Line has 12 nodes
+Way 315: Pakenham Line has 6 nodes
+Way 316: Mernda Line has 11 nodes
+Way 317: Mernda Line has 4 nodes
+Way 319: Hurstbridge Line has 2 nodes
+Way 320: Hurstbridge Line has 83 nodes
+Way 321: Belgrave / Lilydale Line has 6 nodes
+Way 322: Belgrave / Lilydale Line has 2 nodes
+An error occurred: [Errno 54] Connection reset by peer

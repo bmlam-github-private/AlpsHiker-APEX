@@ -1,0 +1,17 @@
+This query returns first-level nodes which are probably the centers of the stations. 
+The ways are likely the area areas, which have around a dozend of nodes with resolving_missing=True
+No relation is returned.
+
+	[out:json][timeout:600];
+	area[name="Melbourne"]->.a;
+	(
+	node["railway"="station"](area.a);
+	way["railway"="station"](area.a);
+	relation["railway"="station"](area.a);
+	);
+	out center;
+	out tags;
+
+Serializing the result for Luxembourg rail ways returns tons of tags which are not interesting for our purpose. The nodes within the ways were bypassed due to long waiting time. Maybe removing tags info but use resolve_missage for way.get_nodes() makes more sense.
+No, not really. way.get_nodes resolve_missing definitely takes too long. 
+Next try: resolves the way.nodes one by one and output each way immediately instead of list comprehension which probably force the server to resolve nodes of all ways in one go!

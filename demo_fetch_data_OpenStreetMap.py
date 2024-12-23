@@ -2,7 +2,7 @@
 
 import overpy
 import sys
-
+import json
 
 def extract_query (file_path):
     # Open the file in read mode
@@ -24,33 +24,97 @@ area[ "name" = "Germany" ];
 way[railway](area);  // Example for the area indicated
 out body;
 """
+""" check this site for query tutorial: https://osm-queries.ldodds.com/tutorial/02-node-output.osm.html
+"""
+
 def run_query ( query ):
 	# Initialize the Overpy API
 	api = overpy.Overpass()
 
 	# Execute the query
 	result = api.query(query)
-	print( "first level nodes: %d" % len( result.nodes) )
-	if len( result.nodes ) > 0:
-		print( "Examples:")
-		print_nodes( result.nodes, 99 )
+	print( "got result so far")
+	print_result ( result )
+	# 
+	if False:
+		print( "relations: %d" % len( result.relations) )
+		print( "ways: %d" % len( result.ways) )
+		print( "first level nodes: %d" % len( result.nodes) )
+		if len( result.nodes ) > 0:
+			print( "Examples:")
+			print_nodes( result.nodes, 99 )
 
-	print( "ways: %d" % len( result.ways) )
-	if len( result.ways ) > 0:
-		print( "nodes of way 0:" )
-		way_0 = result.ways[0]
-		nodes = way_0.get_nodes( resolve_missing= True)
-		print_nodes( nodes )
+		if len( result.ways ) > 0:
+			print_ways( result.ways )
+			# 
+			print( "nodes of way 0:" )
+			way_0 = result.ways[0]
+			nodes = way_0.get_nodes( resolve_missing= True)
+			print_nodes( nodes )
+		if len( result.relations ) > 0:
+			print_relations( result.relations )
 
+def print_result ( result ):
+	# Use list comprehension to extract relevant data for both nodes and ways
+	# Convert the result to JSON
+
+	# unfortunatey, the following line in "ways" caused error due to missing nodes. 
+	# "nodes": way.nodes,
+	# this is a running-away operation: "nodes": way.get_nodes( resolve_missing= True),
+
+	result_json = {
+				"nodes": [
+						{
+								"id": node.id,
+								"lat": node.lat,
+								"lon": node.lon,
+								"tags": node.tags,
+						}
+						for node in result.nodes
+				],
+				"ways": [
+						{
+								"id": way.id,
+								"nodes": way.get_nodes( resolve_missing= True)
+						}
+						for way in result.ways
+				],
+				"relations": [
+						{
+								"id": relation.id,
+								"members": [
+										{"type": member.role, "ref": member.ref} for member in relation.members
+								],
+								"tags": relation.tags,
+						}
+						for relation in result.relations
+				]
+		}	# Output the result as a JSON string
+	print(result_json)
 
 def print_nodes ( nodes, upperBound = 3):  
 	for node in nodes [ 0 : upperBound ]:
 	    print(f"Node ID: {node.id}")
 	    # attribute name does NOT exist 
-	    print( "name: " + node.tags.get("name") )
+	    name= node.tags.get("name") 
+	    if name: print( "name: " + name )
 	    print(f"Latitude: {node.lat}")
 	    print(f"Longitude: {node.lon}")
 	    print()
+
+def print_ways( ways ):
+	for i, way in enumerate( ways ): 
+		name = way.tags.get( "name")
+		if name: 
+			nodes = way.get_nodes( resolve_missing= True)
+			node_cnt = len ( nodes )
+			print( f"Way {i}: {name} has {node_cnt} nodes" )
+
+def print_relations( relations ):
+	for i, relation in enumerate( relations ): 
+		name = relation.tags.get( "name")
+		if name: 
+			print( f"Relation {i}: {name}" )
 
 # Main script logic
 if __name__ == "__main__":
