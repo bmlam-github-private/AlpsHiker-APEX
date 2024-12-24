@@ -33,13 +33,13 @@ def run_query ( query ):
 
 	# Execute the query
 	result = api.query(query)
-	print( "got result so far")
-	print_result ( result )
+	print( "relations: %d" % len( result.relations) )
+	print( "ways: %d" % len( result.ways) )
+	print( "first level nodes: %d" % len( result.nodes) )
+	#
+	return result 
 	# 
 	if False:
-		print( "relations: %d" % len( result.relations) )
-		print( "ways: %d" % len( result.ways) )
-		print( "first level nodes: %d" % len( result.nodes) )
 		if len( result.nodes ) > 0:
 			print( "Examples:")
 			print_nodes( result.nodes, 99 )
@@ -54,7 +54,7 @@ def run_query ( query ):
 		if len( result.relations ) > 0:
 			print_relations( result.relations )
 
-def print_result ( result ):
+def print_result ( result ): # just as references 
 	# Use list comprehension to extract relevant data for both nodes and ways
 	# Convert the result to JSON
 
@@ -110,11 +110,32 @@ def print_ways( ways ):
 			node_cnt = len ( nodes )
 			print( f"Way {i}: {name} has {node_cnt} nodes" )
 
-def print_relations( relations ):
-	for i, relation in enumerate( relations ): 
-		name = relation.tags.get( "name")
-		if name: 
-			print( f"Relation {i}: {name}" )
+def ways_to_json( ways , upperBound= 10 ):
+	ways_output = []
+	# print( f"len of ways: {len(ways)}")
+	for i, way in enumerate( ways [0 : upperBound] ): 
+		#print( f"way id: {way.id}")
+		#print( f"tags of ways: {way.tags}")
+		name = way.tags.get( "name" )
+		if name == None: name = "None"
+		nodes = way.get_nodes( resolve_missing= True)
+		node_cnt = len ( nodes )
+		way_output = {  "way_id": str( way.id),
+						"way_name": name , 
+						"node_cnt": node_cnt , 
+						"nodes": [
+							{
+									"id": str( node.id),
+									"lat": str( node.lat),
+									"lon": str( node.lon)
+							}
+						for node in nodes
+						]
+			}
+		ways_output.append( way_output )
+		# 
+	return  ways_output
+
 
 # Main script logic
 if __name__ == "__main__":
@@ -131,7 +152,11 @@ if __name__ == "__main__":
         query = extract_query( file_path )
         # Print the result
         print( query )
-        run_query( query )
+        result = run_query( query )
+        ways_json= ways_to_json( result.ways, upperBound= 100 )
+        print(json.dumps(ways_json, indent=2))
+
+
     except FileNotFoundError:
         print(f"Error: The file '{file_path}' was not found.")
     except Exception as e:

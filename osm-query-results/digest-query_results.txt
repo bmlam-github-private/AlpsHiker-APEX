@@ -15,3 +15,5 @@ No relation is returned.
 Serializing the result for Luxembourg rail ways returns tons of tags which are not interesting for our purpose. The nodes within the ways were bypassed due to long waiting time. Maybe removing tags info but use resolve_missage for way.get_nodes() makes more sense.
 No, not really. way.get_nodes resolve_missing definitely takes too long. 
 Next try: resolves the way.nodes one by one and output each way immediately instead of list comprehension which probably force the server to resolve nodes of all ways in one go!
+
+to insert line break before each occurrence of ", {'id'" do:  sed -e "s/, {'id'/, {'id'/g" input_file ; Note that the open curly bracket does not need escaping.  
