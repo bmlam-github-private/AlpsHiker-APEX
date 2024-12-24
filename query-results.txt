@@ -102,9 +102,9 @@
 [out:json][timeout:30];
 area[name="Lëtzebuerg"]->.a;
 (
-  node["railway"="rail"](area.a);
-  way["railway"="rail"](area.a);
-  relation["railway"="track"](area.a);
+  way["railway"="station"] (area.a);
+  node["railway"="station"] (area.a);
+  relation["railway"="station"] (area.a);
 );
 out body;
 out tags;

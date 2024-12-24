@@ -1,0 +1,55 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "LineString",
+    "coordinates": [
+        [6.2578100, 49.5987276],
+        [6.2578475, 49.5992646],
+        [lon, lat],
+        [lon, lat]
+      ]
+  },
+  "properties": {
+    "name": "Line 1 from Luxeumbourg example"
+  }
+}
+
+
+        "id": "1118525471",
+        "lat": "",
+        "lon": ""
+      },
+      {
+        "id": "1118525424",
+        "lat": "",
+        "lon": ""
+      },
+      {
+        "id": "1118525433",
+        "lat": "49.6053779",
+        "lon": "6.2583842"
+      },
+      {
+        "id": "1118525331",
+        "lat": "49.6056826",
+        "lon": "6.2584400"
+      },
+
+
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "LineString",
+    "coordinates": [
+        [6.2578100, 49.5987276],
+        [6.2578475, 49.5992646],
+        [lon, lat],
+        [lon, lat]
+      ]
+  },
+  "properties": {
+    "name": "Line 2 from Luxeumbourg example"
+  }
+}
+
+

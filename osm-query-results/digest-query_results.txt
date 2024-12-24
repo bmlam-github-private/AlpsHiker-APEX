@@ -17,3 +17,6 @@ No, not really. way.get_nodes resolve_missing definitely takes too long.
 Next try: resolves the way.nodes one by one and output each way immediately instead of list comprehension which probably force the server to resolve nodes of all ways in one go!
 
 to insert line break before each occurrence of ", {'id'" do:  sed -e "s/, {'id'/, {'id'/g" input_file ; Note that the open curly bracket does not need escaping.  
+
+2024.12.14:
+	I merged the nodes of all Luxembourg ways matching the filters ["railway"="rail"] ["name"="Ligne Luxembourg - Oetrange" into one LineString. there were 18 matching ways. The result on the map looks pretty crappy. Certainly the nodes cannot simply be concatinated as the the line criss-crosses. 
