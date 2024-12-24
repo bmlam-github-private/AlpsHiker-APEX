@@ -111,6 +111,8 @@ def print_ways( ways ):
 			print( f"Way {i}: {name} has {node_cnt} nodes" )
 
 def ways_to_json( ways , upperBound= 10 ):
+	""" only for evauating purpose, the output is not targeted for further automated processing
+	"""
 	ways_output = []
 	# print( f"len of ways: {len(ways)}")
 	for i, way in enumerate( ways [0 : upperBound] ): 
@@ -136,6 +138,23 @@ def ways_to_json( ways , upperBound= 10 ):
 		# 
 	return  ways_output
 
+def way_to_geojson ( way ):
+	nodes = way.get_nodes( resolve_missing= True)
+	""" doing it with list comprehension has the issue that json.dumps failed on decimal type value!
+	geojson = { "type" : "LineString"
+				, "coordinates": [ [str(node.lon), str(node.lat) ] for node in nodes ]
+	}
+	return json.dumps( geojson, indent= 1)
+	""" 
+	text = ""
+	for i, node in enumerate( nodes ):
+		point_str = '[' + str(node.lon) + ', ' + str(node.lat) +']'
+		if i % 5 == 4:
+			text +=  '\n  ' 
+		if i > 0:
+			text += ',' 
+		text += point_str
+	text = '{"type": "LineString"\n ,"coordinates": [' + text + ']}'  
 
 # Main script logic
 if __name__ == "__main__":
@@ -153,9 +172,14 @@ if __name__ == "__main__":
         # Print the result
         print( query )
         result = run_query( query )
-        ways_json= ways_to_json( result.ways, upperBound= 100 )
-        print(json.dumps(ways_json, indent=2))
-
+        #if "want to browso only" == "yes":
+        #    ways_json= ways_to_json( result.ways, upperBound= 100 )
+        #    print(json.dumps(ways_json, indent=2))
+        for i, way in enumerate( result.ways):        
+            if i > 3:          
+            	exit 
+            else:
+	            print( way_to_geojson( way ) ) 
 
     except FileNotFoundError:
         print(f"Error: The file '{file_path}' was not found.")
