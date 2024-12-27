@@ -1,0 +1,112 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.4 2390de5a",
+  "elements": [
+
+{
+  "type": "node",
+  "id": 8091423,
+  "lat": 48.2489807,
+  "lon": 16.3655452,
+  "tags": {
+    "ele": "169",
+    "name": "Wien Heiligenstadt",
+    "operator": "ÖBB-Infrastruktur AG",
+    "platforms": "5",
+    "public_transport": "station",
+    "railway": "station",
+    "railway:position": "2.7 / 9.6",
+    "railway:position:exact": "2.678 / 9.584",
+    "railway:ref": "Ht",
+    "train": "yes",
+    "uic_name": "Wien Heiligenstadt",
+    "uic_ref": "8100269",
+    "wheelchair": "yes",
+    "wikidata": "Q801604",
+    "wikimedia_commons": "Category:Bahnhof Wien Heiligenstadt",
+    "wikipedia": "de:Bahnhof Wien Heiligenstadt"
+  }
+},
+{
+  "type": "node",
+  "id": 25528004,
+  "lat": 47.3866642,
+  "lon": 15.0897306,
+  "tags": {
+    "ele": "540",
+    "name": "Leoben Hauptbahnhof",
+    "operator": "ÖBB-Infrastruktur AG",
+    "public_transport": "station",
+    "railway": "station",
+    "railway:position": "16.5",
+    "railway:position:exact": "16.498",
+    "railway:ref": "Leb",
+    "short_name": "Leoben Hbf",
+    "uic_name": "Leoben Hbf",
+    "uic_ref": "8100070",
+    "wheelchair": "yes",
+    "wikidata": "Q873541",
+    "wikimedia_commons": "Category:Leoben Hauptbahnhof"
+  }
+},
+{
+  "type": "node",
+  "id": 25528260,
+  "lat": 47.0723984,
+  "lon": 15.4165166,
+  "tags": {
+    "ele": "364",
+    "name": "Graz Hauptbahnhof",
+    "operator": "ÖBB-Infrastruktur AG",
+    "public_transport": "station",
+    "railway": "station",
+    "railway:position": "211.4",
+    "railway:position:exact": "211.355",
+    "railway:ref": "G",
+    "short_name": "Graz Hbf",
+    "uic_name": "Graz Hbf",
+    "uic_ref": "8100173",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 26827614,
+  "lat": 47.3884246,
+  "lon": 11.7782710,
+  "tags": {
+    "name": "Jenbach",
+    "operator": "ÖBB-Infrastruktur AG",
+    "public_transport": "station",
+    "railway": "station",
+    "railway:position": "40.9",
+    "railway:position:exact": "40.882",
+    "railway:ref": "Jb",
+    "railway:ref:DB": "XAJB",
+    "uic_name": "Jenbach",
+    "uic_ref": "8100102",
+    "wheelchair": "yes",
+    "wikidata": "Q663697",
+    "wikipedia": "de:Bahnhof Jenbach"
+  }
+},
+{
+  "type": "node",
+  "id": 27144630,
+  "lat": 47.5196061,
+  "lon": 12.0939124,
+  "tags": {
+    "name": "Kirchbichl",
+    "operator": "ÖBB-Infrastruktur AG",
+    "railway": "station",
+    "railway:position": "11.9",
+    "railway:position:exact": "11.920",
+    "railway:ref": "Kir",
+    "railway:ref:DB": "XAKL",
+    "uic_ref": "8100290",
+    "wheelchair": "no",
+    "wikidata": "Q72833763"
+  }
+}
+  ]
+}
