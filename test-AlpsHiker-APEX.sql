@@ -312,16 +312,22 @@ FROM xmlTable (
 )
 ;
 --- working example to extract coordinates from overturbo output 
-select gj.* , sess_id
+select gj.* , sess_id, insert_ts
 from ( 
-    SELECT * FROM temp_geo_json order by insert_ts desc fetch first 2 rows only
+    SELECT * 
+    FROM temp_geo_json tmp
+    WHERE   1=1
+     -- tmp.sess_id =  apex_custom_auth.get_session_id
+      --AND layer_id = 1 
+      AND sess_id = 6861802301585
  ) tmp 
 CROSS JOIN  json_table (
   tmp.json_text ,           '$.elements[*]'
     columns ( 
             --js_val VARCHAR2(50) FORMAT JSON PATH '$'
               id number (38) PATH '$.id' 
-            , lon number (8, 6) PATH '$.lon' 
-            , lat number (8, 6) PATH '$.lat' 
+            , lon number (9, 6) PATH '$.lon' 
+            , lat number (9, 6) PATH '$.lat' 
+            , place_name VARCHAR2(200 CHAR) PATH '$.tags.name' 
     )
 ) gj

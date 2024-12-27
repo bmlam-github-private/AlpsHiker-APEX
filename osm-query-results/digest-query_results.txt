@@ -20,3 +20,19 @@ to insert line break before each occurrence of ", {'id'" do:  sed -e "s/, {'id'/
 
 2024.12.14:
 	I merged the nodes of all Luxembourg ways matching the filters ["railway"="rail"] ["name"="Ligne Luxembourg - Oetrange" into one LineString. there were 18 matching ways. The result on the map looks pretty crappy. Certainly the nodes cannot simply be concatinated as the the line criss-crosses. 
+
+2024.12.27:
+	This query still gets around 1k of nodes:
+	[out:json][timeout:600];
+area[name="Melbourne"]->.a;
+
+(
+  node["railway"="station"][ "network" = "PTV - Metropolitan Trains"
+](area.a);
+  way["railway"="station"](area.a);
+  relation["railway"="station"](area.a);
+);
+
+out body;
+out tags;
+

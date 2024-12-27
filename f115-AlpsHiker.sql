@@ -33,15 +33,15 @@ prompt APPLICATION 115 - Alps Hiker
 -- Application Export:
 --   Application:     115
 --   Name:            Alps Hiker
---   Date and Time:   00:27 Friday December 27, 2024
+--   Date and Time:   11:24 Friday December 27, 2024
 --   Exported By:     LAM_DEV
 --   Flashback:       0
 --   Export Type:     Application Export
 --     Pages:                     25
---       Items:                   41
---       Processes:               19
---       Regions:                 52
---       Buttons:                 22
+--       Items:                   43
+--       Processes:               21
+--       Regions:                 54
+--       Buttons:                 24
 --       Dynamic Actions:          5
 --     Shared Components:
 --       Logic:
@@ -160,7 +160,7 @@ wwv_flow_imp_shared.create_list(
  p_id=>wwv_flow_imp.id(38208581758342982)
 ,p_name=>'Navigation Menu'
 ,p_list_status=>'PUBLIC'
-,p_version_scn=>41491623198592
+,p_version_scn=>41491727115635
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(38503519814343414)
@@ -20063,11 +20063,36 @@ wwv_flow_imp_page.create_page(
  p_id=>21
 ,p_name=>'Upload_geojson_points'
 ,p_alias=>'UPLOAD-GEOJSON-POINTS'
-,p_step_title=>'Upload_geojson_points'
+,p_step_title=>'Upload Geojson Points'
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
 ,p_page_component_map=>'16'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(32515469928492720)
+,p_plug_name=>'File_upload'
+,p_title=>'File Upload'
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_imp.id(38311356292343115)
+,p_plug_display_sequence=>70
+,p_location=>null
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'expand_shortcuts', 'N',
+  'output_as', 'HTML')).to_clob
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(32515552851492721)
+,p_plug_name=>'Direct_Input'
+,p_title=>'Direct Input'
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_imp.id(38311356292343115)
+,p_plug_display_sequence=>80
+,p_plug_new_grid_row=>false
+,p_location=>null
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'expand_shortcuts', 'N',
+  'output_as', 'HTML')).to_clob
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(44915972177360686)
@@ -20082,19 +20107,44 @@ wwv_flow_imp_page.create_page_plug(
 ,p_menu_template_id=>wwv_flow_imp.id(38386111481343190)
 );
 wwv_flow_imp_page.create_page_button(
- p_id=>wwv_flow_imp.id(32514830615492714)
-,p_button_sequence=>40
-,p_button_name=>'Upload'
+ p_id=>wwv_flow_imp.id(32515613906492722)
+,p_button_sequence=>20
+,p_button_plug_id=>wwv_flow_imp.id(32515552851492721)
+,p_button_name=>'Upload_Text'
 ,p_button_action=>'SUBMIT'
 ,p_button_template_options=>'#DEFAULT#'
 ,p_button_template_id=>wwv_flow_imp.id(38384520835343189)
-,p_button_image_alt=>'Upload'
+,p_button_image_alt=>'Upload Text'
+,p_grid_new_row=>'Y'
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(32514830615492714)
+,p_button_sequence=>50
+,p_button_plug_id=>wwv_flow_imp.id(32515469928492720)
+,p_button_name=>'Upload_File'
+,p_button_action=>'SUBMIT'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(38384520835343189)
+,p_button_image_alt=>'Upload File'
+,p_grid_new_row=>'Y'
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(32515825190492724)
+,p_button_sequence=>90
+,p_button_name=>'Show_on_map'
+,p_button_action=>'REDIRECT_PAGE'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(38384520835343189)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>'Show On Map'
+,p_button_redirect_url=>'f?p=&APP_ID.:22:&SESSION.::&DEBUG.:::'
 ,p_grid_new_row=>'Y'
 );
 wwv_flow_imp_page.create_page_item(
  p_id=>wwv_flow_imp.id(32514598590492711)
 ,p_name=>'P21_JSON_FILE'
-,p_item_sequence=>10
+,p_item_sequence=>40
+,p_item_plug_id=>wwv_flow_imp.id(32515469928492720)
 ,p_prompt=>'Json File'
 ,p_display_as=>'NATIVE_FILE'
 ,p_cSize=>30
@@ -20109,7 +20159,8 @@ wwv_flow_imp_page.create_page_item(
 wwv_flow_imp_page.create_page_item(
  p_id=>wwv_flow_imp.id(32514646908492712)
 ,p_name=>'P21_BLOB_ID'
-,p_item_sequence=>20
+,p_item_sequence=>30
+,p_item_plug_id=>wwv_flow_imp.id(32515469928492720)
 ,p_display_as=>'NATIVE_HIDDEN'
 ,p_attribute_01=>'Y'
 );
@@ -20117,7 +20168,7 @@ wwv_flow_imp_page.create_page_item(
  p_id=>wwv_flow_imp.id(32514763841492713)
 ,p_name=>'P21_REMARKS'
 ,p_is_required=>true
-,p_item_sequence=>30
+,p_item_sequence=>60
 ,p_prompt=>'Remarks'
 ,p_display_as=>'NATIVE_TEXT_FIELD'
 ,p_cSize=>30
@@ -20129,12 +20180,29 @@ wwv_flow_imp_page.create_page_item(
 ,p_attribute_04=>'TEXT'
 ,p_attribute_05=>'BOTH'
 );
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(32515377903492719)
+,p_name=>'P21_JSON_DIRECT_INPUT'
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_imp.id(32515552851492721)
+,p_prompt=>'Json Direct Input'
+,p_display_as=>'NATIVE_TEXTAREA'
+,p_cSize=>30
+,p_cHeight=>5
+,p_begin_on_new_line=>'N'
+,p_field_template=>wwv_flow_imp.id(38382094121343180)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_01=>'Y'
+,p_attribute_02=>'N'
+,p_attribute_03=>'N'
+,p_attribute_04=>'BOTH'
+);
 wwv_flow_imp_page.create_page_process(
  p_id=>wwv_flow_imp.id(32514418881492710)
 ,p_process_sequence=>10
 ,p_process_point=>'AFTER_SUBMIT'
 ,p_process_type=>'NATIVE_PLSQL'
-,p_process_name=>'insert_temp_geojson'
+,p_process_name=>'insert_file'
 ,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'declare ',
 '  v_file_id temp_blob.id%TYPE;',
@@ -20182,8 +20250,44 @@ wwv_flow_imp_page.create_page_process(
 ,p_internal_uid=>32514418881492710
 );
 wwv_flow_imp_page.create_page_process(
- p_id=>wwv_flow_imp.id(32514964099492715)
+ p_id=>wwv_flow_imp.id(32515791725492723)
 ,p_process_sequence=>20
+,p_process_point=>'AFTER_SUBMIT'
+,p_process_type=>'NATIVE_PLSQL'
+,p_process_name=>'insert_text'
+,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'declare ',
+'  v_file_id temp_blob.id%TYPE;',
+'  v_blob_content BLOB;',
+'begin',
+'  if :p21_remarks IS NULL THEN ',
+'    RAISE_APPLICATION_ERROR( -20001, ''Remarks must be provided!'');',
+'  END IF;',
+'  --loginfo( null, ''p21_json_file: ''|| :p21_json_file );',
+'    DELETE temp_geo_json',
+'    WHERE sess_id = apex_custom_auth.get_session_id',
+'    ;',
+'        insert into temp_geo_json ',
+'        ( sess_id, remarks, json_text',
+'           , layer_id )',
+'        VALUES ( apex_custom_auth.get_session_id, :P21_REMARKS, :P21_JSON_DIRECT_INPUT',
+'            , 1 )',
+'        ;',
+'        delete temp_blob WHERE id = :P21_BLOB_ID;',
+'        :P21_JSON_DIRECT_INPUT := NULL;',
+'        :P21_REMARKS := NULL;',
+'      --',
+'end;',
+''))
+,p_process_clob_language=>'PLSQL'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_when_button_id=>wwv_flow_imp.id(32515613906492722)
+,p_security_scheme=>'MUST_NOT_BE_PUBLIC_USER'
+,p_internal_uid=>32515791725492723
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(32514964099492715)
+,p_process_sequence=>30
 ,p_process_point=>'AFTER_SUBMIT'
 ,p_process_type=>'NATIVE_PLSQL'
 ,p_process_name=>'xfer_blob_to_tmp_json'
@@ -20205,11 +20309,11 @@ wwv_flow_imp_page.create_page(
  p_id=>22
 ,p_name=>'adhoc_map_points'
 ,p_alias=>'ADHOC-MAP-POINTS'
-,p_step_title=>'adhoc_map_points'
+,p_step_title=>'Locations from Geo_json'
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
-,p_page_component_map=>'19'
+,p_page_component_map=>'17'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(32515035671492716)
@@ -20217,7 +20321,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#'
 ,p_plug_template=>wwv_flow_imp.id(38311356292343115)
-,p_plug_display_sequence=>10
+,p_plug_display_sequence=>20
 ,p_location=>null
 ,p_lazy_loading=>true
 ,p_plug_source_type=>'NATIVE_MAP_REGION'
@@ -20243,32 +20347,39 @@ wwv_flow_imp_page.create_map_region_layer(
 ,p_location=>'LOCAL'
 ,p_query_type=>'SQL'
 ,p_layer_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select gj.id osm_id, gj.lon, gj.lat ',
+'select gj.id osm_id, gj.lon, gj.lat , gj.place_name tool_tip',
 'from ( ',
 '    SELECT * FROM temp_geo_json tmp',
-'    WHERE   tmp.sess_id =  apex_custom_auth.get_session_id',
-'      AND layer_id = 1 ',
+'    WHERE  1=1',
+'      AND  tmp.sess_id =  apex_custom_auth.get_session_id',
+'      --AND layer_id = 1 ',
+'      --AND sess_id = 6152523889977',
 ' ) tmp ',
 'CROSS JOIN  json_table (',
 '  tmp.json_text ,           ''$.elements[*]''',
 '    columns ( ',
 '            --js_val VARCHAR2(50) FORMAT JSON PATH ''$''',
 '              id number (38) PATH ''$.id'' ',
-'            , lon number (8, 6) PATH ''$.lon'' ',
-'            , lat number (8, 6) PATH ''$.lat'' ',
+'            , lon number (9, 6) PATH ''$.lon'' ',
+'            , lat number (9, 6) PATH ''$.lat'' ',
+'            , place_name VARCHAR2(200 CHAR) PATH ''$.tags.name'' ',
 '    )',
 ') gj',
 ''))
+,p_no_data_found_message=>'No points from source'
 ,p_has_spatial_index=>false
+,p_pk_column=>'OSM_ID'
 ,p_geometry_column_data_type=>'LONLAT_COLUMNS'
 ,p_longitude_column=>'LON'
 ,p_latitude_column=>'LAT'
+,p_fill_color=>'#f41717'
 ,p_point_display_type=>'SVG'
 ,p_point_svg_shape=>'Default'
 ,p_feature_clustering=>false
-,p_tooltip_adv_formatting=>false
+,p_tooltip_adv_formatting=>true
+,p_tooltip_html_expr=>'&TOOL_TIP.'
 ,p_info_window_adv_formatting=>false
-,p_allow_hide=>true
+,p_allow_hide=>false
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(45313880338327776)
@@ -20281,6 +20392,33 @@ wwv_flow_imp_page.create_page_plug(
 ,p_menu_id=>wwv_flow_imp.id(38208070893342978)
 ,p_plug_source_type=>'NATIVE_BREADCRUMB'
 ,p_menu_template_id=>wwv_flow_imp.id(38386111481343190)
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(32515935670492725)
+,p_name=>'P22_SESS_ID'
+,p_item_sequence=>10
+,p_prompt=>'Sess Id'
+,p_display_as=>'NATIVE_DISPLAY_ONLY'
+,p_field_template=>wwv_flow_imp.id(38382094121343180)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_01=>'N'
+,p_attribute_02=>'VALUE'
+,p_attribute_04=>'N'
+,p_attribute_05=>'PLAIN'
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(32516074580492726)
+,p_process_sequence=>10
+,p_process_point=>'BEFORE_HEADER'
+,p_process_type=>'NATIVE_PLSQL'
+,p_process_name=>'initialize'
+,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'BEGIN ',
+'  :P22_SESS_ID := apex_custom_auth.get_session_id;',
+'END;',
+''))
+,p_process_clob_language=>'PLSQL'
+,p_internal_uid=>32516074580492726
 );
 end;
 /
