@@ -33,12 +33,12 @@ prompt APPLICATION 115 - Alps Hiker
 -- Application Export:
 --   Application:     115
 --   Name:            Alps Hiker
---   Date and Time:   11:24 Friday December 27, 2024
+--   Date and Time:   02:58 Monday December 30, 2024
 --   Exported By:     LAM_DEV
 --   Flashback:       0
 --   Export Type:     Application Export
 --     Pages:                     25
---       Items:                   43
+--       Items:                   45
 --       Processes:               21
 --       Regions:                 54
 --       Buttons:                 24
@@ -20061,8 +20061,8 @@ prompt --application/pages/page_00021
 begin
 wwv_flow_imp_page.create_page(
  p_id=>21
-,p_name=>'Upload_geojson_points'
-,p_alias=>'UPLOAD-GEOJSON-POINTS'
+,p_name=>'Upload Geojson Points'
+,p_alias=>'UPLOAD_GEOJSON_POINTS'
 ,p_step_title=>'Upload Geojson Points'
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
@@ -20075,7 +20075,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_title=>'File Upload'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_plug_template=>wwv_flow_imp.id(38311356292343115)
-,p_plug_display_sequence=>70
+,p_plug_display_sequence=>90
 ,p_location=>null
 ,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
   'expand_shortcuts', 'N',
@@ -20087,7 +20087,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_title=>'Direct Input'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_plug_template=>wwv_flow_imp.id(38311356292343115)
-,p_plug_display_sequence=>80
+,p_plug_display_sequence=>100
 ,p_plug_new_grid_row=>false
 ,p_location=>null
 ,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
@@ -20130,7 +20130,7 @@ wwv_flow_imp_page.create_page_button(
 );
 wwv_flow_imp_page.create_page_button(
  p_id=>wwv_flow_imp.id(32515825190492724)
-,p_button_sequence=>90
+,p_button_sequence=>110
 ,p_button_name=>'Show_on_map'
 ,p_button_action=>'REDIRECT_PAGE'
 ,p_button_template_options=>'#DEFAULT#'
@@ -20197,6 +20197,36 @@ wwv_flow_imp_page.create_page_item(
 ,p_attribute_03=>'N'
 ,p_attribute_04=>'BOTH'
 );
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(32516445020492730)
+,p_name=>'P21_POINT_OR_LINE'
+,p_item_sequence=>70
+,p_prompt=>'Point Or Line'
+,p_display_as=>'NATIVE_RADIOGROUP'
+,p_lov=>'STATIC:As Points;P,As LineString;L'
+,p_lov_display_null=>'YES'
+,p_begin_on_new_line=>'N'
+,p_field_template=>wwv_flow_imp.id(38382094121343180)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'YES'
+,p_attribute_01=>'1'
+,p_attribute_02=>'NONE'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(32516511038492731)
+,p_name=>'P21_LAYER_NO'
+,p_item_sequence=>80
+,p_prompt=>'Point Or Line'
+,p_display_as=>'NATIVE_RADIOGROUP'
+,p_lov=>'STATIC:Layer 1;1,Layer 2;2'
+,p_lov_display_null=>'YES'
+,p_begin_on_new_line=>'N'
+,p_field_template=>wwv_flow_imp.id(38382094121343180)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'YES'
+,p_attribute_01=>'1'
+,p_attribute_02=>'NONE'
+);
 wwv_flow_imp_page.create_page_process(
  p_id=>wwv_flow_imp.id(32514418881492710)
 ,p_process_sequence=>10
@@ -20228,13 +20258,32 @@ wwv_flow_imp_page.create_page_process(
 '      :p21_blob_id := v_file_id;',
 '      delete from apex_application_temp_files where name = :p21_json_file',
 '      ;',
-'        insert into temp_geo_json ',
-'        ( sess_id, remarks, json_text',
-'           , layer_id )',
-'        SELECT apex_custom_auth.get_session_id, :P21_REMARKS, blob_content',
-'            , 1 ',
-'        FROM temp_blob b',
-'        WHERE b.id = to_number( :P21_BLOB_ID )',
+'      MERGE into temp_geo_json z',
+'        USING (',
+'            SELECT apex_custom_auth.get_session_id AS sess_id',
+'                ,CASE :P21_POINT_OR_LINE',
+'                WHEN ''P'' THEN ',
+'                    CASE to_number( :P21_LAYER_NO )',
+'                    WHEN 1 THEN 1',
+'                    WHEN 2 THEN 2',
+'                    END ',
+'                WHEN ''L'' THEN ',
+'                    CASE to_number( :P21_LAYER_NO )',
+'                    WHEN 1 THEN 3',
+'                    WHEN 2 THEN 4',
+'                    END ',
+'                END AS layer_id',
+'                , b.blob_content ',
+'            FROM temp_blob b',
+'            WHERE b.id = to_number( :P21_BLOB_ID )',
+'        ) q',
+'        ON ( q.sess_id = z.sess_id AND q.layer_id = z.layer_id )',
+'        WHEN MATCHED THEN ',
+'            UPDATE SET z.remarks = :P21_REMARKS, z.json_text = q.blob_content ',
+'',
+'        WHEN NOT MATCHED THEN ',
+'            INSERT ( sess_id , layer_id  , remarks,  json_text )',
+'            VALUES ( q.sess_id, q.layer_id, :P21_REMARKS, q.blob_content )',
 '        ;',
 '        delete temp_blob WHERE id = :P21_BLOB_ID;',
 '        :P21_BLOB_ID := NULL;',
@@ -20267,15 +20316,31 @@ wwv_flow_imp_page.create_page_process(
 '    DELETE temp_geo_json',
 '    WHERE sess_id = apex_custom_auth.get_session_id',
 '    ;',
-'        insert into temp_geo_json ',
-'        ( sess_id, remarks, json_text',
-'           , layer_id )',
-'        VALUES ( apex_custom_auth.get_session_id, :P21_REMARKS, :P21_JSON_DIRECT_INPUT',
-'            , 1 )',
+'MERGE into temp_geo_json z',
+'        USING (',
+'            SELECT apex_custom_auth.get_session_id AS sess_id',
+'                ,CASE :P21_POINT_OR_LINE',
+'                WHEN ''P'' THEN ',
+'                    CASE to_number( :P21_LAYER_NO )',
+'                    WHEN 1 THEN 1',
+'                    WHEN 2 THEN 2',
+'                    END ',
+'                WHEN ''L'' THEN ',
+'                    CASE to_number( :P21_LAYER_NO )',
+'                    WHEN 1 THEN 3',
+'                    WHEN 2 THEN 4',
+'                    END ',
+'                END AS layer_id',
+'            FROM dual ',
+'        ) q',
+'        ON ( q.sess_id = z.sess_id AND q.layer_id = z.layer_id )',
+'        WHEN MATCHED THEN ',
+'            UPDATE SET z.remarks = :P21_REMARKS, z.json_text = :P21_JSON_DIRECT_INPUT ',
+'',
+'        WHEN NOT MATCHED THEN ',
+'            INSERT ( sess_id , layer_id  , remarks,  json_text )',
+'            VALUES ( q.sess_id, q.layer_id, :P21_REMARKS, :P21_JSON_DIRECT_INPUT )',
 '        ;',
-'        delete temp_blob WHERE id = :P21_BLOB_ID;',
-'        :P21_JSON_DIRECT_INPUT := NULL;',
-'        :P21_REMARKS := NULL;',
 '      --',
 'end;',
 ''))
@@ -20290,7 +20355,7 @@ wwv_flow_imp_page.create_page_process(
 ,p_process_sequence=>30
 ,p_process_point=>'AFTER_SUBMIT'
 ,p_process_type=>'NATIVE_PLSQL'
-,p_process_name=>'xfer_blob_to_tmp_json'
+,p_process_name=>'xxx_xfer_blob_to_tmp_json'
 ,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'IF :P21_BLOB_ID IS NOT NULL THEN ',
 'null;',
@@ -20340,7 +20405,7 @@ wwv_flow_imp_page.create_map_region(
 wwv_flow_imp_page.create_map_region_layer(
  p_id=>wwv_flow_imp.id(32515216348492718)
 ,p_map_region_id=>wwv_flow_imp.id(32515127725492717)
-,p_name=>'Layer_1'
+,p_name=>'Layer_1_P_1'
 ,p_label=>'Layer 1'
 ,p_layer_type=>'POINT'
 ,p_display_sequence=>10
@@ -20352,7 +20417,7 @@ wwv_flow_imp_page.create_map_region_layer(
 '    SELECT * FROM temp_geo_json tmp',
 '    WHERE  1=1',
 '      AND  tmp.sess_id =  apex_custom_auth.get_session_id',
-'      --AND layer_id = 1 ',
+'      AND layer_id = 1 ',
 '      --AND sess_id = 6152523889977',
 ' ) tmp ',
 'CROSS JOIN  json_table (',
@@ -20365,6 +20430,8 @@ wwv_flow_imp_page.create_map_region_layer(
 '            , place_name VARCHAR2(200 CHAR) PATH ''$.tags.name'' ',
 '    )',
 ') gj',
+'WHERE        gj.lon IS NOT NULL AND gj.lat IS NOT NULL ',
+'',
 ''))
 ,p_no_data_found_message=>'No points from source'
 ,p_has_spatial_index=>false
@@ -20376,6 +20443,140 @@ wwv_flow_imp_page.create_map_region_layer(
 ,p_point_display_type=>'SVG'
 ,p_point_svg_shape=>'Default'
 ,p_feature_clustering=>false
+,p_tooltip_adv_formatting=>true
+,p_tooltip_html_expr=>'&TOOL_TIP.'
+,p_info_window_adv_formatting=>false
+,p_allow_hide=>false
+);
+wwv_flow_imp_page.create_map_region_layer(
+ p_id=>wwv_flow_imp.id(32516113170492727)
+,p_map_region_id=>wwv_flow_imp.id(32515127725492717)
+,p_name=>'Layer_2_P_2'
+,p_label=>'Layer 2'
+,p_layer_type=>'POINT'
+,p_display_sequence=>20
+,p_location=>'LOCAL'
+,p_query_type=>'SQL'
+,p_layer_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select gj.id osm_id, gj.lon, gj.lat , gj.place_name tool_tip',
+'from ( ',
+'    SELECT * FROM temp_geo_json tmp',
+'    WHERE  1=1',
+'      AND  tmp.sess_id =  apex_custom_auth.get_session_id',
+'      AND layer_id = 2',
+'      --AND sess_id = 6152523889977',
+' ) tmp ',
+'CROSS JOIN  json_table (',
+'  tmp.json_text ,           ''$.elements[*]''',
+'    columns ( ',
+'            --js_val VARCHAR2(50) FORMAT JSON PATH ''$''',
+'              id number (38) PATH ''$.id'' ',
+'            , lon number (9, 6) PATH ''$.lon'' ',
+'            , lat number (9, 6) PATH ''$.lat'' ',
+'            , place_name VARCHAR2(200 CHAR) PATH ''$.tags.name'' ',
+'    )',
+') gj',
+'WHERE        gj.lon IS NOT NULL AND gj.lat IS NOT NULL ',
+''))
+,p_no_data_found_message=>'No points from source'
+,p_has_spatial_index=>false
+,p_pk_column=>'OSM_ID'
+,p_geometry_column_data_type=>'LONLAT_COLUMNS'
+,p_longitude_column=>'LON'
+,p_latitude_column=>'LAT'
+,p_fill_color=>'#17f452'
+,p_point_display_type=>'SVG'
+,p_point_svg_shape=>'Default'
+,p_feature_clustering=>false
+,p_tooltip_adv_formatting=>true
+,p_tooltip_html_expr=>'&TOOL_TIP.'
+,p_info_window_adv_formatting=>false
+,p_allow_hide=>false
+);
+wwv_flow_imp_page.create_map_region_layer(
+ p_id=>wwv_flow_imp.id(32516257227492728)
+,p_map_region_id=>wwv_flow_imp.id(32515127725492717)
+,p_name=>'Layer_3_L_1'
+,p_label=>'Layer 3'
+,p_layer_type=>'LINE'
+,p_display_sequence=>30
+,p_location=>'LOCAL'
+,p_query_type=>'SQL'
+,p_layer_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select gj.id osm_id, gj.lon, gj.lat ',
+', nvl( gj.place_name , ''no info'' ) AS tool_tip',
+'from ( ',
+'    SELECT * FROM temp_geo_json tmp',
+'    WHERE  1=1',
+'      AND  tmp.sess_id =  apex_custom_auth.get_session_id',
+'      AND layer_id = 3',
+'      --AND sess_id = 6152523889977',
+' ) tmp ',
+'CROSS JOIN  json_table (',
+'  tmp.json_text ,           ''$.elements[*]''',
+'    columns ( ',
+'            --js_val VARCHAR2(50) FORMAT JSON PATH ''$''',
+'              id number (38) PATH ''$.id'' ',
+'            , lon number (9, 6) PATH ''$.lon'' ',
+'            , lat number (9, 6) PATH ''$.lat'' ',
+'            , place_name VARCHAR2(200 CHAR) PATH ''$.tags.name'' ',
+'    )',
+') gj',
+'WHERE        gj.lon IS NOT NULL AND gj.lat IS NOT NULL ',
+''))
+,p_no_data_found_message=>'No points from source'
+,p_has_spatial_index=>false
+,p_pk_column=>'OSM_ID'
+,p_geometry_column_data_type=>'LONLAT_COLUMNS'
+,p_longitude_column=>'LON'
+,p_latitude_column=>'LAT'
+,p_stroke_color=>'#7d0d0d'
+,p_stroke_width=>2
+,p_stroke_style=>'DOTTED'
+,p_tooltip_adv_formatting=>true
+,p_tooltip_html_expr=>'&TOOL_TIP.'
+,p_info_window_adv_formatting=>false
+,p_allow_hide=>false
+);
+wwv_flow_imp_page.create_map_region_layer(
+ p_id=>wwv_flow_imp.id(32516366858492729)
+,p_map_region_id=>wwv_flow_imp.id(32515127725492717)
+,p_name=>'Layer_4_L_2'
+,p_label=>'Layer 4'
+,p_layer_type=>'LINE'
+,p_display_sequence=>40
+,p_location=>'LOCAL'
+,p_query_type=>'SQL'
+,p_layer_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select gj.id osm_id, gj.lon, gj.lat , gj.place_name tool_tip',
+'from ( ',
+'    SELECT * FROM temp_geo_json tmp',
+'    WHERE  1=1',
+'      AND  tmp.sess_id =  apex_custom_auth.get_session_id',
+'      AND layer_id = 4',
+'      --AND sess_id = 6152523889977',
+' ) tmp ',
+'CROSS JOIN  json_table (',
+'  tmp.json_text ,           ''$.elements[*]''',
+'    columns ( ',
+'            --js_val VARCHAR2(50) FORMAT JSON PATH ''$''',
+'              id number (38) PATH ''$.id'' ',
+'            , lon number (9, 6) PATH ''$.lon'' ',
+'            , lat number (9, 6) PATH ''$.lat'' ',
+'            , place_name VARCHAR2(200 CHAR) PATH ''$.tags.name'' ',
+'    )',
+') gj',
+'WHERE        gj.lon IS NOT NULL AND gj.lat IS NOT NULL ',
+''))
+,p_no_data_found_message=>'No points from source'
+,p_has_spatial_index=>false
+,p_pk_column=>'OSM_ID'
+,p_geometry_column_data_type=>'LONLAT_COLUMNS'
+,p_longitude_column=>'LON'
+,p_latitude_column=>'LAT'
+,p_stroke_color=>'#048e04'
+,p_stroke_width=>2
+,p_stroke_style=>'DOTTED'
 ,p_tooltip_adv_formatting=>true
 ,p_tooltip_html_expr=>'&TOOL_TIP.'
 ,p_info_window_adv_formatting=>false

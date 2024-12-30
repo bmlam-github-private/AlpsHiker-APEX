@@ -36,3 +36,16 @@ area[name="Melbourne"]->.a;
 out body;
 out tags;
 
+2024.12.28:
+	Tags have keys which can be structured in hierachy. For we can filter to elements starting with the "name", but we can also filter to "name:pjt" which means tags , which will also match filter on "name"
+	We omit the value in the filter if we are interested in all tags with a matching keyword, regardless of the value. 
+
+2024.12.29:
+	It seems that the first part of a query can optionally include the output format specs. The area or bounding box follows as part of the first part, which concludes with a semicolon. That means, the statement whichs specifies the output format cannot end with semicolon since it is not the end of part 1. 
+	Part 1 can be a bounding box notated as [bbox: 2 pairs of coordinates]
+	The second part contains the filters, each statements must be end with a semicolon. 
+	When a (result) set contains a single way, the statement 
+		(._;>;);
+	will include all the way and the nodes of the way. Yet to be tested if the nodes are in adjacent order, i.e. form a line nicely. 
+	In my test, the nodes of the way were output first, then the way itself and the node ids. "._" denotes the default set, and ">" is the recurse command to find nodes of the way. The round brackets denote the union of two sets. 
+

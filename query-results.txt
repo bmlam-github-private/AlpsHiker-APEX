@@ -1,3 +1,7 @@
+#
+# TUTORIAL: https://osm-queries.ldodds.com/tutorial/01-nodes.osm.html  do: cd ..
+#
+
 ### Munich highway
 ###
 ##[out:json(highway, name) ]; 

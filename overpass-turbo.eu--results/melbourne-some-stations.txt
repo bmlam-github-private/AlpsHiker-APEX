@@ -1,0 +1,1107 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.4 2390de5a",
+  "osm3s": {
+    "timestamp_osm_base": "2024-12-27T07:36:15Z",
+    "timestamp_areas_base": "2024-12-27T05:13:32Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 27071462,
+  "lat": -37.8752637,
+  "lon": 145.1281258,
+  "tags": {
+    "name": "Mount Waverley",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "wikidata": "Q6924528"
+  }
+},
+{
+  "type": "node",
+  "id": 27091664,
+  "lat": -37.8736635,
+  "lon": 145.1122691,
+  "tags": {
+    "name": "Jordanville",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q6277377"
+  }
+},
+{
+  "type": "node",
+  "id": 27123069,
+  "lat": -37.8768464,
+  "lon": 145.0691723,
+  "tags": {
+    "name": "East Malvern",
+    "name:zh": "东墨尔文",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "wikidata": "Q5328928"
+  }
+},
+{
+  "type": "node",
+  "id": 29749085,
+  "lat": -37.7846970,
+  "lon": 145.3131856,
+  "tags": {
+    "addr:postcode": "3138",
+    "addr:state": "VIC",
+    "addr:street": "Brice Avenue",
+    "addr:suburb": "Mooroolbark",
+    "name": "Mooroolbark",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "MLK",
+    "ref:PTV": "19877",
+    "train": "yes",
+    "website": "https://www.ptv.vic.gov.au/stop/1133/",
+    "wheelchair": "yes",
+    "wikidata": "Q6908452",
+    "wikipedia": "en:Mooroolbark railway station"
+  }
+},
+{
+  "type": "node",
+  "id": 29764097,
+  "lat": -37.8620470,
+  "lon": 145.0812907,
+  "tags": {
+    "addr:postcode": "3147",
+    "addr:state": "VIC",
+    "addr:street": "Welfare Parade",
+    "addr:suburb": "Ashburton",
+    "name": "Ashburton",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "ASH",
+    "ref:ptv": "19848",
+    "train": "yes",
+    "website": "https://www.ptv.vic.gov.au/stop/1010",
+    "wheelchair": "yes",
+    "wikidata": "Q4804680",
+    "wikipedia": "en:Ashburton railway station, Melbourne"
+  }
+},
+{
+  "type": "node",
+  "id": 29764104,
+  "lat": -37.8516710,
+  "lon": 145.0805767,
+  "tags": {
+    "name": "Burwood",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q5001065"
+  }
+},
+{
+  "type": "node",
+  "id": 29980432,
+  "lat": -37.9343919,
+  "lon": 145.0368952,
+  "tags": {
+    "name": "Moorabbin",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q6908070"
+  }
+},
+{
+  "type": "node",
+  "id": 30226248,
+  "lat": -37.7791763,
+  "lon": 145.0169241,
+  "tags": {
+    "addr:postcode": "3078",
+    "addr:state": "VIC",
+    "addr:street": "Railway Place",
+    "addr:suburb": "Fairfield",
+    "name": "Fairfield",
+    "name:zh": "费尔菲尔德",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "FFD",
+    "ref:ptv": "19930",
+    "train": "yes",
+    "website": "https://www.ptv.vic.gov.au/stop/1065",
+    "wheelchair": "yes",
+    "wikidata": "Q5430411",
+    "wikipedia": "en:Fairfield railway station, Melbourne"
+  }
+},
+{
+  "type": "node",
+  "id": 30226366,
+  "lat": -37.7747529,
+  "lon": 145.0386786,
+  "tags": {
+    "addr:postcode": "3079",
+    "addr:state": "VIC",
+    "addr:street": "Heidelberg Road",
+    "addr:suburb": "Ivanhoe",
+    "name": "Darebin",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "DBN",
+    "ref:ptv": "19932",
+    "train": "yes",
+    "website": "https://www.ptv.vic.gov.au/stop/1050",
+    "wheelchair": "yes",
+    "wikidata": "Q5222490",
+    "wikipedia": "en:Darebin railway station"
+  }
+},
+{
+  "type": "node",
+  "id": 30226555,
+  "lat": -37.7428788,
+  "lon": 145.0661791,
+  "tags": {
+    "layer": "1",
+    "name": "Rosanna",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q14935284"
+  }
+},
+{
+  "type": "node",
+  "id": 31287044,
+  "lat": -37.7948639,
+  "lon": 144.9360832,
+  "tags": {
+    "fare_gates": "no",
+    "name": "Macaulay",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Public Transport Victoria - Metro",
+    "public_transport": "station",
+    "railway": "station",
+    "railway:ref": "MAC",
+    "train": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q6722765"
+  }
+},
+{
+  "type": "node",
+  "id": 32315392,
+  "lat": -37.7749186,
+  "lon": 144.9587440,
+  "tags": {
+    "addr:postcode": "3056",
+    "addr:state": "VIC",
+    "addr:street": "Wilson Avenue",
+    "addr:suburb": "Brunswick",
+    "fare_gates": "no",
+    "name": "Jewell",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "JWL",
+    "ref:ptv": "19969",
+    "train": "yes",
+    "website": "https://www.ptv.vic.gov.au/stop/1103",
+    "wheelchair": "yes",
+    "wikidata": "Q6189571",
+    "wikipedia": "en:Jewell railway station"
+  }
+},
+{
+  "type": "node",
+  "id": 32315393,
+  "lat": -37.7676910,
+  "lon": 144.9596104,
+  "tags": {
+    "addr:postcode": "3056",
+    "addr:state": "VIC",
+    "addr:street": "Wilkinson Street",
+    "addr:suburb": "Brunswick",
+    "fare_gates": "no",
+    "name": "Brunswick",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "BWK",
+    "ref:ptv": "19968",
+    "train": "yes",
+    "website": "https://www.ptv.vic.gov.au/stop/1029",
+    "wheelchair": "yes",
+    "wikidata": "Q4979569",
+    "wikipedia": "en:Brunswick railway station, Melbourne"
+  }
+},
+{
+  "type": "node",
+  "id": 115049006,
+  "lat": -37.8247469,
+  "lon": 145.0807636,
+  "tags": {
+    "name": "Canterbury",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q5033718"
+  }
+},
+{
+  "type": "node",
+  "id": 301990838,
+  "lat": -37.6951482,
+  "lon": 144.9158281,
+  "tags": {
+    "fare_gates": "no",
+    "name": "Jacana",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q6110469"
+  }
+},
+{
+  "type": "node",
+  "id": 327832566,
+  "lat": -37.8762762,
+  "lon": 145.1497930,
+  "tags": {
+    "name": "Syndal",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q7662288"
+  }
+},
+{
+  "type": "node",
+  "id": 482806364,
+  "lat": -37.9175354,
+  "lon": 145.0369346,
+  "tags": {
+    "name": "Bentleigh",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q4890445"
+  }
+},
+{
+  "type": "node",
+  "id": 608004827,
+  "lat": -37.9090141,
+  "lon": 145.3552538,
+  "tags": {
+    "addr:postcode": "3160",
+    "addr:state": "VIC",
+    "addr:street": "Belgrave - Gembrook Road",
+    "addr:suburb": "Belgrave",
+    "name": "Belgrave",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "platforms": "2",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "BEG",
+    "ref:ptv": "19844",
+    "train": "yes",
+    "website": "https://www.ptv.vic.gov.au/stop/1018",
+    "wheelchair": "yes",
+    "wikidata": "Q4882691",
+    "wikipedia": "en:Belgrave railway station"
+  }
+},
+{
+  "type": "node",
+  "id": 690177803,
+  "lat": -38.0067174,
+  "lon": 145.0875658,
+  "tags": {
+    "name": "Mordialloc",
+    "network": "PTV - Metropolitan Trains",
+    "operator": "Metro Trains Melbourne",
+    "phone": "+61 3 9610 6155",
+    "platforms": "1",
+    "public_transport": "station",
+    "railway": "station",
+    "website": "https://ptv.vic.gov.au/stop/view/19863",
+    "wheelchair": "yes",
+    "wikidata": "Q6910825"
+  }
+},
+{
+  "type": "node",
+  "id": 1763901251,
+  "lat": -37.8224057,
+  "lon": 145.0458764,
+  "tags": {
+    "addr:postcode": "3122",
+    "addr:state": "VIC",
+    "addr:street": "Auburn Road",
+    "addr:suburb": "Hawthorn",
+    "name": "Auburn",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "AUB",
+    "ref:ptv": "19903",
+    "train": "yes",
+    "website": "https://www.ptv.vic.gov.au/stop/1012",
+    "wheelchair": "limited",
+    "wikidata": "Q4819343",
+    "wikipedia": "en:Auburn railway station, Melbourne"
+  }
+},
+{
+  "type": "node",
+  "id": 1763901253,
+  "lat": -37.8417390,
+  "lon": 145.2681208,
+  "tags": {
+    "addr:postcode": "3153",
+    "addr:state": "VIC",
+    "addr:street": "Station Street",
+    "addr:suburb": "Bayswater",
+    "fare_gates": "yes",
+    "name": "Bayswater",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "platforms": "2",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "BAY",
+    "ref:ptv": "19870",
+    "train": "yes",
+    "website": "https://www.ptv.vic.gov.au/stop/1016",
+    "wheelchair": "yes",
+    "wikidata": "Q4874861",
+    "wikipedia": "en:Bayswater railway station, Melbourne"
+  }
+},
+{
+  "type": "node",
+  "id": 1763901255,
+  "lat": -37.8606450,
+  "lon": 145.2848446,
+  "tags": {
+    "addr:postcode": "3155",
+    "addr:state": "VIC",
+    "addr:street": "Genista Avenue",
+    "addr:suburb": "Boronia",
+    "name": "Boronia",
+    "network": "PTV - Metropolitan Trains",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "BOR",
+    "ref:ptv": "19869",
+    "train": "yes",
+    "website": "https://www.ptv.vic.gov.au/stop/1025",
+    "wikidata": "Q4946281",
+    "wikipedia": "en:Boronia railway station"
+  }
+},
+{
+  "type": "node",
+  "id": 1763901275,
+  "lat": -37.8926144,
+  "lon": 145.3077074,
+  "tags": {
+    "addr:postcode": "3156",
+    "addr:state": "VIC",
+    "addr:street": "Burwood Highway",
+    "addr:suburb": "Upper Ferntree Gully",
+    "alt_name": "Upper Fern Tree Gully",
+    "name": "Upper Ferntree Gully",
+    "network": "PTV - Metropolitan Trains",
+    "note": "\"Upper Ferntree Gully\" officially registered on 02/05/1966",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "UFG",
+    "ref:ptv": "19867",
+    "train": "yes",
+    "website": "https://www.ptv.vic.gov.au/stop/1199",
+    "wikidata": "Q7898644",
+    "wikipedia": "en:Upper Ferntree Gully railway station"
+  }
+},
+{
+  "type": "node",
+  "id": 1763919351,
+  "lat": -37.8815825,
+  "lon": 145.2951466,
+  "tags": {
+    "addr:postcode": "3156",
+    "addr:state": "VIC",
+    "addr:street": "Station Street",
+    "addr:suburb": "Ferntree Gully",
+    "alt_name": "Fern Tree Gully",
+    "name": "Ferntree Gully",
+    "network": "PTV - Metropolitan Trains",
+    "note": "\"Ferntree Gully\" officially registered on 02/05/1966",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "FTG",
+    "ref:ptv": "19868",
+    "train": "yes",
+    "website": "https://www.ptv.vic.gov.au/stop/1067",
+    "wheelchair": "yes",
+    "wikidata": "Q5445142",
+    "wikipedia": "en:Ferntree Gully railway station"
+  }
+},
+{
+  "type": "node",
+  "id": 1763919352,
+  "lat": -37.8745091,
+  "lon": 145.0902428,
+  "tags": {
+    "name": "Holmesglen",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q5883683"
+  }
+},
+{
+  "type": "node",
+  "id": 1763919359,
+  "lat": -37.8117518,
+  "lon": 145.2499467,
+  "tags": {
+    "addr:postcode": "3135",
+    "addr:state": "VIC",
+    "addr:street": "Railway Avenue",
+    "addr:suburb": "Ringwood East",
+    "fare_gates": "no",
+    "name": "Ringwood East",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "operator:wikidata": "Q10931299",
+    "operator:wikipedia": "en:Metro Trains Melbourne",
+    "platforms": "2",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "RWE",
+    "ref:ptv": "19879",
+    "train": "yes",
+    "website": "https://www.ptv.vic.gov.au/stop/1164",
+    "wheelchair": "yes",
+    "wikidata": "Q7335019",
+    "wikipedia": "en:Ringwood East railway station"
+  }
+},
+{
+  "type": "node",
+  "id": 1764747359,
+  "lat": -37.9251159,
+  "lon": 145.0354959,
+  "tags": {
+    "name": "Patterson",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "wikidata": "Q7148480"
+  }
+},
+{
+  "type": "node",
+  "id": 1774405224,
+  "lat": -38.0272365,
+  "lon": 145.1021263,
+  "tags": {
+    "name": "Aspendale",
+    "network": "PTV - Metropolitan Trains",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "wikidata": "Q4807863"
+  }
+},
+{
+  "type": "node",
+  "id": 1774405225,
+  "lat": -38.0654490,
+  "lon": 145.1201080,
+  "tags": {
+    "name": "Bonbeach",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "wikidata": "Q4941225"
+  }
+},
+{
+  "type": "node",
+  "id": 1774405230,
+  "lat": -37.9930593,
+  "lon": 145.0763034,
+  "tags": {
+    "name": "Parkdale",
+    "network": "PTV - Metropolitan Trains",
+    "operator": "Metro Trains Melbourne",
+    "platforms": "2",
+    "public_transport": "station",
+    "railway": "station",
+    "toilets:wheelchair": "no",
+    "wheelchair": "yes",
+    "wikidata": "Q7138223"
+  }
+},
+{
+  "type": "node",
+  "id": 1774405231,
+  "lat": -38.1040134,
+  "lon": 145.1282259,
+  "tags": {
+    "name": "Seaford",
+    "network": "PTV - Metropolitan Trains",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "wikidata": "Q7440398"
+  }
+},
+{
+  "type": "node",
+  "id": 1777850736,
+  "lat": -37.9036086,
+  "lon": 145.3313506,
+  "tags": {
+    "addr:postcode": "3158",
+    "addr:state": "VIC",
+    "addr:street": "Burwood Highway",
+    "addr:suburb": "Upwey",
+    "name": "Upwey",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "UPW",
+    "ref:ptv": "19846",
+    "train": "yes",
+    "website": "https://www.ptv.vic.gov.au/stop/1200",
+    "wheelchair": "yes",
+    "wikidata": "Q7899498",
+    "wikipedia": "en:Upwey railway station, Melbourne"
+  }
+},
+{
+  "type": "node",
+  "id": 1874062750,
+  "lat": -37.7783921,
+  "lon": 145.0312833,
+  "tags": {
+    "addr:postcode": "3078",
+    "addr:state": "VIC",
+    "addr:street": "Rowe Street",
+    "addr:suburb": "Alphington",
+    "name": "Alphington",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "ALP",
+    "ref:ptv": "19931",
+    "source": "bing",
+    "train": "yes",
+    "website": "https://www.ptv.vic.gov.au/stop/1004/",
+    "wheelchair": "yes",
+    "wikidata": "Q4735327",
+    "wikipedia": "en:Alphington railway station"
+  }
+}
+{
+  "type": "node",
+  "id": 1874062754,
+  "lat": -37.7335442,
+  "lon": 144.9628427,
+  "tags": {
+    "fare_gates": "no",
+    "name": "Batman",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q4869423",
+    "wikipedia": "en:Batman railway station"
+  }
+},
+{
+  "type": "node",
+  "id": 1874062759,
+  "lat": -37.9670081,
+  "lon": 145.0546951,
+  "tags": {
+    "name": "Cheltenham",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "toilets:wheelchair": "yes",
+    "train": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q5090255"
+  }
+},
+{
+  "type": "node",
+  "id": 1874069580,
+  "lat": -37.8283636,
+  "lon": 145.2445770,
+  "tags": {
+    "addr:postcode": "3135",
+    "addr:state": "VIC",
+    "addr:street": "Heathmont Road",
+    "addr:suburb": "Heathmont",
+    "name": "Heathmont",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "platforms": "2",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "HMT",
+    "ref:ptv": "19871",
+    "train": "yes",
+    "website": "https://www.ptv.vic.gov.au/stop/1092",
+    "wheelchair": "yes",
+    "wikidata": "Q14935153",
+    "wikipedia": "en:Heathmont railway station"
+  }
+},
+{
+  "type": "node",
+  "id": 1874069587,
+  "lat": -37.9484438,
+  "lon": 145.0418800,
+  "tags": {
+    "name": "Highett",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q5758473"
+  }
+},
+{
+  "type": "node",
+  "id": 1874241133,
+  "lat": -37.7939378,
+  "lon": 144.9305645,
+  "tags": {
+    "name": "Kensington",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Public Transport Victoria - Metro",
+    "public_transport": "station",
+    "railway": "station",
+    "railway:ref": "KEN",
+    "source": "bing",
+    "train": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q6391519",
+    "wikipedia": "en:Kensington railway station, Melbourne"
+  }
+},
+{
+  "type": "node",
+  "id": 1874241180,
+  "lat": -37.9048498,
+  "lon": 145.0026141,
+  "tags": {
+    "name": "North Brighton",
+    "name:zh": "北布莱顿",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q7054281"
+  }
+},
+{
+  "type": "node",
+  "id": 1874241186,
+  "lat": -37.7168415,
+  "lon": 145.0069944,
+  "tags": {
+    "addr:postcode": "3073",
+    "fixme": "New elevated station needs mapping: https://levelcrossings.vic.gov.au/projects/high-street-reservoir",
+    "internet_access": "wlan",
+    "name": "Reservoir",
+    "name:zh": "瑞泽瓦",
+    "network": "PTV - Metropolitan Trains",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "source": "bing",
+    "train": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q7315333"
+  }
+},
+{
+  "type": "node",
+  "id": 1874241194,
+  "lat": -37.7830163,
+  "lon": 144.9921266,
+  "tags": {
+    "name": "Rushall",
+    "name:zh": "罗沙尔",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "source": "bing",
+    "train": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q7380769"
+  }
+},
+{
+  "type": "node",
+  "id": 1874241214,
+  "lat": -37.8493440,
+  "lon": 145.0417139,
+  "tags": {
+    "addr:postcode": "3144",
+    "addr:state": "VIC",
+    "addr:street": "Milton Parade",
+    "addr:suburb": "Malvern",
+    "name": "Tooronga",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "TGA",
+    "ref:ptv": "19911",
+    "source": "bing",
+    "train": "yes",
+    "website": "https://www.ptv.vic.gov.au/stop/1195",
+    "wheelchair": "yes",
+    "wikidata": "Q7824216",
+    "wikipedia": "en:Tooronga railway station"
+  }
+},
+{
+  "type": "node",
+  "id": 1874241232,
+  "lat": -37.7991230,
+  "lon": 144.9944300,
+  "tags": {
+    "addr:postcode": "3067",
+    "addr:state": "VIC",
+    "addr:street": "Little Turner Street",
+    "addr:suburb": "Abbotsford",
+    "name": "Victoria Park",
+    "name:zh": "维多利亚帕克",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "VPK",
+    "ref:ptv": "19975",
+    "source": "bing",
+    "train": "yes",
+    "website": "https://www.ptv.vic.gov.au/stop/1201",
+    "wheelchair": "yes",
+    "wikidata": "Q7926946",
+    "wikipedia": "en:Victoria Park railway station, Melbourne"
+  }
+},
+{
+  "type": "node",
+  "id": 1930471943,
+  "lat": -37.9502592,
+  "lon": 145.0043868,
+  "tags": {
+    "addr:postcode": "3191",
+    "addr:state": "VIC",
+    "addr:street": "Station Street",
+    "addr:suburb": "Sandringham",
+    "name": "Sandringham",
+    "network": "PTV - Metropolitan Trains",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "SHM",
+    "ref:ptv": "19948",
+    "train": "yes",
+    "website": "https://www.ptv.vic.gov.au/stop/1173",
+    "wheelchair": "yes",
+    "wikidata": "Q7416841",
+    "wikipedia": "en:Sandringham railway station"
+  }
+},
+{
+  "type": "node",
+  "id": 2610870553,
+  "lat": -37.8242309,
+  "lon": 145.0886628,
+  "tags": {
+    "addr:postcode": "3127",
+    "addr:state": "VIC",
+    "addr:street": "Stanley Terrace",
+    "addr:suburb": "Surrey Hills",
+    "name": "Chatham",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "CHM",
+    "ref:ptv": "19894",
+    "train": "yes",
+    "website": "https://www.ptv.vic.gov.au/stop/1037",
+    "wheelchair": "yes",
+    "wikidata": "Q5087713",
+    "wikipedia": "en:Chatham railway station, Melbourne"
+  }
+},
+{
+  "type": "node",
+  "id": 2683027867,
+  "lat": -37.8180929,
+  "lon": 145.1928003,
+  "tags": {
+    "addr:postcode": "3132",
+    "addr:state": "VIC",
+    "addr:street": "Mitcham Road",
+    "addr:suburb": "Mitcham",
+    "name": "Mitcham",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "MCH",
+    "ref:ptv": "1128",
+    "train": "yes",
+    "website": "https://www.ptv.vic.gov.au/stop/1128",
+    "wheelchair": "yes",
+    "wikidata": "Q6881051",
+    "wikipedia": "en:Mitcham railway station, Melbourne"
+  }
+},
+{
+  "type": "node",
+  "id": 2965346868,
+  "lat": -37.6658431,
+  "lon": 145.0172760,
+  "tags": {
+    "name": "Lalor",
+    "network": "PTV - Metropolitan Trains",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2965353208,
+  "lat": -37.6804981,
+  "lon": 145.0142881,
+  "tags": {
+    "name": "Thomastown",
+    "name:zh": "湯馬斯镇",
+    "network": "PTV - Metropolitan Trains",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2965429197,
+  "lat": -37.8206741,
+  "lon": 145.1408716,
+  "tags": {
+    "addr:postcode": "3130",
+    "addr:state": "VIC",
+    "addr:street": "Laburnum Street",
+    "addr:suburb": "Blackburn",
+    "name": "Laburnum",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "LAB",
+    "ref:ptv": "19897",
+    "train": "yes",
+    "website": "https://www.ptv.vic.gov.au/stop/1111",
+    "wheelchair": "yes",
+    "wikidata": "Q6467697",
+    "wikipedia": "en:Laburnum railway station"
+  }
+},
+{
+  "type": "node",
+  "id": 2965462536,
+  "lat": -37.8683603,
+  "lon": 145.0797334,
+  "tags": {
+    "addr:street": "Ashburn Grove",
+    "name": "Alamein",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "ALM",
+    "ref:ptv": "19847",
+    "train": "yes",
+    "website": "https://www.ptv.vic.gov.au/stop/1002/",
+    "wikidata": "Q4705898",
+    "wikipedia": "en:Alamein railway station"
+  }
+},
+{
+  "type": "node",
+  "id": 3787166146,
+  "lat": -37.9265062,
+  "lon": 144.9890551,
+  "tags": {
+    "name": "Brighton Beach",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "phone": "+61 396106261",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "wikidata": "Q4967604"
+  }
+},
+{
+  "type": "node",
+  "id": 4719803446,
+  "lat": -37.8353952,
+  "lon": 145.0701111,
+  "tags": {
+    "name": "Willison",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "wikidata": "Q8022132"
+  }
+},
+{
+  "type": "node",
+  "id": 4719964543,
+  "lat": -37.8440337,
+  "lon": 145.0755686,
+  "tags": {
+    "name": "Hartwell",
+    "network": "PTV - Metropolitan Trains",
+    "network:wikidata": "Q7257648",
+    "operator": "Metro Trains Melbourne",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "wikidata": "Q5675424",
+    "wikipedia": "en:Hartwell railway station"
+  }
+}
+  ]
+}
