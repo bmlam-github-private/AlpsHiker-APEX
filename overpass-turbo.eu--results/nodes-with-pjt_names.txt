@@ -1,0 +1,323 @@
+//[out:json][timeout:30];
+//node[ "name:pjt" ];
+//out body;
+//out tags;
+
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.4 2390de5a",
+  "osm3s": {
+    "timestamp_osm_base": "2024-12-28T06:05:08Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 1653844378,
+  "lat": -25.3511333,
+  "lon": 131.0326892,
+  "tags": {
+    "name": "Kapi Mutitjulu (Mutitjulu Waterhole)",
+    "name:en": "Mutitjulu Waterhole",
+    "name:pjt": "Kapi Mutitjulu",
+    "tourism": "attraction",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2251425855,
+  "lat": -25.3448570,
+  "lon": 131.0325171,
+  "tags": {
+    "access": "no",
+    "alt_name": "Ayers Rock",
+    "alt_name:en": "Ayers Rock",
+    "description": "A large sandstone rock formation. Sacred to the Pitjantjatjara and Yankunytjatjara, the Aboriginal people of the area. It has many springs, waterholes, rock caves and ancient paintings. Uluru is listed as a World Heritage Site.",
+    "ele": "863",
+    "man_made": "survey_point",
+    "name": "Uluṟu / Ayers Rock",
+    "name:ar": "أولورو",
+    "name:arz": "أولورو",
+    "name:az-Arab": "اولورو",
+    "name:azb": "اولورو",
+    "name:be": "Улуру",
+    "name:be-tarask": "Улуру",
+    "name:bg": "Улуру",
+    "name:cs": "Uluru",
+    "name:de": "Uluru",
+    "name:el": "Ουλουρού",
+    "name:en": "Uluru",
+    "name:es": "Uluru",
+    "name:fa": "اولورو",
+    "name:kk": "Улуру",
+    "name:kk-Arab": "ۋلۋرۋ",
+    "name:ks": "اولورو",
+    "name:pa": "ਉਲੁਰੂ",
+    "name:pjt": "Uluṟu",
+    "name:pnb": "اولورو",
+    "name:pt": "Uluru",
+    "name:ro": "Uluru",
+    "name:ru": "Улуру",
+    "name:sr": "Улуру",
+    "name:uk": "Улуру",
+    "name:ur": "اولورو",
+    "natural": "peak",
+    "note:name": "Naming was discussed in talk-au on October 2019",
+    "official_name": "Uluru / Ayers Rock",
+    "official_name:en": "Uluru / Ayers Rock",
+    "source": "survey",
+    "wikidata": "Q33910",
+    "wikipedia": "en:Uluru"
+  }
+},
+{
+  "type": "node",
+  "id": 2288360860,
+  "lat": -25.2978933,
+  "lon": 130.7336132,
+  "tags": {
+    "alt_name": "Mount Olga",
+    "ele": "1066",
+    "geological": "bornhardt",
+    "name": "Kata Tjuṯa",
+    "name:en": "Mount Olga",
+    "name:pjt": "Kata Tjuṯa",
+    "natural": "peak",
+    "note": "official name of highest point of Kata Tjuta",
+    "wikidata": "Q279980",
+    "wikipedia": "en:Kata Tjuta"
+  }
+},
+{
+  "type": "node",
+  "id": 2377985491,
+  "lat": -25.3409557,
+  "lon": 131.0252996,
+  "tags": {
+    "name": "Kulpi Minymaku",
+    "name:en": "Kitchen Cave",
+    "name:pjt": "Kulpi Minymaku",
+    "natural": "cave_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 2377985514,
+  "lat": -25.3530944,
+  "lon": 131.0332944,
+  "tags": {
+    "name": "Mai Tjuta",
+    "name:pjt": "Mai Tjuta",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 2377985515,
+  "lat": -25.3427478,
+  "lon": 131.0246858,
+  "tags": {
+    "name": "Kulpi Watiku",
+    "name:en": "Men's Cave",
+    "name:pjt": "Kulpi Watiku",
+    "natural": "cave_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 2377985516,
+  "lat": -25.3527900,
+  "lon": 131.0330849,
+  "tags": {
+    "name": "Kulpi Mutitjulu",
+    "name:en": "Mutitjulu Cave",
+    "name:pjt": "Kulpi Mutitjulu",
+    "natural": "cave_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 2377985518,
+  "lat": -25.3407274,
+  "lon": 131.0258591,
+  "tags": {
+    "name": "Tjilpi Pampa Kulpi",
+    "name:en": "Old People's Cave",
+    "name:pjt": "Tjilpi Pampa Kulpi",
+    "natural": "cave_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 2377985533,
+  "lat": -25.3430157,
+  "lon": 131.0245341,
+  "tags": {
+    "name": "Kulpi Nyiinkaku",
+    "name:en": "Teaching Cave",
+    "name:pjt": "Kulpi Nyiinkaku",
+    "natural": "cave_entrance",
+    "note": "two caves at Uluru have same name"
+  }
+},
+{
+  "type": "node",
+  "id": 3145303924,
+  "lat": -25.0200555,
+  "lon": 129.3956333,
+  "tags": {
+    "name": "Lasseter's Cave",
+    "name:en": "Lasseter's Cave",
+    "name:pjt": "Kuḻpi Tjuntinya",
+    "natural": "cave_entrance",
+    "wikidata": "Q61013874"
+  }
+},
+{
+  "type": "node",
+  "id": 1653844378,
+  "tags": {
+    "name": "Kapi Mutitjulu (Mutitjulu Waterhole)",
+    "name:en": "Mutitjulu Waterhole",
+    "name:pjt": "Kapi Mutitjulu",
+    "tourism": "attraction",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2251425855,
+  "tags": {
+    "access": "no",
+    "alt_name": "Ayers Rock",
+    "alt_name:en": "Ayers Rock",
+    "description": "A large sandstone rock formation. Sacred to the Pitjantjatjara and Yankunytjatjara, the Aboriginal people of the area. It has many springs, waterholes, rock caves and ancient paintings. Uluru is listed as a World Heritage Site.",
+    "ele": "863",
+    "man_made": "survey_point",
+    "name": "Uluṟu / Ayers Rock",
+    "name:ar": "أولورو",
+    "name:arz": "أولورو",
+    "name:az-Arab": "اولورو",
+    "name:azb": "اولورو",
+    "name:be": "Улуру",
+    "name:be-tarask": "Улуру",
+    "name:bg": "Улуру",
+    "name:cs": "Uluru",
+    "name:de": "Uluru",
+    "name:el": "Ουλουρού",
+    "name:en": "Uluru",
+    "name:es": "Uluru",
+    "name:fa": "اولورو",
+    "name:kk": "Улуру",
+    "name:kk-Arab": "ۋلۋرۋ",
+    "name:ks": "اولورو",
+    "name:pa": "ਉਲੁਰੂ",
+    "name:pjt": "Uluṟu",
+    "name:pnb": "اولورو",
+    "name:pt": "Uluru",
+    "name:ro": "Uluru",
+    "name:ru": "Улуру",
+    "name:sr": "Улуру",
+    "name:uk": "Улуру",
+    "name:ur": "اولورو",
+    "natural": "peak",
+    "note:name": "Naming was discussed in talk-au on October 2019",
+    "official_name": "Uluru / Ayers Rock",
+    "official_name:en": "Uluru / Ayers Rock",
+    "source": "survey",
+    "wikidata": "Q33910",
+    "wikipedia": "en:Uluru"
+  }
+},
+{
+  "type": "node",
+  "id": 2288360860,
+  "tags": {
+    "alt_name": "Mount Olga",
+    "ele": "1066",
+    "geological": "bornhardt",
+    "name": "Kata Tjuṯa",
+    "name:en": "Mount Olga",
+    "name:pjt": "Kata Tjuṯa",
+    "natural": "peak",
+    "note": "official name of highest point of Kata Tjuta",
+    "wikidata": "Q279980",
+    "wikipedia": "en:Kata Tjuta"
+  }
+},
+{
+  "type": "node",
+  "id": 2377985491,
+  "tags": {
+    "name": "Kulpi Minymaku",
+    "name:en": "Kitchen Cave",
+    "name:pjt": "Kulpi Minymaku",
+    "natural": "cave_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 2377985514,
+  "tags": {
+    "name": "Mai Tjuta",
+    "name:pjt": "Mai Tjuta",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 2377985515,
+  "tags": {
+    "name": "Kulpi Watiku",
+    "name:en": "Men's Cave",
+    "name:pjt": "Kulpi Watiku",
+    "natural": "cave_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 2377985516,
+  "tags": {
+    "name": "Kulpi Mutitjulu",
+    "name:en": "Mutitjulu Cave",
+    "name:pjt": "Kulpi Mutitjulu",
+    "natural": "cave_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 2377985518,
+  "tags": {
+    "name": "Tjilpi Pampa Kulpi",
+    "name:en": "Old People's Cave",
+    "name:pjt": "Tjilpi Pampa Kulpi",
+    "natural": "cave_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 2377985533,
+  "tags": {
+    "name": "Kulpi Nyiinkaku",
+    "name:en": "Teaching Cave",
+    "name:pjt": "Kulpi Nyiinkaku",
+    "natural": "cave_entrance",
+    "note": "two caves at Uluru have same name"
+  }
+},
+{
+  "type": "node",
+  "id": 3145303924,
+  "tags": {
+    "name": "Lasseter's Cave",
+    "name:en": "Lasseter's Cave",
+    "name:pjt": "Kuḻpi Tjuntinya",
+    "natural": "cave_entrance",
+    "wikidata": "Q61013874"
+  }
+}
+
+  ]
+}

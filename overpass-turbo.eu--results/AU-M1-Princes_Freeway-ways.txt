@@ -1,0 +1,7455 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.4 2390de5a",
+  "osm3s": {
+    "timestamp_osm_base": "2025-01-01T07:44:26Z",
+    "timestamp_areas_base": "2025-01-01T05:29:59Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "way",
+  "id": 4440980,
+  "nodes": [
+    26756204,
+    880404439,
+    880404440,
+    880404441,
+    617475524,
+    880404442,
+    880404443,
+    617475525,
+    880404444,
+    617475526,
+    880404445,
+    617475560,
+    880404446,
+    617475563
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 4440981,
+  "nodes": [
+    38734871,
+    38734872,
+    38734873,
+    253370970,
+    38734874,
+    38734061,
+    4954922031,
+    27266311,
+    351095362
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 4618927,
+  "nodes": [
+    29319691,
+    267093669
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "3",
+    "layer": "1",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 5386873,
+  "nodes": [
+    282810561,
+    661569159,
+    38714166,
+    9642967995,
+    9642967996,
+    9642967994,
+    9642967997,
+    9642967998,
+    9642967999,
+    9642968000,
+    9642968001,
+    38714168
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 5386975,
+  "nodes": [
+    38715078,
+    38716491,
+    38716493,
+    38716494,
+    29319691
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 5387029,
+  "nodes": [
+    34219992,
+    2283053190
+  ],
+  "tags": {
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "5",
+    "lit": "yes",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 5388331,
+  "nodes": [
+    204454023,
+    3924946378
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Geelong",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 6390932,
+  "nodes": [
+    52082429,
+    7046136607,
+    7046136309,
+    7046136386,
+    52082447,
+    573205006
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 6395458,
+  "nodes": [
+    52120190,
+    1014165088,
+    7046136383,
+    52120204
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "Bing",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 6398040,
+  "nodes": [
+    52120428,
+    7183503802,
+    7183504012,
+    52120444,
+    1199961697,
+    1199961596,
+    52120454,
+    416848686
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 6406014,
+  "nodes": [
+    52121016,
+    1603041857,
+    1603041887,
+    52121030,
+    1603041902,
+    1603041917,
+    1603041875,
+    11868531656,
+    52121041,
+    52121064
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 6417815,
+  "nodes": [
+    11868531655,
+    1600720760,
+    52121145,
+    52121165
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 6425030,
+  "nodes": [
+    52121806,
+    1182029943,
+    1182030089,
+    6715644255,
+    1182029998,
+    1182029965,
+    1182029920,
+    1182029961,
+    52121864,
+    6715600750,
+    6715644238,
+    418126647
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "destination": "Taralgon;Sale;Bairnsdale",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt",
+    "website": "https://vicroads.vic.gov.au/Home/TrafficAndRoadConditions/PrincesFreewayMorwellBypassClosure/"
+  }
+},
+{
+  "type": "way",
+  "id": 7972885,
+  "nodes": [
+    59614546,
+    7278641606
+  ],
+  "tags": {
+    "highway": "motorway",
+    "lanes": "3",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt",
+    "tunnel": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 8098952,
+  "nodes": [
+    52121795,
+    52121806
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt",
+    "website": "https://vicroads.vic.gov.au/Home/TrafficAndRoadConditions/PrincesFreewayMorwellBypassClosure/"
+  }
+},
+{
+  "type": "way",
+  "id": 8098954,
+  "nodes": [
+    53171455,
+    822149
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt",
+    "website": "https://vicroads.vic.gov.au/Home/TrafficAndRoadConditions/PrincesFreewayMorwellBypassClosure/"
+  }
+},
+{
+  "type": "way",
+  "id": 15241934,
+  "nodes": [
+    150990510,
+    10010223992
+  ],
+  "tags": {
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "3",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt",
+    "tunnel": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 15749191,
+  "nodes": [
+    1014165059,
+    157681764
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "Bing",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 15749193,
+  "nodes": [
+    157681818,
+    1014158520
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "layer": "1",
+    "lit": "no",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "Bing",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 15749195,
+  "nodes": [
+    157681764,
+    5758540155,
+    5758540191,
+    1014165080,
+    5758540172,
+    52082407,
+    1014165055,
+    1014165120,
+    1014165090,
+    1014165063,
+    1014165121,
+    606379287,
+    52082429
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "Bing",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 17047368,
+  "nodes": [
+    150989988,
+    2301942363,
+    2301942362,
+    150989989,
+    2301942359,
+    11393164863,
+    176948310
+  ],
+  "tags": {
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 17047370,
+  "nodes": [
+    176954483,
+    150989818
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "bridge": "yes",
+    "highway": "motorway",
+    "layer": "1",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 17047373,
+  "nodes": [
+    150989818,
+    150989819,
+    11393164856,
+    5235781717,
+    5235781922,
+    150989820,
+    176948367,
+    5825150780,
+    5235781712,
+    176948386,
+    176948514,
+    5235781923,
+    150989821,
+    5235781714,
+    176948496,
+    176948397,
+    11393164857,
+    176948530,
+    5235781713,
+    150989822,
+    2301945615,
+    176948474,
+    150989823,
+    176948578,
+    176948558,
+    2301945607,
+    176948543,
+    150989824,
+    259635617
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 19690897,
+  "nodes": [
+    204454537,
+    204454023
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "yes",
+    "bridge": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "highway": "motorway",
+    "lanes": "3",
+    "layer": "1",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 19690902,
+  "nodes": [
+    204454011,
+    204454012
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "yes",
+    "bridge": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "highway": "motorway",
+    "lanes": "3",
+    "layer": "1",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 19690905,
+  "nodes": [
+    204454012,
+    282810986
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 19692385,
+  "nodes": [
+    3877493516,
+    38717639,
+    38717640,
+    5128227892,
+    38717641
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "destination": "Geelong",
+    "destination:ref": "M1",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 23401359,
+  "nodes": [
+    350784734,
+    29319958
+  ],
+  "tags": {
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "5",
+    "lit": "yes",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "turn:lanes": "left|left;through|none|none|none"
+  }
+},
+{
+  "type": "way",
+  "id": 23475898,
+  "nodes": [
+    29321163,
+    29321166,
+    254218146,
+    29321168,
+    254218156,
+    254218172,
+    29321158
+  ],
+  "tags": {
+    "bicycle": "no",
+    "destination": "Geelong;Avalon Airport",
+    "destination:symbol": "airport",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "80",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 24565428,
+  "nodes": [
+    204503693,
+    5128227895,
+    204503695,
+    204503696,
+    3877493506,
+    204503698,
+    4984050557
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 24565431,
+  "nodes": [
+    267093718,
+    38717652
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "3",
+    "layer": "1",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 24565433,
+  "nodes": [
+    38717652,
+    38717653,
+    38717654,
+    282811126,
+    38717655,
+    38717656,
+    38713127,
+    38716173,
+    282810947
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "destination": "Geelong",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 25757057,
+  "nodes": [
+    1276980882,
+    10829910440,
+    1276980812,
+    10829910441,
+    31562728,
+    10829910442,
+    1276980839,
+    10829910443,
+    10829910444,
+    1276980842,
+    1276980850,
+    10829910445,
+    31562729,
+    1276980846,
+    10829910446,
+    1276980866,
+    10829910447,
+    31562730,
+    10829910448,
+    1276980884,
+    10829910449,
+    1276980810,
+    31562731
+  ],
+  "tags": {
+    "highway": "motorway",
+    "lanes": "4",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt",
+    "turn:lanes": "slight_left|none|none|none"
+  }
+},
+{
+  "type": "way",
+  "id": 25757058,
+  "nodes": [
+    150990488,
+    280889325
+  ],
+  "tags": {
+    "bridge": "yes",
+    "cycleway:both": "no",
+    "highway": "motorway",
+    "lanes": "3",
+    "layer": "1",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 25757059,
+  "nodes": [
+    280889325,
+    7278968058,
+    7278969597,
+    150990489
+  ],
+  "tags": {
+    "cycleway:both": "no",
+    "highway": "motorway",
+    "lanes": "4",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt",
+    "turn:lanes": "slight_left|none|none|none"
+  }
+},
+{
+  "type": "way",
+  "id": 25757060,
+  "nodes": [
+    280889324,
+    280889339
+  ],
+  "tags": {
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "3",
+    "layer": "1",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 25926073,
+  "nodes": [
+    38714168,
+    38714171,
+    9642967993,
+    38714173,
+    9642967992,
+    9642967991,
+    9642967990,
+    9642967989,
+    38714174,
+    9642967988,
+    9642967987,
+    3317644263,
+    9642967986,
+    38714176,
+    9642967985,
+    38714177,
+    9642967984,
+    9642967983,
+    9642967982,
+    38714178,
+    9642967981,
+    3317644282,
+    9642967980,
+    9642967979,
+    38714179,
+    9642967978,
+    38714180,
+    661567997,
+    9642967977,
+    9642967976,
+    9642967975,
+    9642967974,
+    9642967973,
+    9642967972,
+    38714183,
+    9642967971,
+    3317644271,
+    9642967970,
+    38714185,
+    661567024
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 25926074,
+  "nodes": [
+    253003255,
+    253003230,
+    3562300328,
+    3562300330,
+    3562300331,
+    253003231,
+    38713669,
+    38734864,
+    661569043,
+    661569207,
+    38734871
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Geelong",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 25926099,
+  "nodes": [
+    282811013,
+    204454537
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 26741787,
+  "nodes": [
+    293313392,
+    29320572
+  ],
+  "tags": {
+    "bicycle": "no",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "4",
+    "layer": "1",
+    "lit": "yes",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 26741790,
+  "nodes": [
+    293313428,
+    293318762,
+    29320573,
+    2857841334,
+    2857841345,
+    29320574,
+    293313542,
+    293313543,
+    29320575,
+    293317766,
+    293317661,
+    1840859061,
+    293317663,
+    293317769
+  ],
+  "tags": {
+    "bicycle": "no",
+    "destination": "Geelong",
+    "destination:ref": "M1",
+    "destination:symbol": "airport",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "yes",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 26741791,
+  "nodes": [
+    293313427,
+    293313428
+  ],
+  "tags": {
+    "bicycle": "no",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "4",
+    "layer": "1",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 26741805,
+  "nodes": [
+    125289616,
+    1840911768,
+    125290837,
+    125290839,
+    125290840,
+    9364905651,
+    125290841,
+    125290843,
+    350732502,
+    125290845,
+    125290846,
+    350732512,
+    125290847
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "yes",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 26741812,
+  "nodes": [
+    293318489,
+    293321910
+  ],
+  "tags": {
+    "bicycle": "no",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "4",
+    "layer": "1",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 26742133,
+  "nodes": [
+    293318326,
+    293318327
+  ],
+  "tags": {
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "no",
+    "maxheight": "5.2",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 26742141,
+  "nodes": [
+    293318498,
+    293318489
+  ],
+  "tags": {
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "4",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey"
+  }
+},
+{
+  "type": "way",
+  "id": 26742143,
+  "nodes": [
+    293318510,
+    293318498
+  ],
+  "tags": {
+    "bicycle": "no",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "4",
+    "layer": "1",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 26742144,
+  "nodes": [
+    350784931,
+    1838751134,
+    4435252263,
+    34220039
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 26742152,
+  "nodes": [
+    29320572,
+    293313427
+  ],
+  "tags": {
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "yes",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey"
+  }
+},
+{
+  "type": "way",
+  "id": 29060474,
+  "nodes": [
+    319641698,
+    385128529,
+    267115801,
+    267115800,
+    616948949
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source:name": "Vicmap.Transport:services.land.vic.gov.au",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 31440226,
+  "nodes": [
+    350784733,
+    350784734
+  ],
+  "tags": {
+    "bicycle": "no",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "5",
+    "layer": "1",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "turn:lanes": "left|left;through|none|none|none"
+  }
+},
+{
+  "type": "way",
+  "id": 31440238,
+  "nodes": [
+    350784930,
+    350784931
+  ],
+  "tags": {
+    "bicycle": "no",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "4",
+    "layer": "1",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 31449016,
+  "nodes": [
+    351093921,
+    351093922,
+    628549554,
+    27266306,
+    174839398
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 34037114,
+  "nodes": [
+    390044194,
+    176948263
+  ],
+  "tags": {
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 34037115,
+  "nodes": [
+    176948263,
+    176948329,
+    2097562841,
+    150989990,
+    2451316805,
+    2451316830,
+    176948196,
+    246912570
+  ],
+  "tags": {
+    "alt_name": "Pakenham Bypass",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 34037128,
+  "nodes": [
+    390044263,
+    10629998381,
+    176948281
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 34037130,
+  "nodes": [
+    390044266,
+    390044263
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 35572205,
+  "nodes": [
+    1199961705,
+    1199961710,
+    52120300,
+    52120305,
+    1199961619,
+    52120327,
+    1199961647,
+    52120352,
+    52120364,
+    52120372,
+    52120382,
+    1199961594,
+    52120389,
+    52120397,
+    52120408,
+    1199961599,
+    52120414,
+    1199961586,
+    1199961598,
+    7183503901,
+    52120420
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 37404163,
+  "nodes": [
+    319641813,
+    27266296,
+    253491507,
+    253491509,
+    867732177,
+    253491511,
+    27266297,
+    619532872,
+    867732178,
+    619532811
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Geelong",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo;Landsat",
+    "source:name": "Vicmap.Transport:services.land.vic.gov.au",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 44999275,
+  "nodes": [
+    570500315,
+    176947777,
+    570500041
+  ],
+  "tags": {
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 44999276,
+  "nodes": [
+    570500238,
+    150989790
+  ],
+  "tags": {
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 44999277,
+  "nodes": [
+    570500014,
+    150989789,
+    570500238
+  ],
+  "tags": {
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "3",
+    "layer": "1",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 44999286,
+  "nodes": [
+    150989575,
+    1276980862,
+    1276980826,
+    150990060,
+    1276980829,
+    1276980878,
+    150990061,
+    1276980808,
+    150990062,
+    1276980863,
+    280390474,
+    150990063
+  ],
+  "tags": {
+    "highway": "motorway",
+    "lanes": "4",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 45061618,
+  "nodes": [
+    254224704,
+    9013906142,
+    10696274505,
+    253329691
+  ],
+  "tags": {
+    "bicycle": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "4",
+    "maxspeed": "80",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 45061619,
+  "nodes": [
+    571400149,
+    253329684,
+    571400419,
+    254218132,
+    254224704
+  ],
+  "tags": {
+    "bicycle": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "5",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 45061620,
+  "nodes": [
+    571400150,
+    253330465,
+    1824095073,
+    253330472,
+    253334899,
+    253337672
+  ],
+  "tags": {
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "5",
+    "lit": "no",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 45167865,
+  "nodes": [
+    573205019,
+    52082472,
+    1634133398,
+    1634133342,
+    1634133415,
+    52082500,
+    5120854594,
+    52082515,
+    5120854597,
+    5120854593,
+    52082529,
+    5120854598,
+    5120854592,
+    5120854599,
+    52082537,
+    5120853818,
+    5120853815,
+    52082545,
+    8006287594,
+    5120853820,
+    8006273682,
+    5120853814,
+    8006273683,
+    52082557,
+    8006287588,
+    52082575,
+    8006287585,
+    5120853805,
+    5120853813,
+    52082588,
+    5120853807,
+    5120853806,
+    5120853817,
+    5120853819,
+    48837514,
+    48837513,
+    48837512,
+    48837511
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "lit": "no",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "shoulder": "left",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 45167869,
+  "nodes": [
+    573204984,
+    573204993
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 45167873,
+  "nodes": [
+    573204993,
+    1634133446,
+    7046136452,
+    52120182,
+    7046136625,
+    52120190
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 45167874,
+  "nodes": [
+    573205006,
+    573205019
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "layer": "1",
+    "lit": "no",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 48621843,
+  "nodes": [
+    617475563,
+    253491523,
+    880404423,
+    880404424,
+    880404425,
+    880404426,
+    880404427,
+    27266291,
+    880404428,
+    619532808,
+    27266293,
+    619532812
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "source:name": "Vicmap.Transport:services.land.vic.gov.au",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 48835861,
+  "nodes": [
+    619532810,
+    867732169,
+    27266294,
+    867732170,
+    867732171,
+    27266292,
+    867732172,
+    867732173,
+    867732174,
+    253491515,
+    617475561,
+    867732175,
+    617475562
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Geelong",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 48835870,
+  "nodes": [
+    253491513,
+    11007886494,
+    619532873,
+    27266298,
+    880404429,
+    253491512,
+    880404430,
+    253491510,
+    880404431,
+    633091174,
+    253491508,
+    27266295,
+    880404432,
+    880404433
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 48835876,
+  "nodes": [
+    619532811,
+    619532810
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "bridge": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Geelong",
+    "highway": "motorway",
+    "lanes": "3",
+    "layer": "1",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo;Landsat;nearmap",
+    "source:name": "Vicmap.Transport:services.land.vic.gov.au",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 48835877,
+  "nodes": [
+    619532812,
+    253491513
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "bridge": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "3",
+    "layer": "1",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 49475232,
+  "nodes": [
+    628549525,
+    351093921
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "bridge": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "highway": "motorway",
+    "lanes": "3",
+    "layer": "1",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source:name": "Vicmap.Transport:services.land.vic.gov.au",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 49475234,
+  "nodes": [
+    351093714,
+    351093715,
+    628549557,
+    27266305,
+    351093694,
+    501582408
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Geelong",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source:name": "Vicmap.Transport:services.land.vic.gov.au",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 49475235,
+  "nodes": [
+    628549553,
+    351093714
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "bridge": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "highway": "motorway",
+    "lanes": "3",
+    "layer": "1",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source:name": "Vicmap.Transport:services.land.vic.gov.au",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 50694587,
+  "nodes": [
+    52120420,
+    52120428
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 50694588,
+  "nodes": [
+    645660072,
+    7183488982,
+    52082230,
+    1199961641,
+    52082240,
+    1199961650,
+    52082250,
+    1199961674,
+    52082257,
+    1199961679,
+    52082265,
+    52082277,
+    52082289,
+    1199961651,
+    1199961659,
+    1199961634,
+    1199961578,
+    1199961574,
+    52082294,
+    52082301,
+    1199961611,
+    52082308,
+    52082323
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 50694589,
+  "nodes": [
+    52082225,
+    645660072
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 56020635,
+  "nodes": [
+    176947886,
+    2619474279
+  ],
+  "tags": {
+    "alt_name": "Pakenham Bypass",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 56020638,
+  "nodes": [
+    5515331809,
+    10703262977,
+    570506212,
+    570505896,
+    570505900,
+    570505902
+  ],
+  "tags": {
+    "alt_name": "Pakenham Bypass",
+    "highway": "motorway",
+    "lanes": "3",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 56020639,
+  "nodes": [
+    150990004,
+    5515331809
+  ],
+  "tags": {
+    "alt_name": "Pakenham Bypass",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 56020640,
+  "nodes": [
+    150989795,
+    176947886
+  ],
+  "tags": {
+    "alt_name": "Pakenham Bypass",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "3",
+    "layer": "1",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 93168606,
+  "nodes": [
+    1080060936,
+    1080060938
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 93168618,
+  "nodes": [
+    1080061024,
+    52120996
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 104461307,
+  "nodes": [
+    822146,
+    1205251679,
+    1181953340,
+    1181953305,
+    760018434,
+    1181953402,
+    1181953322,
+    6722859901,
+    1181953437,
+    1182030096,
+    1182030077,
+    1181953502,
+    6721982295,
+    1181953505
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt",
+    "website": "https://vicroads.vic.gov.au/Home/TrafficAndRoadConditions/PrincesFreewayMorwellBypassClosure/"
+  }
+},
+{
+  "type": "way",
+  "id": 146841631,
+  "nodes": [
+    1600720750,
+    1600720742,
+    52081336
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "110",
+    "maxspeed:advisory": "90",
+    "maxspeed:hgv:advisory": "80",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source:maxspeed:advisory": "https://www.mapillary.com/app/?lat=-38.186181707471995&lng=146.27805647122&z=19.243050403724514&pKey=166579893142120&focus=photo&x=0.5006403657760801&y=0.6512531065233967&zoom=0.6841142881719559",
+    "source:maxspeed:hgv:advisory": "https://www.mapillary.com/app/?lat=-38.18476525575899&lng=146.27653455023005&z=19.243050403724514&pKey=663791332132893&focus=photo",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 146841634,
+  "nodes": [
+    52121110,
+    1600720790,
+    842889154
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "110",
+    "maxspeed:advisory": "90",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source:maxspeed:advisory": "https://www.mapillary.com/app/?lat=-38.184124248101405&lng=146.26537714219103&z=17.23376068756101&pKey=3746360662099294&focus=photo&x=0.4862301248430046&y=0.33578824027501747&zoom=0",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 146841637,
+  "nodes": [
+    1600669157,
+    52081379,
+    1603041882,
+    1603041889,
+    1603041896,
+    52081400,
+    1603041892,
+    52081415,
+    1603041901,
+    52081428,
+    1603041895
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 147005151,
+  "nodes": [
+    1080060938,
+    598786641
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 162698734,
+  "nodes": [
+    293321910,
+    825696180,
+    293322019,
+    293318484,
+    293318485,
+    293318486,
+    293313180,
+    825696887,
+    825697216,
+    825697414,
+    29320581,
+    593267455
+  ],
+  "tags": {
+    "bicycle": "no",
+    "destination": "City",
+    "destination:ref": "M1",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 173251133,
+  "nodes": [
+    29319958,
+    1840911782,
+    1840911727,
+    1840911780,
+    38717612,
+    38717613,
+    1840911741,
+    1840911770,
+    38717614,
+    1840911754,
+    38717616,
+    1840911745,
+    38717617
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "destination": "Geelong",
+    "destination:ref": "M1",
+    "destination:symbol": "airport",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "yes",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 173251158,
+  "nodes": [
+    125287423,
+    350784930
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "yes",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 194210718,
+  "nodes": [
+    176948618,
+    2047246322
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 194210719,
+  "nodes": [
+    2047246233,
+    259635625,
+    150989978,
+    150989979,
+    176948632,
+    150989980,
+    150989981,
+    2301945598,
+    150989983,
+    2301945614,
+    5235781720,
+    11393164858,
+    176948442,
+    5235781718,
+    150989984,
+    5235781924,
+    11393164859,
+    176948418,
+    5235781715,
+    5235781925,
+    5235781921,
+    150989985,
+    5825150779,
+    5235781716,
+    150989986,
+    5235781719,
+    150989987,
+    11393164855,
+    11393164850
+  ],
+  "tags": {
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 194210721,
+  "nodes": [
+    2047246322,
+    2047246301,
+    2047246264,
+    4989927751,
+    4989927683,
+    4989927697,
+    4989927632,
+    150989825,
+    176948592
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxheight": "default",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 194210725,
+  "nodes": [
+    2047246304,
+    2047246233
+  ],
+  "tags": {
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 199764169,
+  "nodes": [
+    2097562840,
+    390044194
+  ],
+  "tags": {
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 199764170,
+  "nodes": [
+    176948281,
+    10629998382,
+    10629998383,
+    2097562839
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 199764171,
+  "nodes": [
+    176948310,
+    10629998385,
+    10629998384,
+    2097562840
+  ],
+  "tags": {
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 199764172,
+  "nodes": [
+    2097562839,
+    11393164861,
+    11393164862,
+    150989817,
+    11393164860,
+    176948345,
+    176954483
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 200082768,
+  "nodes": [
+    5134587984,
+    9013906154,
+    2100687102,
+    254227222,
+    9013906149
+  ],
+  "tags": {
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "2",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1"
+  }
+},
+{
+  "type": "way",
+  "id": 207523715,
+  "nodes": [
+    282793264,
+    29320464,
+    29320459,
+    253465604
+  ],
+  "tags": {
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "5",
+    "lit": "yes",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 207523716,
+  "nodes": [
+    1838751130,
+    1824095102
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "destination": "City",
+    "destination:ref": "M1",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "yes",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 207523717,
+  "nodes": [
+    10874908240,
+    293324461,
+    293318750,
+    293318749,
+    1537828632,
+    1537828679,
+    1537828640,
+    1537828620,
+    293318776,
+    293318747,
+    293318777,
+    1537828688,
+    293318778,
+    293318744,
+    293318779,
+    1537828685,
+    1537828663,
+    293318741,
+    293318740,
+    1537828634,
+    1537828638,
+    1537828619,
+    1537828646,
+    1537828628,
+    1537828682,
+    2300311981,
+    293318735,
+    293318510
+  ],
+  "tags": {
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "yes",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 219102674,
+  "nodes": [
+    2283053182,
+    7117902002,
+    1838751132
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "no",
+    "maxheight:signed": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 219102675,
+  "nodes": [
+    2283053181,
+    2283053183
+  ],
+  "tags": {
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "no",
+    "maxheight:signed": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 219102676,
+  "nodes": [
+    34220039,
+    1838751130
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "yes",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 219102677,
+  "nodes": [
+    2283053190,
+    350784733
+  ],
+  "tags": {
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "5",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "turn:lanes": "left|none|none|none|none"
+  }
+},
+{
+  "type": "way",
+  "id": 219102678,
+  "nodes": [
+    38717629,
+    38717630
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 219102679,
+  "nodes": [
+    2283053183,
+    125301103
+  ],
+  "tags": {
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "5",
+    "lit": "yes",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "turn:lanes": "slight_left|slight_left;through|through|through|through"
+  }
+},
+{
+  "type": "way",
+  "id": 219102680,
+  "nodes": [
+    253465634,
+    253465635,
+    29320458,
+    29320462,
+    293384923,
+    293314238
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "yes",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 219972416,
+  "nodes": [
+    52081241,
+    1599513694,
+    52081250,
+    1600720746,
+    52081263,
+    1600720743,
+    11868531659,
+    11868531658,
+    52081285,
+    11868531661,
+    1600720766,
+    52081277,
+    1600720816
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "destination": "Warrigul;Melbourne",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 219982025,
+  "nodes": [
+    52120966,
+    1602025276,
+    1080060987,
+    52120978,
+    1602025251,
+    1602025205,
+    1602025214,
+    1080061034,
+    1602025188,
+    1602025259,
+    1602025223
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "destination": "Traralgon;Sale",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 220000539,
+  "nodes": [
+    418126553,
+    1634108965,
+    1634108744,
+    1634108984,
+    1634108848,
+    1634108582,
+    1634108940,
+    6385165816,
+    585131630,
+    52081938,
+    1634108873,
+    1634108679,
+    1634108740,
+    1634108853,
+    1634108948,
+    1634108534,
+    52081944,
+    1634108596,
+    1634108770,
+    1634108944,
+    52081948,
+    6385165863,
+    6385165820,
+    6385165785,
+    6385165860,
+    6385165804,
+    6385165174,
+    6385165131,
+    6385165821,
+    6385165898,
+    1199961686,
+    6385165881,
+    52081954,
+    6385165160,
+    1199961687,
+    6385165889,
+    52082095,
+    1199961580,
+    52082107,
+    4867896971,
+    52082119,
+    1199961665,
+    6501345430,
+    52082129,
+    6501347016,
+    1199961633,
+    6501345419,
+    52082140,
+    6501345475,
+    1199961676,
+    52082152
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 256274804,
+  "nodes": [
+    2619474786,
+    10598284884,
+    10598284885,
+    10598284886,
+    150989998,
+    10598284887,
+    10598284888,
+    10598284889,
+    150989999,
+    10598284890,
+    3180453396,
+    10598284891,
+    176947996,
+    10598284892,
+    10598284893,
+    150990000,
+    10598284894,
+    10598284895,
+    10598284896,
+    3180453394,
+    150990001
+  ],
+  "tags": {
+    "alt_name": "Pakenham Bypass",
+    "highway": "motorway",
+    "lanes": "2",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 256274806,
+  "nodes": [
+    2619474281,
+    150989796,
+    243646147
+  ],
+  "tags": {
+    "alt_name": "Pakenham Bypass",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt",
+    "turn:lanes": "slight_left|none|none"
+  }
+},
+{
+  "type": "way",
+  "id": 256274807,
+  "nodes": [
+    2619474787,
+    2619474786
+  ],
+  "tags": {
+    "alt_name": "Pakenham Bypass",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 256274809,
+  "nodes": [
+    2619474284,
+    2619474283
+  ],
+  "tags": {
+    "alt_name": "Pakenham Bypass",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "3",
+    "layer": "1",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 256274811,
+  "nodes": [
+    2619474283,
+    150990004
+  ],
+  "tags": {
+    "alt_name": "Pakenham Bypass",
+    "highway": "motorway",
+    "lanes": "3",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 256274834,
+  "nodes": [
+    2619474279,
+    2619474281
+  ],
+  "tags": {
+    "alt_name": "Pakenham Bypass",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 256274837,
+  "nodes": [
+    2619474784,
+    2619474785
+  ],
+  "tags": {
+    "alt_name": "Pakenham Bypass",
+    "bicycle": "yes",
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "layer": "1",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 256274840,
+  "nodes": [
+    2619474785,
+    10598284875,
+    10598284874,
+    10598284873,
+    150989806,
+    176948068,
+    10598284872,
+    150989807,
+    10598284871,
+    10598284870,
+    10598284869,
+    176948048,
+    150989808,
+    243645844
+  ],
+  "tags": {
+    "alt_name": "Pakenham Bypass",
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 312198656,
+  "nodes": [
+    150989790,
+    570518016,
+    570517990,
+    570518017,
+    150989791,
+    570518023,
+    570518024,
+    570506775,
+    1221058751,
+    150989792,
+    570506781,
+    570506784,
+    570506529,
+    150989793,
+    570506535,
+    570506538,
+    176947863,
+    570506360,
+    150989794,
+    150989795
+  ],
+  "tags": {
+    "alt_name": "Pakenham Bypass",
+    "destination": "Pakenham;Warragul;Traralgon",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 312198657,
+  "nodes": [
+    570505902,
+    570505905,
+    570504807,
+    570504811,
+    570504824,
+    570504828,
+    570504833,
+    570504837,
+    570504843,
+    570504851,
+    570504858,
+    570504864,
+    570504873,
+    570504881,
+    570504889,
+    570504896,
+    570500315
+  ],
+  "tags": {
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "3",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 312200183,
+  "nodes": [
+    150989813,
+    2451316812,
+    150989814,
+    10598284934,
+    6542404579,
+    10598284935,
+    2451316815,
+    176948169,
+    10598284936,
+    2451316819,
+    2451316821,
+    10598284937,
+    6542404563,
+    150989815,
+    2451316817,
+    250281869,
+    176948212,
+    2451316826,
+    150989816,
+    2451316823,
+    176948240,
+    390044266
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "destination": "Warragul;Traralgon",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxheight": "default",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 312200184,
+  "nodes": [
+    246912570,
+    10598284927,
+    6542410384,
+    10598284928,
+    10598284929,
+    150989991,
+    10598284930,
+    10598284931,
+    6542410421,
+    176948122,
+    6542410345,
+    10598284932,
+    2451316807,
+    10598284933,
+    150989992,
+    6542410397,
+    6542404561,
+    376381874,
+    250281877,
+    10598284925,
+    150989993,
+    10598284924,
+    10598284922,
+    10598284921,
+    150989994,
+    10598284920,
+    9981038201,
+    3180453389,
+    10598284919,
+    10598284918,
+    176948102,
+    3180453406,
+    10598284868,
+    150989995,
+    3180453407,
+    10598284867,
+    243645839,
+    176948076,
+    9981540799,
+    150989996,
+    176948029,
+    3180453399,
+    150989997,
+    3180453387,
+    176948009,
+    2619474787
+  ],
+  "tags": {
+    "alt_name": "Pakenham Bypass",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxheight": "default",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 312200185,
+  "nodes": [
+    243645844,
+    3180453383,
+    10598284642,
+    3180453380,
+    10598284643,
+    150989809,
+    10598284644,
+    10598284649,
+    150989810,
+    10598284650,
+    10598284651,
+    3180453408,
+    10598284652,
+    9981038200,
+    150989811,
+    10598284923,
+    150989812,
+    150989813
+  ],
+  "tags": {
+    "alt_name": "Pakenham Bypass",
+    "bicycle": "yes",
+    "destination": "Warragul;Traralgon",
+    "highway": "motorway",
+    "lanes": "2",
+    "lit": "no",
+    "maxheight": "default",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 312200186,
+  "nodes": [
+    243646146,
+    176947933,
+    176947910,
+    150990055,
+    2619474284
+  ],
+  "tags": {
+    "alt_name": "Pakenham Bypass",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "3",
+    "maxheight": "default",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 312200187,
+  "nodes": [
+    150989801,
+    10598284903,
+    10598284904,
+    10598284905,
+    10598284906,
+    150989802,
+    10598284907,
+    10598284908,
+    150989803,
+    10598284909,
+    10598284910,
+    10598284911,
+    10598284912,
+    10598284913,
+    150989804,
+    10598284914,
+    10598284915,
+    10598284916,
+    10598284917,
+    2619474784
+  ],
+  "tags": {
+    "alt_name": "Pakenham Bypass",
+    "bicycle": "yes",
+    "destination": "Warragul;Traralgon",
+    "highway": "motorway",
+    "lanes": "2",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 312200961,
+  "nodes": [
+    259635617,
+    176948618
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "destination": "Warragul;Traralgon",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 312200962,
+  "nodes": [
+    194859481,
+    2047246198,
+    2047246252,
+    150989974,
+    2047246272,
+    150989975,
+    150989976,
+    2047246304
+  ],
+  "tags": {
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxheight": "default",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 312202241,
+  "nodes": [
+    48765670,
+    6766248367,
+    1634133401,
+    48765668,
+    6766248354,
+    48765666,
+    48765665,
+    3180474018,
+    1634133421,
+    48765664,
+    48765663,
+    8006287596,
+    48765662,
+    8006287597,
+    48765661,
+    8006287591,
+    48765658,
+    8006287589,
+    48765657,
+    8006287595,
+    48765656
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 312203280,
+  "nodes": [
+    52120204,
+    1014165060,
+    1014165126,
+    52120211,
+    1014165115,
+    52120224,
+    5758540179,
+    1014165119,
+    157681818
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "Bing",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 312203281,
+  "nodes": [
+    52082374,
+    4845023775,
+    4845023755,
+    4845023798,
+    1014165068,
+    1014165076,
+    4845023760,
+    1014165084,
+    52082386,
+    1014165059
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 312203665,
+  "nodes": [
+    416848686,
+    6501345466,
+    6501345426,
+    6501345470,
+    52120462,
+    52120475,
+    6501345417,
+    6501345469,
+    266281102,
+    1199961601,
+    6501345480,
+    6501346993,
+    6501345460,
+    6501346989,
+    416848723,
+    1199961688,
+    52120493,
+    6501347021,
+    1199961685,
+    6501345456,
+    4867896927,
+    52120502,
+    1199961709,
+    3132382927,
+    52120508,
+    4867896942,
+    4867896969,
+    3132382851,
+    3132382838,
+    4867896959,
+    4867896947,
+    4867896961,
+    52120515,
+    1199961681,
+    4867896945,
+    52120523,
+    6385165175,
+    52120530,
+    6385165873,
+    6385165173,
+    6385165800,
+    6385165874,
+    52120538,
+    1634108567,
+    1634108566,
+    1634108764,
+    1634108921,
+    1634108892,
+    52120547,
+    1634108815,
+    1634108793,
+    1634108991,
+    1634108923,
+    52120558,
+    1634108485,
+    1634108558,
+    1634108597,
+    52120565,
+    585131635,
+    1634108584,
+    1634108942,
+    1634108499,
+    1634108843,
+    192039060,
+    1634109005,
+    585131634,
+    1634108554,
+    1634108796,
+    1634108525,
+    192039040,
+    1634108613,
+    6385165166,
+    1634108643
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "destination": "Morwell;Traralgon",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 312203666,
+  "nodes": [
+    52082152,
+    6501347011,
+    6501345424,
+    52082166,
+    6501345459,
+    1199961616,
+    6501345467,
+    52082175,
+    6501345453,
+    52082188,
+    6501346988,
+    6501346992,
+    6501345473,
+    416848241,
+    52082201,
+    1199961704,
+    52082216,
+    1199961700,
+    7183504094,
+    7183503950,
+    52082225
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 312205356,
+  "nodes": [
+    616951228,
+    616951642,
+    616951643,
+    616951644,
+    351095911,
+    27266310,
+    4954921762,
+    351093450,
+    253370972,
+    253370971,
+    12072660106,
+    12072660107,
+    253370968,
+    253370967,
+    282810561
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 312205357,
+  "nodes": [
+    322483539,
+    9164227660,
+    2134404316,
+    319641698
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxheight": "5.3",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 312205358,
+  "nodes": [
+    10571563536,
+    351094976,
+    27266307,
+    628549555,
+    351093713,
+    628549553
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Geelong",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 312205359,
+  "nodes": [
+    476313233,
+    616936370,
+    616936360,
+    267115762,
+    267115805,
+    319641788
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Geelong",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source:name": "Vicmap.Transport:services.land.vic.gov.au",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 312205362,
+  "nodes": [
+    1585625876,
+    501582357,
+    351093918,
+    628549556,
+    351093919,
+    351093920,
+    27266304,
+    628549525
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source:name": "Vicmap.Transport:services.land.vic.gov.au",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 312205368,
+  "nodes": [
+    319641788,
+    319641676
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Geelong",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source:name": "Vicmap.Transport:services.land.vic.gov.au",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 312205370,
+  "nodes": [
+    616948949,
+    10179692344,
+    174828888
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxheight": "5.3",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source:name": "Vicmap.Transport:services.land.vic.gov.au",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 312205371,
+  "nodes": [
+    1173113227,
+    27266303,
+    27266300,
+    253491505,
+    319641354
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Geelong",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source:name": "Vicmap.Transport:services.land.vic.gov.au",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 312205372,
+  "nodes": [
+    319641354,
+    2722528518,
+    319641376,
+    616936239
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Geelong",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source:name": "Vicmap.Transport:services.land.vic.gov.au",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 312733975,
+  "nodes": [
+    1602025176,
+    1602025230,
+    263937752,
+    1602025281,
+    1602025190,
+    1602025222,
+    1602025243,
+    1602025239,
+    1602025247,
+    1602025256,
+    52081486
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "destination": "Warrigal;Melbourne",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 312734043,
+  "nodes": [
+    52121165,
+    1599513681,
+    1599513718,
+    1599513665,
+    1599513768,
+    1599513731,
+    1599513752,
+    1240852827
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "destination": "Traralgon;Sale",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 326024750,
+  "nodes": [
+    1213241397,
+    150990482,
+    1213241427,
+    7278969588,
+    195331745
+  ],
+  "tags": {
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "3",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 386733787,
+  "nodes": [
+    1745493186,
+    571400394,
+    571400149
+  ],
+  "tags": {
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "no",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 386733788,
+  "nodes": [
+    29321143,
+    254256023,
+    254255995,
+    29320592,
+    4435266743,
+    4435266742,
+    253337776,
+    825692744,
+    29320590,
+    254256024,
+    825692749,
+    825692548,
+    825692549,
+    825692551,
+    29320588,
+    825693262,
+    825693539,
+    825693541,
+    825693543,
+    825693545,
+    29320586,
+    825693707,
+    825693710,
+    825693711,
+    825693714,
+    29320584,
+    10874909212
+  ],
+  "tags": {
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "yes",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey"
+  }
+},
+{
+  "type": "way",
+  "id": 401745908,
+  "nodes": [
+    617475562,
+    4041541535,
+    617475547,
+    4041541536,
+    617475615,
+    10874883361
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Geelong",
+    "destination:lanes": "Geelong City Centre;Queenscliff|Geelong City Centre;Queenscliff;Colac|Colac|Colac",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt",
+    "turn:lanes": "left|left;through|none|none"
+  }
+},
+{
+  "type": "way",
+  "id": 484846852,
+  "nodes": [
+    280390475,
+    10829910439,
+    1276980882
+  ],
+  "tags": {
+    "highway": "motorway",
+    "lanes": "2",
+    "maxheight": "6.0",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 484846853,
+  "nodes": [
+    1213241356,
+    31562711,
+    31562712,
+    1276980860,
+    10829910746,
+    10829910747,
+    1276980865,
+    10829910748,
+    1276980824,
+    10829910749,
+    1276980818,
+    1276980841,
+    31562713,
+    10829910750,
+    1276980880,
+    31562726,
+    1276980858,
+    10829910751,
+    31562727,
+    1276980848,
+    10829910752,
+    280390475
+  ],
+  "tags": {
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 484846854,
+  "nodes": [
+    150990063,
+    1276980831
+  ],
+  "tags": {
+    "highway": "motorway",
+    "lanes": "2",
+    "maxheight": "6.0",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 484846855,
+  "nodes": [
+    1276980831,
+    1276980883,
+    150990064,
+    1276980822,
+    1276980821,
+    150990065,
+    1276980859,
+    150990478,
+    1276980816,
+    1276980844,
+    150990479,
+    1276980886,
+    150990480
+  ],
+  "tags": {
+    "highway": "motorway",
+    "lanes": "4",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt",
+    "turn:lanes": "slight_left|none|none|none"
+  }
+},
+{
+  "type": "way",
+  "id": 484846856,
+  "nodes": [
+    150990481,
+    1213241397
+  ],
+  "tags": {
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxheight": "5.6",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 484846857,
+  "nodes": [
+    150990480,
+    1213241457,
+    7278968024,
+    150990481
+  ],
+  "tags": {
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "3",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 484846858,
+  "nodes": [
+    1213241467,
+    9807925334,
+    9807925333,
+    1213241356
+  ],
+  "tags": {
+    "highway": "motorway",
+    "lanes": "2",
+    "maxheight": "5.6",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 484846859,
+  "nodes": [
+    7321266690,
+    7278968063,
+    31562707,
+    7278968020,
+    7278967999,
+    31562708,
+    7278968051,
+    7278969585,
+    31562709,
+    7278968017,
+    195331563
+  ],
+  "tags": {
+    "highway": "motorway",
+    "lanes": "4",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt",
+    "turn:lanes": "slight_left|through|through|through"
+  }
+},
+{
+  "type": "way",
+  "id": 484874373,
+  "nodes": [
+    319641676,
+    2134404317,
+    319641813
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Geelong",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxheight": "5.3",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo;Landsat",
+    "source:name": "Vicmap.Transport:services.land.vic.gov.au",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 484874801,
+  "nodes": [
+    616936239,
+    616936238,
+    253491506,
+    616936237,
+    476313233
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Geelong",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxheight": "5.3",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source:name": "Vicmap.Transport:services.land.vic.gov.au",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 484874805,
+  "nodes": [
+    174828888,
+    319641334
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source:name": "Vicmap.Transport:services.land.vic.gov.au",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 484875614,
+  "nodes": [
+    1173113225,
+    1585644406,
+    1585625876
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxheight": "5.2",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source:name": "Vicmap.Transport:services.land.vic.gov.au",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 484875615,
+  "nodes": [
+    319641334,
+    277215028,
+    2722528523,
+    277215187,
+    319641353,
+    253491504,
+    27266299,
+    27266301,
+    1173113225
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source:name": "Vicmap.Transport:services.land.vic.gov.au",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 484875616,
+  "nodes": [
+    501582408,
+    1585644396,
+    1173113227
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Geelong",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxheight": "5.2",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source:name": "Vicmap.Transport:services.land.vic.gov.au",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 484876043,
+  "nodes": [
+    616950642,
+    616951228
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxheight": "5.2",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 484876044,
+  "nodes": [
+    616951229,
+    616950646
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Geelong",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxheight": "5.2",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 484876045,
+  "nodes": [
+    351095362,
+    616951647,
+    351095370,
+    351095371,
+    616951229
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Geelong",
+    "destination:ref": "M1",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 484876047,
+  "nodes": [
+    174839398,
+    616950642
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "source:name": "Vicmap.Transport:services.land.vic.gov.au",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 484877001,
+  "nodes": [
+    661569592,
+    661569593
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Geelong",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxheight": "6.7",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 484877002,
+  "nodes": [
+    661569593,
+    253003255
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Geelong",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 484877003,
+  "nodes": [
+    661567024,
+    38714187
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxheight": "6.7",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 484877004,
+  "nodes": [
+    38714187,
+    38714190,
+    38714191,
+    253367488
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 484877430,
+  "nodes": [
+    3924946378,
+    4780179491
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Geelong",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxheight": "5.3",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 484877431,
+  "nodes": [
+    38714412,
+    351092332,
+    661569592
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Geelong",
+    "destination:ref": "M1",
+    "destination:symbol": "airport",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 484877432,
+  "nodes": [
+    253367488,
+    38715077
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxheight": "5.3",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 484877433,
+  "nodes": [
+    38715077,
+    253367484,
+    204454011
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 485027785,
+  "nodes": [
+    48765671,
+    6766248375,
+    48765670
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxheight": "5.8",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485027786,
+  "nodes": [
+    48765673,
+    1634133419,
+    1634133389,
+    1634133356,
+    48765672,
+    48765671
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485027787,
+  "nodes": [
+    48765656,
+    48765655
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "destination": "Warragul;Traralgon",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxheight": "5.8",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485027788,
+  "nodes": [
+    48765655,
+    48765654,
+    48765653,
+    5120854521,
+    8006287586,
+    52120057,
+    5120854523,
+    52120069,
+    5120853808,
+    5120854522,
+    5120853809,
+    8006287590,
+    52120079,
+    5120853810,
+    8006287593,
+    52120088,
+    5120853816,
+    8006273684,
+    52120098,
+    5120853811,
+    5120853812,
+    52120111,
+    5120854600,
+    52120120,
+    5120854595,
+    5120854596,
+    52120129,
+    52120137,
+    52120156,
+    52120145,
+    52120165,
+    52120175,
+    573204984
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "destination": "Warragul;Traralgon",
+    "highway": "motorway",
+    "lanes": "2",
+    "lit": "no",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "shoulder": "left",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485027789,
+  "nodes": [
+    48837511,
+    48837510
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxheight": "5.8",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485027790,
+  "nodes": [
+    48837510,
+    48837509,
+    8006273681,
+    48837508,
+    8006287587,
+    48837507,
+    48837506,
+    48837505,
+    48837503,
+    8006287592,
+    48837502,
+    48837501,
+    48837500
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485028890,
+  "nodes": [
+    52120270,
+    5755191347,
+    52120280,
+    5755191345,
+    1199961705
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxheight": "7.0",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485028891,
+  "nodes": [
+    1014158495,
+    4845023814,
+    52120242,
+    4845023807,
+    4845023761,
+    1199961666,
+    4845023926,
+    52120250,
+    4845023815,
+    1199961657,
+    4845023811,
+    52120259,
+    1199961713,
+    52120262,
+    1199961605,
+    5755191348,
+    52120270
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "lit": "no",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485028892,
+  "nodes": [
+    52082323,
+    5755191350,
+    1199961584,
+    5755191346,
+    52082334
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxheight": "7.0",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485028893,
+  "nodes": [
+    52082334,
+    5755191349,
+    1199961604,
+    52082346,
+    1199961602,
+    52082357,
+    1199961699,
+    1199961585,
+    52082374
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485029438,
+  "nodes": [
+    1240852827,
+    1599513713,
+    52121176,
+    1599513771,
+    1240852806,
+    52121185,
+    1599513706
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "destination": "Traralgon;Sale",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxheight": "6.1",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485029439,
+  "nodes": [
+    1599513706,
+    1599513700,
+    1599513748,
+    403518013
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "destination": "Traralgon;Sale",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485029440,
+  "nodes": [
+    52081227,
+    1599513725,
+    1599513687,
+    1599513740,
+    1599513717,
+    1599513757,
+    1599513699,
+    52081241
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "destination": "Warrigul;Melbourne",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxheight": "6.1",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485029441,
+  "nodes": [
+    110179073,
+    1599513705,
+    1599513737,
+    1599513707,
+    52081216,
+    1599513719,
+    1599513688,
+    52081227
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "destination": "Warrigul;Melbourne",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485029442,
+  "nodes": [
+    1603041895,
+    1603041910,
+    1603041923,
+    1603041872,
+    52081437
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxheight": "5.4",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485029443,
+  "nodes": [
+    52081437,
+    52081444,
+    1080060936
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485029444,
+  "nodes": [
+    52121007,
+    1603041912,
+    1603041904,
+    1603041856,
+    52121016
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxheight": "5.4",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485029445,
+  "nodes": [
+    52120996,
+    1080061008,
+    52121007
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485029446,
+  "nodes": [
+    598786641,
+    1602337052,
+    1602025176
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "destination": "Warrigal;Melbourne",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxheight": "5.6",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485029447,
+  "nodes": [
+    1080061000,
+    1080061041,
+    1080061024
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "destination": "Traralgon;Sale",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485029448,
+  "nodes": [
+    1602025223,
+    345848910,
+    1080061000
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "destination": "Traralgon;Sale",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxheight": "5.6",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485233241,
+  "nodes": [
+    1181953505,
+    6721976384,
+    598767283
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxheight": "5.3",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt",
+    "website": "https://vicroads.vic.gov.au/Home/TrafficAndRoadConditions/PrincesFreewayMorwellBypassClosure/"
+  }
+},
+{
+  "type": "way",
+  "id": 485233242,
+  "nodes": [
+    598767283,
+    6715644292,
+    6715644299,
+    6715644275,
+    1182029931,
+    822147,
+    1182029983,
+    1182029915,
+    6715600782,
+    1182029995,
+    1182030103,
+    53171455
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt",
+    "website": "https://vicroads.vic.gov.au/Home/TrafficAndRoadConditions/PrincesFreewayMorwellBypassClosure/"
+  }
+},
+{
+  "type": "way",
+  "id": 485233243,
+  "nodes": [
+    418126647,
+    1182030081,
+    1182030100
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "destination": "Taralgon;Sale;Bairnsdale",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxheight": "5.3",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt",
+    "website": "https://vicroads.vic.gov.au/Home/TrafficAndRoadConditions/PrincesFreewayMorwellBypassClosure/"
+  }
+},
+{
+  "type": "way",
+  "id": 485233244,
+  "nodes": [
+    1182030100,
+    1182030061,
+    52121831,
+    1181925942,
+    1181925971,
+    1181925955,
+    1181925953,
+    84556450
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "destination": "Taralgon;Sale;Bairnsdale",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt",
+    "website": "https://vicroads.vic.gov.au/Home/TrafficAndRoadConditions/PrincesFreewayMorwellBypassClosure/"
+  }
+},
+{
+  "type": "way",
+  "id": 485236909,
+  "nodes": [
+    29321140,
+    1824095074
+  ],
+  "tags": {
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "yes",
+    "maxheight": "5.3",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485236911,
+  "nodes": [
+    1824095074,
+    1745493186
+  ],
+  "tags": {
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "yes",
+    "maxspeed": "80",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485236912,
+  "nodes": [
+    1824095075,
+    29321143
+  ],
+  "tags": {
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "yes",
+    "maxheight": "5.3",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey"
+  }
+},
+{
+  "type": "way",
+  "id": 485236913,
+  "nodes": [
+    253337672,
+    1985550170,
+    1824095075
+  ],
+  "tags": {
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "yes",
+    "maxspeed": "80",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey"
+  }
+},
+{
+  "type": "way",
+  "id": 485237520,
+  "nodes": [
+    204503689,
+    204503691,
+    5128227894,
+    204503693
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxheight": "5.3",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 485237521,
+  "nodes": [
+    267093669,
+    204503684,
+    204503685,
+    3679587748,
+    3877493498
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 485237522,
+  "nodes": [
+    38717641,
+    5128227893,
+    38717643,
+    3679587745
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxheight": "5.3",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 485237523,
+  "nodes": [
+    4984018928,
+    3679587746,
+    253363796,
+    267093718
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 485237525,
+  "nodes": [
+    4435219101,
+    293318333
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "4",
+    "maxheight": "5.2",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485237526,
+  "nodes": [
+    293314238,
+    4435219101
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485237527,
+  "nodes": [
+    293318327,
+    293346218
+  ],
+  "tags": {
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "yes",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 485237528,
+  "nodes": [
+    1824095106,
+    9864880663,
+    1824095108
+  ],
+  "tags": {
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "yes",
+    "maxheight": "5.5",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 485237529,
+  "nodes": [
+    1824095108,
+    34219992
+  ],
+  "tags": {
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "yes",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 485237530,
+  "nodes": [
+    1824095102,
+    9864880664,
+    1824095100
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "yes",
+    "maxheight": "5.5",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485237531,
+  "nodes": [
+    1824095100,
+    34220306,
+    2283053182
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "yes",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485237532,
+  "nodes": [
+    253465604,
+    2283053181
+  ],
+  "tags": {
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "yes",
+    "maxheight": "6.6",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 485237533,
+  "nodes": [
+    1838751132,
+    253465634
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "yes",
+    "maxheight": "6.6",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485237535,
+  "nodes": [
+    125290847,
+    350732519
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "yes",
+    "maxheight": "6.9",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 485237536,
+  "nodes": [
+    350732519,
+    125290849,
+    350731099,
+    125290852,
+    125290853,
+    350731106,
+    125290855,
+    1840911756,
+    1840911731,
+    125287423
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "yes",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 485237537,
+  "nodes": [
+    38717617,
+    4984075965,
+    38717619
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "yes",
+    "maxheight": "6.9",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 485237538,
+  "nodes": [
+    38717619,
+    38717621,
+    8732978266,
+    38717622,
+    8732978267,
+    38717624,
+    8732978268,
+    38717625,
+    204501404,
+    38717626,
+    38717627,
+    8732978269,
+    38717629
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "yes",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 485237809,
+  "nodes": [
+    4780179491,
+    38714412
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Geelong",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxheight": "5.3",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 485237813,
+  "nodes": [
+    8096521079,
+    11078709015,
+    282811013
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "destination": "Geelong",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 485237817,
+  "nodes": [
+    253363803,
+    4780179492
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "destination": "Geelong",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxheight": "5.5",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485237820,
+  "nodes": [
+    282810953,
+    253363807
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxheight": "5.5",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485237824,
+  "nodes": [
+    253363807,
+    38715669
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 485238976,
+  "nodes": [
+    253329691,
+    10696247404,
+    10696247403,
+    253329709
+  ],
+  "tags": {
+    "bicycle": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "4",
+    "maxheight": "5.2",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 485238977,
+  "nodes": [
+    253329709,
+    10696247402,
+    26476120
+  ],
+  "tags": {
+    "bicycle": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "4",
+    "maxspeed": "80",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 485238986,
+  "nodes": [
+    26476120,
+    10696247401,
+    254225264
+  ],
+  "tags": {
+    "bicycle": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "4",
+    "maxheight": "5.2",
+    "maxspeed": "80",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 528325470,
+  "nodes": [
+    9013906149,
+    10696262221,
+    10696262220,
+    9013906153,
+    9013906152,
+    9013906150,
+    5134587949,
+    5134587950,
+    10696262222,
+    5134587951,
+    5134587952,
+    5134587953,
+    5134587954,
+    5134587955,
+    5134587956,
+    5134587957,
+    5134587958,
+    5134587959,
+    10696262224,
+    5134587960,
+    5134587961,
+    10708224873,
+    10708224872,
+    5134587962,
+    5134587963,
+    10696262226,
+    5134587964,
+    10696262227,
+    10696262225,
+    5134587965,
+    10696262228,
+    5134587966
+  ],
+  "tags": {
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "80",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1"
+  }
+},
+{
+  "type": "way",
+  "id": 705789504,
+  "nodes": [
+    125301103,
+    1824095106
+  ],
+  "tags": {
+    "bicycle": "no",
+    "destination": "Geelong",
+    "destination:ref": "M1",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "yes",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 714582611,
+  "nodes": [
+    4984050557,
+    204503699,
+    204503700,
+    204503702,
+    204503706,
+    204503708,
+    125289616
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 715447528,
+  "nodes": [
+    150990489,
+    7278641621,
+    150990510
+  ],
+  "tags": {
+    "cycleway:both": "no",
+    "destination": "Dandenong;City",
+    "destination:ref": "M1",
+    "highway": "motorway",
+    "lanes": "3",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 715985724,
+  "nodes": [
+    1014158520,
+    1014158495
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "lit": "no",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 779459583,
+  "nodes": [
+    7278641606,
+    7278641624,
+    7278641623,
+    280889576,
+    280889324
+  ],
+  "tags": {
+    "highway": "motorway",
+    "lanes": "3",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 779495214,
+  "nodes": [
+    195331563,
+    7278968071,
+    1213241349,
+    31562710,
+    1213241344,
+    1213241467
+  ],
+  "tags": {
+    "highway": "motorway",
+    "lanes": "3",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 779495226,
+  "nodes": [
+    195331745,
+    150990483,
+    7278968038,
+    150990484,
+    7278969587,
+    150990485,
+    7278969590,
+    150990486,
+    7278969605,
+    150990487,
+    7278968016,
+    7278968060,
+    150990488
+  ],
+  "tags": {
+    "cycleway:both": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "4",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 779565175,
+  "nodes": [
+    52121564,
+    1206847760
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 783824118,
+  "nodes": [
+    280889339,
+    7321266690
+  ],
+  "tags": {
+    "highway": "motorway",
+    "lanes": "3",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 974005438,
+  "nodes": [
+    5134587969,
+    571400393,
+    571400150
+  ],
+  "tags": {
+    "bicycle": "no",
+    "destination": "Geelong;Avalon Airport",
+    "destination:symbol": "airport",
+    "highway": "motorway",
+    "lanes": "5",
+    "lit": "no",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 1020820157,
+  "nodes": [
+    822149,
+    1205119951,
+    1205119965,
+    1205119889,
+    1205119914,
+    53171451,
+    1205119903,
+    6715644310,
+    1205119916,
+    822153,
+    1205119912,
+    1205119902,
+    1205119983,
+    1205119900,
+    822150,
+    1205119904,
+    1205119930,
+    1205119941,
+    1205119888,
+    822159,
+    1205119890,
+    1205119918,
+    1205119899,
+    1205119944,
+    1205119985,
+    6715644242,
+    1205119934,
+    822160
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "bing",
+    "surface": "asphalt",
+    "website": "https://vicroads.vic.gov.au/Home/TrafficAndRoadConditions/PrincesFreewayMorwellBypassClosure/"
+  }
+},
+{
+  "type": "way",
+  "id": 1020820158,
+  "nodes": [
+    52121774,
+    1205119937,
+    1205119939,
+    1205119920,
+    1205119884,
+    1205119973,
+    52121779,
+    1205119980,
+    1205119898,
+    1205119967,
+    52121789,
+    1205119968,
+    1205119958,
+    1205119950,
+    1205119966,
+    1205119910,
+    52121795
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "destination": "Taralgon;Sale;Bairnsdale",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "bing",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1041897277,
+  "nodes": [
+    243646147,
+    176947952,
+    150989798,
+    10578185553,
+    150989799,
+    10578185552,
+    176947969,
+    10578185551,
+    150989800,
+    10578185550,
+    10578185549,
+    150989801
+  ],
+  "tags": {
+    "alt_name": "Pakenham Bypass",
+    "destination": "Warragul;Traralgon",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxheight": "default",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1068404765,
+  "nodes": [
+    570500041,
+    570501084,
+    570501086,
+    570501089,
+    570501092,
+    570501098,
+    570501101,
+    570501103,
+    570501109,
+    570501112,
+    570501115,
+    570501121,
+    570501126,
+    570501129,
+    570501132,
+    9807925325
+  ],
+  "tags": {
+    "highway": "motorway",
+    "lanes": "3",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1068404766,
+  "nodes": [
+    9807925324,
+    570503102,
+    570503096,
+    570503091,
+    570503088,
+    570503084,
+    570503078,
+    9254890148,
+    570503075,
+    4145975702,
+    570503071,
+    570503067,
+    570503063,
+    570503061,
+    570503058,
+    570503046,
+    570503041,
+    570503037,
+    570500014
+  ],
+  "tags": {
+    "highway": "motorway",
+    "lanes": "3",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1068404767,
+  "nodes": [
+    570503108,
+    9807925324
+  ],
+  "tags": {
+    "covered": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1068404768,
+  "nodes": [
+    9807925325,
+    9807925323
+  ],
+  "tags": {
+    "covered": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1085734726,
+  "nodes": [
+    38717630,
+    38717631,
+    204501355,
+    38717633,
+    38717634,
+    38717637,
+    38717638,
+    3877493516
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "destination": "Geelong",
+    "destination:ref": "M1",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 1085734727,
+  "nodes": [
+    3679587745,
+    38717644,
+    38717647,
+    253359974,
+    38717648,
+    4984018928
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 1085734728,
+  "nodes": [
+    3877493498,
+    204503687,
+    204503688,
+    3679587737,
+    204503689
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 1085734781,
+  "nodes": [
+    282810947,
+    282810935,
+    282810934,
+    2674553949,
+    253363803
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "destination": "Geelong",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1085734782,
+  "nodes": [
+    38715669,
+    38715078
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1085734783,
+  "nodes": [
+    4780179492,
+    8096521079
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "destination": "Geelong",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 1085734784,
+  "nodes": [
+    8096521040,
+    282810962,
+    2645435374,
+    282810952,
+    282810953
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 1086315686,
+  "nodes": [
+    593267455,
+    825698167,
+    29320583,
+    825698170,
+    825698173,
+    254255608,
+    825698176,
+    825698178,
+    29320585,
+    825698640,
+    825698641,
+    254255609,
+    825699510,
+    825699513,
+    825699514,
+    29320587,
+    825699518,
+    825699519,
+    29320589,
+    825699520
+  ],
+  "tags": {
+    "bicycle": "no",
+    "destination": "City",
+    "destination:ref": "M1",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "yes",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1086315687,
+  "nodes": [
+    825699520,
+    1745518636,
+    1745518630,
+    1745518673,
+    1745518626,
+    1745518623,
+    254239192,
+    1745518612,
+    254239193,
+    29321140
+  ],
+  "tags": {
+    "bicycle": "no",
+    "destination": "City",
+    "destination:ref": "M1",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "yes",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1093475769,
+  "nodes": [
+    31562731,
+    570433479,
+    570433685,
+    570433689,
+    570503153,
+    570503149,
+    570503139,
+    570503108
+  ],
+  "tags": {
+    "highway": "motorway",
+    "lanes": "3",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1093475770,
+  "nodes": [
+    9807925323,
+    570501138,
+    570501142,
+    570501155,
+    570501158,
+    150990058,
+    150989575
+  ],
+  "tags": {
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1130867179,
+  "nodes": [
+    150990001,
+    10578185563,
+    10578185564,
+    10578185565,
+    3180453381,
+    10578185562,
+    150990002,
+    10578185561,
+    10578185560,
+    176947989,
+    10578185559,
+    150990003,
+    10578185558,
+    10578185556,
+    243646146
+  ],
+  "tags": {
+    "alt_name": "Pakenham Bypass",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxheight": "default",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1133923788,
+  "nodes": [
+    616950646,
+    616950644,
+    616950645,
+    10571563536
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Geelong",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1133961178,
+  "nodes": [
+    282810986,
+    8096521040
+  ],
+  "tags": {
+    "alt_name": "Maltby Bypass",
+    "bicycle": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "3",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 1169517183,
+  "nodes": [
+    10874909212,
+    825697646,
+    825697334,
+    825697228,
+    293313146,
+    825696513,
+    825696514,
+    825696515,
+    825696517,
+    825696518,
+    825696248,
+    825696249,
+    293313392
+  ],
+  "tags": {
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey"
+  }
+},
+{
+  "type": "way",
+  "id": 1169517219,
+  "nodes": [
+    10874927930,
+    293314308,
+    293346166,
+    293318329,
+    293318326
+  ],
+  "tags": {
+    "bicycle": "no",
+    "destination": "Geelong",
+    "destination:ref": "M1",
+    "destination:symbol": "airport",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1169517220,
+  "nodes": [
+    293318333,
+    293346370,
+    10874908240
+  ],
+  "tags": {
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1169519472,
+  "nodes": [
+    10874883361,
+    867732176,
+    26756206,
+    617475616
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Geelong",
+    "destination:lanes": "Geelong City Centre;Queenscliff|Geelong City Centre;Queenscliff;Colac|Colac|Colac",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "yes",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt",
+    "turn:lanes": "left|left;through|none|none"
+  }
+},
+{
+  "type": "way",
+  "id": 1185057523,
+  "nodes": [
+    880404433,
+    322483539
+  ],
+  "tags": {
+    "alt_name": "Princes Highway",
+    "bicycle": "yes",
+    "cycleway:left": "shoulder",
+    "cycleway:right": "no",
+    "destination": "Melbourne",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "no",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt",
+    "turn:lanes": "slight_left|||"
+  }
+},
+{
+  "type": "way",
+  "id": 1228526950,
+  "nodes": [
+    11393164850,
+    150989988
+  ],
+  "tags": {
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1259361686,
+  "nodes": [
+    5134587966,
+    10696262234,
+    12428712645,
+    5134587969
+  ],
+  "tags": {
+    "bicycle": "no",
+    "destination": "Geelong;Avalon Airport",
+    "destination:symbol": "airport",
+    "highway": "motorway",
+    "lanes": "5",
+    "maxspeed": "110",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 1259361687,
+  "nodes": [
+    29321158,
+    571400418,
+    5134587974,
+    5134587966
+  ],
+  "tags": {
+    "bicycle": "no",
+    "destination": "Geelong;Avalon Airport",
+    "destination:symbol": "airport",
+    "highway": "motorway",
+    "lanes": "4",
+    "maxspeed": "80",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 1278434876,
+  "nodes": [
+    52121064,
+    1600720751,
+    842889150,
+    52121082,
+    842889151,
+    842889152,
+    52121098,
+    842889153,
+    1600720800,
+    1600720795,
+    1600720774,
+    52121110
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "maxspeed:advisory": "90",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source:maxspeed:advisory": "https://www.mapillary.com/app/?lat=-38.184124248101405&lng=146.26537714219103&z=17.23376068756101&pKey=3746360662099294&focus=photo&x=0.4862301248430046&y=0.33578824027501747&zoom=0",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1278434877,
+  "nodes": [
+    842889154,
+    52121124,
+    1600720754,
+    1600720779,
+    842889155,
+    52121134,
+    842889156,
+    11868531655
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "maxspeed:advisory": "90",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source:maxspeed:advisory": "https://www.mapillary.com/app/?lat=-38.184124248101405&lng=146.26537714219103&z=17.23376068756101&pKey=3746360662099294&focus=photo&x=0.4862301248430046&y=0.33578824027501747&zoom=0",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1278434878,
+  "nodes": [
+    1600720816,
+    52081297,
+    842889144,
+    1600720792,
+    52081312,
+    842889145,
+    1600720750
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "destination": "Warrigul;Melbourne",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "maxspeed:advisory": "90",
+    "maxspeed:hgv:advisory": "80",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source:maxspeed:advisory": "https://www.mapillary.com/app/?lat=-38.186181707471995&lng=146.27805647122&z=19.243050403724514&pKey=166579893142120&focus=photo&x=0.5006403657760801&y=0.6512531065233967&zoom=0.6841142881719559",
+    "source:maxspeed:hgv:advisory": "https://www.mapillary.com/app/?lat=-38.18476525575899&lng=146.27653455023005&z=19.243050403724514&pKey=663791332132893&focus=photo",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1278434879,
+  "nodes": [
+    52081336,
+    1600720752,
+    842889146,
+    52081347,
+    1600720810,
+    842889147,
+    842889148,
+    52081364,
+    842889149,
+    1600720804,
+    1600720813,
+    1600669157
+  ],
+  "tags": {
+    "bicycle": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "maxspeed": "110",
+    "maxspeed:advisory": "90",
+    "maxspeed:hgv:advisory": "80",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source:maxspeed:advisory": "https://www.mapillary.com/app/?lat=-38.186181707471995&lng=146.27805647122&z=19.243050403724514&pKey=166579893142120&focus=photo&x=0.5006403657760801&y=0.6512531065233967&zoom=0.6841142881719559",
+    "source:maxspeed:hgv:advisory": "https://www.mapillary.com/app/?lat=-38.18476525575899&lng=146.27653455023005&z=19.243050403724514&pKey=663791332132893&focus=photo",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1314575781,
+  "nodes": [
+    293346218,
+    282793264
+  ],
+  "tags": {
+    "bicycle": "no",
+    "highway": "motorway",
+    "lanes": "5",
+    "lit": "yes",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "source": "survey;Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 1314575782,
+  "nodes": [
+    293317769,
+    293317665,
+    293313660,
+    293313662,
+    293317666,
+    293313666,
+    10874927930
+  ],
+  "tags": {
+    "bicycle": "no",
+    "destination": "Geelong",
+    "destination:ref": "M1",
+    "destination:symbol": "airport",
+    "highway": "motorway",
+    "lanes": "4",
+    "lit": "yes",
+    "maxspeed": "100",
+    "name": "Princes Freeway",
+    "network": "AU:VIC",
+    "oneway": "yes",
+    "ref": "M1",
+    "surface": "asphalt"
+  }
+}
+
+  ]
+}

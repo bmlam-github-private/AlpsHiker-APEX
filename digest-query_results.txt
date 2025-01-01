@@ -1,3 +1,5 @@
+QL syntax reference: https://osm-queries.ldodds.com/syntax-reference.html 
+
 This query returns first-level nodes which are probably the centers of the stations. 
 The ways are likely the area areas, which have around a dozend of nodes with resolving_missing=True
 No relation is returned.
@@ -48,4 +50,51 @@ out tags;
 		(._;>;);
 	will include all the way and the nodes of the way. Yet to be tested if the nodes are in adjacent order, i.e. form a line nicely. 
 	In my test, the nodes of the way were output first, then the way itself and the node ids. "._" denotes the default set, and ">" is the recurse command to find nodes of the way. The round brackets denote the union of two sets. 
+
+2024.12.31:
+	This works fine: 
+		//return the main railway stations of austria using the keyword "area" as setting and parameter
+		[out:json];
+		area["name"="Österreich"];
+		(node(area)["name"~"Hauptbahnhof"] ["railway"="station"];
+		);
+		out body;
+
+	Railways around Wien and Salzburg main:
+		//return the main railway stations of austria using the keyword "area" as setting and parameter
+		[out:json];
+		area["name"="Österreich"]->.a;
+		(node(area.a)["name"~"Hauptbahnhof"]["name"~"Wien|Salzburg"]  ["railway"="station"] ;
+		way[ "railway"="rail"] ["name" ]["railway:track_type"="main"] (around:500);
+		);
+
+		out body;
+
+2025.01.01:
+	The following extracts a relation then convert it with command map_to_area to an area so that we can find other elements within. In our case, we just look for ways (polygons or lines) within :
+		[out:json]
+		[bbox:-25.38653, 130.99883, -25.31478, 131.08938];
+		(
+		  relation["name"="Mutitjulu"] ->.rel;
+		  .rel map_to_area ->.mutitjulu;
+		//  nwr["leisure"](area.mutitjulu);
+		//  >;
+		//  nwr["building"](area.mutitjulu);
+		//  >;
+		  way(area.mutitjulu);
+		);
+		out body;
+
+	Queries are normally load-balanced to one of the endpoints (servers), which do not store the 100% identical set of data. To target a particular endpoint such as kumi, the command is an example: 
+		{{data:overpass,server=https://overpass.kumi.systems/api/}}
+
+	The following outputs AU-M1-Princes_Freeway-ways.txt:
+		[out:json];
+		area ["name"="Victoria"] ;
+		(
+		  way (area)  ["highway" = "motorway"] ["ref"="M1"] ["name"= "Princes Freeway"] ;
+		);
+		out body;
+
+
 

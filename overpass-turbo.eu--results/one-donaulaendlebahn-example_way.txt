@@ -1,0 +1,194 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.4 2390de5a",
+  "osm3s": {
+    "timestamp_osm_base": "2024-12-30T02:50:48Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 325661871,
+  "lat": 48.1538054,
+  "lon": 16.4764557,
+  "tags": {
+    "railway": "signal",
+    "railway:signal:direction": "forward",
+    "railway:signal:position": "right",
+    "railway:signal:speed_limit": "AT-V2:geschwindigkeitstafel",
+    "railway:signal:speed_limit:form": "sign",
+    "railway:signal:speed_limit:height": "dwarf",
+    "railway:signal:speed_limit:speed": "60"
+  }
+},
+{
+  "type": "node",
+  "id": 325661872,
+  "lat": 48.1542766,
+  "lon": 16.4770466
+},
+{
+  "type": "node",
+  "id": 325661873,
+  "lat": 48.1545942,
+  "lon": 16.4773336
+},
+{
+  "type": "node",
+  "id": 1645008849,
+  "lat": 48.1540203,
+  "lon": 16.4767544
+},
+{
+  "type": "node",
+  "id": 1645008854,
+  "lat": 48.1544846,
+  "lon": 16.4772460,
+  "tags": {
+    "railway": "signal",
+    "railway:signal:direction": "backward",
+    "railway:signal:electricity": "AT-V2:ankündigung_hauptschalter_aus",
+    "railway:signal:electricity:form": "sign",
+    "railway:signal:electricity:height": "dwarf",
+    "railway:signal:electricity:type": "power_off_advance",
+    "railway:signal:position": "left"
+  }
+},
+{
+  "type": "node",
+  "id": 1645008857,
+  "lat": 48.1548410,
+  "lon": 16.4775132,
+  "tags": {
+    "interlocking:ref": "Alb",
+    "operator": "ÖBB-Infrastruktur AG",
+    "railway": "signal",
+    "railway:position:exact": "20.182",
+    "railway:signal:direction": "forward",
+    "railway:signal:distant": "AT-V2:vorsignal",
+    "railway:signal:distant:form": "light",
+    "railway:signal:distant:height": "normal",
+    "railway:signal:distant:states": "AT-V2:hauptsignal_frei;AT-V2:hauptsignal_frei_mit_40;AT-V2:vorsicht",
+    "railway:signal:main": "AT-V2:hauptsignal",
+    "railway:signal:main:form": "light",
+    "railway:signal:main:function": "intermediate",
+    "railway:signal:main:height": "normal",
+    "railway:signal:main:states": "AT-V2:frei;AT-V2:frei_mit_40;AT-V2:halt",
+    "railway:signal:main:substitute_signal": "AT-V2:ersatzsignal",
+    "railway:signal:position": "right",
+    "railway:signal:shunting": "AT-V2:verschubsignal",
+    "railway:signal:shunting:form": "light",
+    "railway:signal:shunting:height": "normal",
+    "railway:signal:shunting:states": "AT-V2:verschubverbot_aufgehoben",
+    "ref": "E439/r"
+  }
+},
+{
+  "type": "node",
+  "id": 3934517998,
+  "lat": 48.1538640,
+  "lon": 16.4765409,
+  "tags": {
+    "railway": "signal",
+    "railway:signal:direction": "backward",
+    "railway:signal:position": "left",
+    "railway:signal:speed_limit": "AT-V2:geschwindigkeitstafel",
+    "railway:signal:speed_limit:form": "sign",
+    "railway:signal:speed_limit:height": "dwarf",
+    "railway:signal:speed_limit:speed": "80"
+  }
+},
+{
+  "type": "node",
+  "id": 10195225014,
+  "lat": 48.1548012,
+  "lon": 16.4774873
+},
+{
+  "type": "node",
+  "id": 10195225015,
+  "lat": 48.1547154,
+  "lon": 16.4774244
+},
+{
+  "type": "node",
+  "id": 10195225016,
+  "lat": 48.1545191,
+  "lon": 16.4772750
+},
+{
+  "type": "node",
+  "id": 10195225017,
+  "lat": 48.1544196,
+  "lon": 16.4771877
+},
+{
+  "type": "node",
+  "id": 10195225018,
+  "lat": 48.1542183,
+  "lon": 16.4769851
+},
+{
+  "type": "node",
+  "id": 10195225019,
+  "lat": 48.1541667,
+  "lon": 16.4769267
+},
+{
+  "type": "node",
+  "id": 10195225020,
+  "lat": 48.1540904,
+  "lon": 16.4768393
+},
+{
+  "type": "node",
+  "id": 10195225021,
+  "lat": 48.1539270,
+  "lon": 16.4766298
+},
+{
+  "type": "way",
+  "id": 1134347563,
+  "nodes": [
+    325661871,
+    3934517998,
+    10195225021,
+    1645008849,
+    10195225020,
+    10195225019,
+    10195225018,
+    325661872,
+    10195225017,
+    1645008854,
+    10195225016,
+    325661873,
+    10195225015,
+    10195225014,
+    1645008857
+  ],
+  "tags": {
+    "electrified": "contact_line",
+    "frequency": "16.7",
+    "gauge": "1435",
+    "maxspeed": "60",
+    "name": "Donauländebahn",
+    "operator": "ÖBB-Infrastruktur AG",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "railway:pzb": "yes",
+    "railway:radio": "gsm-r",
+    "railway:track_class": "D4",
+    "railway:track_ref": "439",
+    "railway:track_type": "main",
+    "railway:traffic_mode": "freight",
+    "ref": "124 01",
+    "structure_gauge": "GC",
+    "tracks": "1",
+    "usage": "main",
+    "voltage": "15000"
+  }
+}
+
+  ]
+}
