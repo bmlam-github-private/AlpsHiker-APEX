@@ -96,5 +96,5 @@ out tags;
 		);
 		out body;
 
-
+	To visualize railway tracks which supposed connect 2 cities, we need to convert JSON data to sdo_geometry as multiple line strings. Does such a thing exist?
 
