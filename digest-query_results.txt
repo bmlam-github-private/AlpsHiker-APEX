@@ -98,3 +98,5 @@ out tags;
 
 	To visualize railway tracks which supposed connect 2 cities, we need to convert JSON data to sdo_geometry as multiple line strings. Does such a thing exist?
 
+2025.01.04:
+	sdo_util.from_geojson definitely can not have unexpected attributes in the json data. I tried to add "comments":"oh yes" and it caused an error
