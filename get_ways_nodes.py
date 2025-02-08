@@ -7,11 +7,11 @@ In addition we likely need a method to compute the positioning sequence of each 
 """
 
 import overpy
-import sys
+import sys, tempfile 
 import json
 import time 
 
-from dbx import _dbx , _errorExit
+from dbx import setDebug, _dbx , _errorExit
 
 overpass_conx = None 
 
@@ -58,8 +58,16 @@ def extract_ways_meta( ways ):
 		ret_val += "\n" + info 
 	return ret_val 
 
+def dump_text_to_temp_file ( text_string ): 
+    with tempfile.NamedTemporaryFile(mode='w', delete=False) as temp_file:
+        temp_file.write(text_string)
+        temp_file_path = temp_file.name  # Get the path of the temporary file
+
+    return temp_file_path
+
 # Main script logic
 if __name__ == "__main__":
+	setDebug( True )
 	# Initialize the Overpy overpass_conx
 	overpass_conx = overpy.Overpass()
 
@@ -85,10 +93,13 @@ if __name__ == "__main__":
 	way_infos = extract_ways_meta( result.ways)
 	# print( way_infos )
 	line_str_list = []
-	for way in result.ways [ 0: 3 ]:
+	for way in result.ways [ 0: 999 ]:
 		coord_str= get_way_nodes_coordinates( way )
-		_dbx( coord_str )
+		# _dbx( coord_str )
 		line_str_list.append( coord_str )
 	multi_line_str = '[' + "\n ,".join ( line_str_list ) + ']'
 	geojson_data = '{"type": "MultiLineString" \n , "coordinates": \n' + multi_line_str + ' }'
-	print( geojson_data )
+	# 
+	out_text = f"/* QUERY:\n{query}\n\nWays Info:\n{way_infos}\n*/\n\n{geojson_data}"
+	out_file= dump_text_to_temp_file( out_text )
+	print( f"geojson written to {out_file}")
