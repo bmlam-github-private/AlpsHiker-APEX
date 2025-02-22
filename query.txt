@@ -1,0 +1,44 @@
+# out body ; is taken for granted!
+
+[out:json];
+area ["name"="Melbourne"] ;
+(
+way (area)  ["railway" = "rail"]["name"="Frankston Line"] ;
+// do it within py script: >;
+);
+out body;
+
+##
+## PYTHON SCRIPT MUST NOT READ PAST THIS LINE !
+##
+
+#
+# returns all nodes with name Wien in Austria. Most of them has tag     "traffic_sign": "city_limit"
+#
+# [out:json];
+#area ["name"="Österreich"] ;
+#(
+#  node (area) ["name"="Wien"] ;
+#);
+
+#
+# returns all cities with population over 100k in austria
+#[out:json];
+#area ["name"="Österreich"] ;
+#(
+#  node (area) (if:t ["population"] > 100000 ) ["name"] ["place"="city"] ;
+#);
+
+Returns all Zweitausender in the area: 
+
+area ["name"="Oberbayern"] ;
+(
+  node (area)(if:t ["ele"] > 2000 ) ["name"]  [ "natural"="peak" ];
+);
+
+Return railway of area including Munich Central and Holzkirchen, also include nodes:
+[out:json] [bbox:47.9500,11.5000,48.2000,11.7500];
+way["railway"];
+out body;
+(._;>;);
+out body;
