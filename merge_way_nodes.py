@@ -53,37 +53,60 @@ def extract_ways_meta( ways ):
 
 # Convert the result object to JSON
 def result_to_json(result):
-    data = {
-        "nodes": [
-            {
-                "id": node.id,
-                "lat": float( node.lat ),
-                "lon": float( node.lon ),
-                "tags": node.tags
-            }
-            for node in result.nodes
-        ],
-        "ways": [
-            {
-                "id": way.id,
-                "nodes": [node.id for node in way.nodes],
-                "tags": way.tags
-            }
-            for way in result.ways
-        ],
-        "relations": [
-            {
-                "id": rel.id,
-                "members": [
-                    {"type": member._type, "ref": member.ref, "role": member.role}
-                    for member in rel.members
-                ],
-                "tags": rel.tags
-            }
-            for rel in result.relations
-        ]
-    }
-    return json.dumps(data, indent=4)
+	WANT_NODES=False  
+	if WANT_NODES:
+	    data = {
+	        "nodes": [
+	            {
+	                "id": node.id,
+	                "lat": float( node.lat ),
+	                "lon": float( node.lon ),
+	                "tags": node.tags
+	            }
+	            for node in result.nodes
+	        ],
+	        "ways": [
+	            {
+	                "id": way.id,
+	                "nodes": [node.id for node in way.nodes],
+	                "tags": way.tags
+	            }
+	            for way in result.ways
+	        ],
+	        "relations": [
+	            {
+	                "id": rel.id,
+	                "members": [
+	                    {"type": member._type, "ref": member.ref, "role": member.role}
+	                    for member in rel.members
+	                ],
+	                "tags": rel.tags
+	            }
+	            for rel in result.relations
+	        ]
+	    }
+	else:
+	    data = {
+	        "ways": [
+	            {
+	                "id": way.id,
+	                "tags": way.tags
+	            }
+	            for way in result.ways
+	        ],
+	        "relations": [
+	            {
+	                "id": rel.id,
+	                "members": [
+	                    {"type": member._type, "ref": member.ref, "role": member.role}
+	                    for member in rel.members
+	                ],
+	                "tags": rel.tags
+	            }
+	            for rel in result.relations
+	        ]
+	    }
+	return json.dumps(data, indent=4)
 
 # Main script logic
 if __name__ == "__main__":
@@ -94,9 +117,7 @@ if __name__ == "__main__":
 	# Call the function to read the file and get the lines
 	try:
 		query = """[out:json] [bbox:47.9500,11.5000,48.2000,11.7500];
-			way["railway"];
-			out body;
-			(._;>;);
+			way["railway"="rail"];
 			out body;
 		"""
 	except FileNotFoundError:
