@@ -11,6 +11,7 @@ import json
 import time 
 
 from dbx import setDebug, _dbx , _errorExit, _infoTs
+from merged_object_classes import MergedWay
 
 overpass_conx = None 
 
@@ -19,7 +20,7 @@ def query_ways ( query ):
 	global overpass_conx 
 
 	# Execute the query
-	result = overpass_conx.query(query)
+	result = overpass_conx.query(query )
 	if len( result.ways ) == 0:
 		_errorExit( "No ways found in query result")
 	_dbx( "relations: %d" % len( result.relations) )
@@ -108,6 +109,38 @@ def result_to_json(result):
 	    }
 	return json.dumps(data, indent=4)
 
+def enrich_ways_with_nodes ( in_ways ):
+	""" if in_ways was gotten without nodes due to performance reason. 
+		we want to get the nodes on the fly but only one time per way! 
+		may be we can mutate the ways directly ? 
+	"""
+	out_ways= []
+	for in_w in in_ways:
+		out_w = in_w 
+		if len( in_w.nodes ):
+			_infoTs( f"way: {out_w.id}")
+			out_w.nodes = in_w.get_nodes (resolve_missing = True ) 
+		out_ways.append( out_w )
+	return out_ways 
+
+
+def merge_ways ( ways ):
+	way_ids = []
+	way_codes = []
+	for i, i_w in enumerate(ways):
+		first_nid = i_w.nodes[0].id
+		last_nid = i_w.nodes[len( i_w.nodes ) - 1].id 
+		for j, j_w in enumerate ( ways):
+			if i != j : # not the sane way 
+				if first_nid ==j_w.nodes[ len( j_w.nodes ) - 1].id  or last_nid == j_w.nodes[0].id :
+					print( f"way {i_w.id} CONNECTS with way {j_w.id}")
+
+def display_ways ( ways ):
+	for way in ways:
+		text = f"id: {way.id} "
+		if "name" in way.tags:			text += f"name: {way.tags['name']}"
+		print( text )
+
 # Main script logic
 if __name__ == "__main__":
 	setDebug( True )
@@ -118,6 +151,7 @@ if __name__ == "__main__":
 	try:
 		query = """[out:json] [bbox:47.9500,11.5000,48.2000,11.7500];
 			way["railway"="rail"];
+			(._;>;);
 			out body;
 		"""
 	except FileNotFoundError:
@@ -128,4 +162,7 @@ if __name__ == "__main__":
 	_dbx( query )
 	_infoTs( "Submitting query...")
 	result = query_ways( query )
-	print(  result_to_json( result ) )
+	# print(  result_to_json( result ) )
+	#display_ways( result.ways )
+	merge_ways( result.ways )
+	# useless? enrich_ways_with_nodes( result.ways )
