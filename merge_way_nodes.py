@@ -124,16 +124,29 @@ def enrich_ways_with_nodes ( in_ways ):
 	return out_ways 
 
 
+
+def concat_ids_bracing ( num1, num2, delim = ","):
+	""" return both numbers separated with delim(iter). delim is also appended so that one can identify either number  with search pattern ",num,""
+	"""
+	if num1 == num2:
+		_errorExit( f" both numbers are: {num1}")
+	if num2 > num1 :	return f"{delim}{num1}{delim}{num2}{delim}"
+	else           :	return f"{delim}{num2}{delim}{num1}{delim}"
+
 def merge_ways ( ways ):
-	way_ids = []
+	chained_pair_strs = []
 	way_codes = []
 	for i, i_w in enumerate(ways):
 		first_nid = i_w.nodes[0].id
 		last_nid = i_w.nodes[len( i_w.nodes ) - 1].id 
 		for j, j_w in enumerate ( ways):
-			if i != j : # not the sane way 
+			if i != j : # make sure they are not identical 
 				if first_nid ==j_w.nodes[ len( j_w.nodes ) - 1].id  or last_nid == j_w.nodes[0].id :
-					print( f"way {i_w.id} CONNECTS with way {j_w.id}")
+					chained_pair_str = concat_ids_bracing( i_w.id, j_w.id )
+					if chained_pair_str not in chained_pair_strs:
+						chained_pair_strs.append( chained_pair_str )
+						print( f"way {i_w.id} CONNECTS with way {j_w.id}")
+	_dbx( f"chained_pair_strs len: {len( chained_pair_strs)}")
 
 def display_ways ( ways ):
 	for way in ways:
@@ -149,7 +162,7 @@ if __name__ == "__main__":
 
 	# Call the function to read the file and get the lines
 	try:
-		query = """[out:json] [bbox:47.9500,11.5000,48.2000,11.7500];
+		query = """[out:json] [bbox:47.9500,11.5000,48.0500,11.6500]; 
 			way["railway"="rail"];
 			(._;>;);
 			out body;
