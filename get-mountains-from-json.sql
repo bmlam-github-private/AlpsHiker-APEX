@@ -1,3 +1,4 @@
+create table tmp_mountains_json AS 
 SELECT jt.*
 FROM JSON_TABLE ( 
 q'[
@@ -2277,7 +2278,11 @@ q'[
 ]'  -- end of JSON text
 	, '$.elements[*]' 
 	COLUMNS (
-	    name VARCHAR2(100) PATH '$.tags.name'
+	    name 	VARCHAR2(100) 	PATH '$.tags.name'
+	   ,ele 	NUMBER 			PATH '$.tags.ele'
+	   ,osm_id 	NUMBER 			PATH '$.id'
+	   ,lat 	NUMBER 			PATH '$.lat'
+	   ,lon 	NUMBER 			PATH '$.lon'
 	) 
 ) jt 
 ;
