@@ -1,0 +1,27 @@
+To specify an area directly with id, since plain text name can be fuzzy due to different versions. 
+
+area( <id>).a 
+
+Then we can query the elements, for example, ways with some tags WITHIN the area:
+
+way["highway"]["tunnel"="yes"](area.a);
+
+If there are too many hits and we may just want to see the count of hits:
+
+out count;
+
+The area(s) can be given with LIKE operator. the following returns motorway ways:
+
+[out:json][timeout:60];
+area["name"~"Graubünden"]->.searchArea;
+(
+  way["highway"="motorway"](area.searchArea);
+);
+out body;
+
+Querying for elements using named or id'ed area is a matter of luck. Presumably result can only be found if the name has exact matches and yielding the id's and then there are elements which are linked the id's. 
+Using bounding box or a circle ( center plus distance / radiuos) are likely more reliable way to find nodes.
+
+Lets try to determine the data model used by OSM. 
+
+It is a big joke: many ways have the tag highway=pedestrian and tunnel=yes. So using these tags to query car traffic is read bad idea. Better maxspeed=80 or overtaking=no.
