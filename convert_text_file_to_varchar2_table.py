@@ -35,7 +35,7 @@ def generate_plsql_collection_from_file(filename, collection_name="json_chunks",
 
 
 # Example usage:
-output = generate_plsql_collection_from_file("./osm-query-results/oberbayern_2k_berge.json", max_chunk_size= 2000 )
+output = generate_plsql_collection_from_file("./osm-query-results/oesterreich_2k_berge.json", max_chunk_size= 2000 )
 with open("xxx_output_plsql_script.sql", "w", encoding="utf-8") as f:
     f.write(output)
 

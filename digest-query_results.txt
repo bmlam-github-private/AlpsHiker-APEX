@@ -100,3 +100,20 @@ out tags;
 
 2025.01.04:
 	sdo_util.from_geojson definitely can not have unexpected attributes in the json data. I tried to add "comments":"oh yes" and it caused an error
+
+2025.05.02:
+	Returns all Zweitausender in the area: 
+
+		area ["name"="Oberbayern"] ;
+		(
+		  node (area)(if:t ["ele"] > 2000 ) ["name"]  [ "natural"="peak" ];
+		);
+
+2025.05.04 
+	This supposedly plots the json output of overpass in a visual window:
+
+import geopandas as gpd
+
+		df = gpd.read_file('export.geojson')
+		df.geometry = df.geometry.to_crs(epsg=32636)
+		df.plot()
