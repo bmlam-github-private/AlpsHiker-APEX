@@ -10,6 +10,7 @@
       of ways instead of single way to improve performance
     * generates a dummy GEOJSON text for lines 
     * fetch JSON data based on an Overpass query and stores the result to a file .. sounds simple, but the APIs tend to return the result as internal tree.
+    * formats the JSON data which has no newlines in a brain-friendly way
 
     Further features:
     * a keyed list of Overpass query templates will be defined
@@ -86,7 +87,10 @@ def count_members_in_relation_json():
     for (typ, role), count in sorted(counter.items()):
         print(f"{typ:8} {role:10}: {count}")
 
-def demo_query_and_dump_json():
+def demo_query_and_dump_json_via_url():
+    """ 
+        this method just dumps an empty "elements" attribute !
+    """
     import requests
 
     # Your Overpass query (example: all railway stations in Berlin)
@@ -110,8 +114,25 @@ def demo_query_and_dump_json():
     else:
         print(f"Error: {response.status_code}")
 
+def demo_query_and_dump_json_via_api():
+    import overpass 
+    # Initialize the Overpy API
+    api = overpass.API()
+
+    # NOTA BENE : specifying the command timeout, out:json, out spells TROUBLE because the api module seems to insert the 2 commands automatically! 
+
+    query =  """    area["name"="Berlin"]; 
+                    node["railway"="station"] ["railway:station_category" = "2"](area); 
+            """
+    # Print the result
+    print( "***********++++*** query *****************")
+    print( query )
+    print( "***********++++*** END of query *****************")
+    json_text = api.Get(query)
+    print( "***********++++*** Result *****************")
+    print( json_text )
 
 if __name__ == '__main__':
     #main()
-    #count_members_in_relation_json() 
-    demo_query_and_dump_json()
+    #count_members_in_relation_json_via_url() 
+    demo_query_and_dump_json_via_api()
