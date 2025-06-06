@@ -43,9 +43,26 @@
 #(._;>;);
 
 # fuzzy find railway road Munich - Verona 
-area ["name"="Österreich"] ;
-(
-  relation (area) ["name" ~ "Verona"]  ;
-);
+#area ["name"="Österreich"] ;
+#(
+#  relation (area) ["name" ~ "Verona"]  ;
+#);
+#
+#out body;
 
+# Tho following one-liner works with overpass.API.get !
+# node["name"="Salt Lake City"]
+
+# The following example works for python overpass.API Notabene: out:json must NOT be specified
+( way( 465740845 );
+);
+._;>;
 out body;
+
+# all long distance train server from Munich . 
+[out:json][timeout:25];
+area["name"="Oberbayern"]->.myArea;
+// search for relation
+relation [ "type" = "route" ] [ "route" = "train" ] [ "service" = "long_distance" ] [ "from" ~ "München" ] ;
+out body 99;
+

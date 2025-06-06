@@ -117,3 +117,13 @@ import geopandas as gpd
 		df = gpd.read_file('export.geojson')
 		df.geometry = df.geometry.to_crs(epsg=32636)
 		df.plot()
+
+2025.05.20:
+	to limit the number of element to be output, simply put the amount in the "out" command, before the semicolon. e.g "out body 200;"
+	It seems that for Oberbayern, railway tunnels are tagged with "tunnel"="yes", while in Switzenland, some other tags are used. 
+
+2025.05.31
+	railroads are tagges with key "railway", never use railroad. Values may be: rail, tram. 
+	Operator in Germany: DB InfraGO AG, DB Netz AG, or other regional operators 
+	For train route from Munich to Vienna, we need to look for route from Munich to Budapest. See file "query.txt" . So WE ACTUALLY GOT THE RELATION with ways from "München" to "Wien"
+

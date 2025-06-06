@@ -1,0 +1,40 @@
+***********++++*** query *****************
+( way( 465740845 );
+);
+._;>;
+out body;
+***********++++*** END of query *****************
+***********++++*** Result *****************
+{'type': 'FeatureCollection', 
+	'features': [{'type': 'Feature'
+		, 'properties': {'type': 'node', 'id': 1364686261}, 'geometry': {'type': 'Point', 'coordinates': [12.1655048, 47.5822055]}}, {'type': 'Feature'
+		, 'properties': {'type': 'node', 'id': 1364686295}, 'geometry': {'type': 'Point', 'coordinates': [12.1651512, 47.5812727]}}, {'type': 'Feature'
+		, 'properties': {'type': 'node', 'id': 1364686321}, 'geometry': {'type': 'Point', 'coordinates': [12.165418, 47.5818741]}}, {'type': 'Feature'
+		, 'properties': {'type': 'node', 'id': 1364686363}, 'geometry': {'type': 'Point', 'coordinates': [12.1649118, 47.5809021]}}, {'type': 'Feature'
+		, 'properties': {'type': 'node', 'id': 1364686383}, 'geometry': {'type': 'Point', 'coordinates': [12.1652755, 47.5815092]}}, {'type': 'Feature'
+		, 'properties': {'type': 'node', 'id': 1364686421}, 'geometry': {'type': 'Point', 'coordinates': [12.1655407, 47.5823892]}}, {'type': 'Feature'
+		
+	, 'properties': {'type': 'node', 'id': 1364686453}, 'geometry': {'type': 'Point', 'coordinates': [12.1647693, 47.5807201]}}, {'type': 'Feature'
+	, 'properties': {'type': 'node', 'id': 1364686474}, 'geometry': {'type': 'Point', 'coordinates': [12.1655747, 47.5827225]}}, {'type': 'Feature'
+	, 'properties': {'type': 'node', 'id': 3004651017}, 'geometry': {'type': 'Point', 'coordinates': [12.16557, 47.5829575]}}, {'type': 'Feature'
+	, 'properties': {'type': 'node', 'id': 3004845111}, 'geometry': {'type': 'Point', 'coordinates': [12.1650553, 47.5811165]}}, {'type': 'Feature'
+	, 'properties': {'type': 'node', 'id': 3004845119}, 'geometry': {'type': 'Point', 'coordinates': [12.1653785, 47.5817614]}}, {'type': 'Feature'
+	, 'properties': {'type': 'node', 'id': 3004845125}, 'geometry': {'type': 'Point', 'coordinates': [12.1654742, 47.582079]}}, {'type': 'Feature'
+	, 'properties': {'type': 'node', 'id': 3004846633, 'tags': {'description': 'Kufstein, Gleis 3', 'name': 'Kufstein', 'operator': 'ÖBB-Infrastruktur AG', 'public_transport': 'stop_position', 'railway': 'stop', 'railway:platform_height': '55', 'railway:platform_length': '456', 'ref': '3', 'train': 'yes'}}, 'geometry': {'type': 'Point', 'coordinates': [12.165535, 47.5833716]}}, {'type': 'Feature'
+	, 'properties': {'type': 'node', 'id': 3994389027, 'tags': {'railway': 'signal', 'railway:signal:direction': 'backward', 'railway:signal:minor': 'AT-V2:schutzsignal', 'railway:signal:minor:form': 'light', 'railway:signal:minor:height': 'normal', 'railway:signal:minor:states': 'AT-V2:fahrverbot;AT-V2:fahrverbot_aufgehoben', 'railway:signal:minor:substitute_signal': 'AT-V2:ersatzsignal', 'railway:signal:position': 'left', 'ref': 'Sch202'}}, 'geometry': {'type': 'Point', 'coordinates': [12.1655192, 47.5835249]}}, {'type': 'Feature'
+	, 'properties': {'type': 'node', 'id': 1364686261}, 'geometry': {'type': 'Point', 'coordinates': [12.1655048, 47.5822055]}}, {'type': 'Feature'
+	, 'properties': {'type': 'node', 'id': 1364686295}, 'geometry': {'type': 'Point', 'coordinates': [12.1651512, 47.5812727]}}, {'type': 'Feature'
+	, 'properties': {'type': 'node', 'id': 1364686321}, 'geometry': {'type': 'Point', 'coordinates': [12.165418, 47.5818741]}}, {'type': 'Feature'
+	, 'properties': {'type': 'node', 'id': 1364686363}, 'geometry': {'type': 'Point', 'coordinates': [12.1649118, 47.5809021]}}, {'type': 'Feature'
+	, 'properties': {'type': 'node', 'id': 1364686383}, 'geometry': {'type': 'Point', 'coordinates': [12.1652755, 47.5815092]}}, {'type': 'Feature'
+	, 'properties': {'type': 'node', 'id': 1364686421}, 'geometry': {'type': 'Point', 'coordinates': [12.1655407, 47.5823892]}}, {'type': 'Feature'
+	, 'properties': {'type': 'node', 'id': 1364686453}, 'geometry': {'type': 'Point', 'coordinates': [12.1647693, 47.5807201]}}, {'type': 'Feature'
+	, 'properties': {'type': 'node', 'id': 1364686474}, 'geometry': {'type': 'Point', 'coordinates': [12.1655747, 47.5827225]}}, {'type': 'Feature'
+	, 'properties': {'type': 'node', 'id': 3004651017}, 'geometry': {'type': 'Point', 'coordinates': [12.16557, 47.5829575]}}, {'type': 'Feature'
+	, 'properties': {'type': 'node', 'id': 3004845111}, 'geometry': {'type': 'Point', 'coordinates': [12.1650553, 47.5811165]}}, {'type': 'Feature'
+	, 'properties': {'type': 'node', 'id': 3004845119}, 'geometry': {'type': 'Point', 'coordinates': [12.1653785, 47.5817614]}}, {'type': 'Feature'
+	, 'properties': {'type': 'node', 'id': 3004845125}, 'geometry': {'type': 'Point', 'coordinates': [12.1654742, 47.582079]}}, {'type': 'Feature'
+	, 'properties': {'type': 'node', 'id': 3004846633
+		, 'tags': {'description': 'Kufstein, Gleis 3', 'name': 'Kufstein', 'operator': 'ÖBB-Infrastruktur AG', 'public_transport': 'stop_position', 'railway': 'stop', 'railway:platform_height': '55', 'railway:platform_length': '456', 'ref': '3', 'train': 'yes'}}, 'geometry': {'type': 'Point', 'coordinates': [12.165535, 47.5833716]}}, {'type': 'Feature'
+	, 'properties': {'type': 'node', 'id': 3994389027
+		, 'tags': {'railway': 'signal', 'railway:signal:direction': 'backward', 'railway:signal:minor': 'AT-V2:schutzsignal', 'railway:signal:minor:form': 'light', 'railway:signal:minor:height': 'normal', 'railway:signal:minor:states': 'AT-V2:fahrverbot;AT-V2:fahrverbot_aufgehoben', 'railway:signal:minor:substitute_signal': 'AT-V2:ersatzsignal', 'railway:signal:position': 'left', 'ref': 'Sch202'}}, 'geometry': {'type': 'Point', 'coordinates': [12.1655192, 47.5835249]}}]}

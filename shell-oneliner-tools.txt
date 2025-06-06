@@ -1,0 +1,2 @@
+* extracts line A to B from a file:
+	sed -n '2,19p' infile.txt 
