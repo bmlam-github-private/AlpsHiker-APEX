@@ -15,9 +15,17 @@
     Further features:
     * a keyed list of Overpass query templates will be defined
 """
-import argparse
+
+overpass_queries = {}
+
+def set_overpass_queries():
+    global overpass_queries
+    overpass_queries[ "berlin_cat_2_stations"] =  """
+        area["name"="Berlin"]; 
+        node["railway"="station"] ["railway:station_category" = "2"](area);  """
 
 def parse_args():
+    import argparse
     parser = argparse.ArgumentParser(description="Sample script with flags and values")
 
     # Value arguments
@@ -31,7 +39,7 @@ def parse_args():
     args = parser.parse_args()
     return args 
 
-def main():
+def main_using_args():
     prog_args = parse_args()
     # Example usage
     if prog_args.verbose:
@@ -132,7 +140,41 @@ def demo_query_and_dump_json_via_api():
     print( "***********++++*** Result *****************")
     print( json_text )
 
+def make_json_list_eye_friendly( json_line, max_value_length = 100 ):
+    import json
+
+    # Sample JSON line with many records
+    json_line = '[{"id":1,"name":"Short name","description":"This is a short description."}, {"id":2,"name":"Another name","description":"This is a very long description that exceeds the threshold for line length and should be formatted on its own line."}]'
+    result = ""
+    # Parameters
+    
+    # Load JSON data
+    records = json.loads(json_line)
+    result = '[\n'; record_ix= 0 
+    # Format each record
+    for record in records:
+        result += "  "
+        if record_ix > 0:
+            result += ","
+        else:
+            result += ""
+        result += ("{")
+        for key, value in record.items():
+            record_ix += 1
+            value_str = str(value)
+            if len(value_str) > max_value_length:
+                result +=(f'\n"{key}":')
+                result +=(f' "{value_str}"')
+            else:
+                result +=(f' "{key}": "{value_str}",')
+        result +=("}\n")
+    result += "]"
+    return result
+
 if __name__ == '__main__':
-    #main()
+    #main_using_args()
     #count_members_in_relation_json_via_url() 
-    demo_query_and_dump_json_via_api()
+    #demo_query_and_dump_json_via_api()
+    #set_overpass_queries();     print( overpass_queries[ "berlin_cat_2_stations"])
+    result = make_json_list_eye_friendly( "dummy" )
+    print ( result )
