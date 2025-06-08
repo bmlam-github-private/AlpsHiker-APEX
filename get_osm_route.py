@@ -10,7 +10,10 @@
       of ways instead of single way to improve performance
     * generates a dummy GEOJSON text for lines 
     * fetch JSON data based on an Overpass query and stores the result to a file .. sounds simple, but the APIs tend to return the result as internal tree.
-    * formats the JSON data which has no newlines in a brain-friendly way
+    * formats the JSON data which has no newlines in a brain-friendly way. Actually the result from Overpass is alreay is a JSON object, when we print it, 
+      the whole thing is dumped as a single line. But json.dumps() has an optional parameter indent which will give us a nice representation (though no 
+      fancy config capabilities). to traverse the json object, we can do it directly without going thru str representation!
+
 
     Further features:
     * a keyed list of Overpass query templates will be defined
@@ -122,10 +125,14 @@ def demo_query_and_dump_json_via_url():
     else:
         print(f"Error: {response.status_code}")
 
-def demo_query_and_dump_json_via_api():
+def get_query_result ( query ):
     import overpass 
-    # Initialize the Overpy API
     api = overpass.API()
+    result = api.Get(query)
+    return result 
+
+def demo_query_and_dump_json_via_api(  ):
+    # Initialize the Overpy API
 
     # NOTA BENE : specifying the command timeout, out:json, out spells TROUBLE because the api module seems to insert the 2 commands automatically! 
 
@@ -136,45 +143,23 @@ def demo_query_and_dump_json_via_api():
     print( "***********++++*** query *****************")
     print( query )
     print( "***********++++*** END of query *****************")
-    json_text = api.Get(query)
+    json_text = qet_query_result ( query )
     print( "***********++++*** Result *****************")
     print( json_text )
 
-def make_json_list_eye_friendly( json_line, max_value_length = 100 ):
-    import json
 
-    # Sample JSON line with many records
-    json_line = '[{"id":1,"name":"Short name","description":"This is a short description."}, {"id":2,"name":"Another name","description":"This is a very long description that exceeds the threshold for line length and should be formatted on its own line."}]'
-    result = ""
-    # Parameters
-    
-    # Load JSON data
-    records = json.loads(json_line)
-    result = '[\n'; record_ix= 0 
-    # Format each record
-    for record in records:
-        result += "  "
-        if record_ix > 0:
-            result += ","
-        else:
-            result += ""
-        result += ("{")
-        for key, value in record.items():
-            record_ix += 1
-            value_str = str(value)
-            if len(value_str) > max_value_length:
-                result +=(f'\n"{key}":')
-                result +=(f' "{value_str}"')
-            else:
-                result +=(f' "{key}": "{value_str}",')
-        result +=("}\n")
-    result += "]"
-    return result
 
 if __name__ == '__main__':
+    import json 
     #main_using_args()
     #count_members_in_relation_json_via_url() 
     #demo_query_and_dump_json_via_api()
-    #set_overpass_queries();     print( overpass_queries[ "berlin_cat_2_stations"])
-    result = make_json_list_eye_friendly( "dummy" )
-    print ( result )
+    set_overpass_queries();     
+    query = overpass_queries[ "berlin_cat_2_stations" ]
+
+    q_res = get_query_result( query )
+    print( json.dumps( q_res, indent= 2 ) )
+
+
+    #friendly_res = make_json_list_eye_friendly( q_res )
+    #print ( friendly_res )
