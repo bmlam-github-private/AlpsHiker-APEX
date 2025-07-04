@@ -17,14 +17,15 @@ order by log_ts desc fetch first 100 rows only
 ;
 
 select ' ' x
- , sdo_util.to_geojson( sdo_geo )  gj
+, gpx_data 
+-- , sdo_util.to_geojson( sdo_geo )  gj
 --    , DBMS_CRYPTO.HASH(UTL_RAW.CAST_TO_RAW(gpx_data), 1 ) digest
     , dbms_lob.getlength( gpx_data ) len 
 , tr.*
 from alph_tracks tr
 where 1=1
-  AND id = 45 
-  AND sdo_geo IS NOT NULL 
+--  AND id = 45 
+--  AND sdo_geo IS NOT NULL 
 order by null 
 -- lower(name_display) desc
 ;
@@ -61,8 +62,9 @@ WHERE 1=1
 
 WITH from_blob as ( 
     select 
-    to_clob( blob_content ) as_clob,
-    b.* from test_blob b
+--    to_clob( blob_content ) as_clob,
+--    b.* from test_blob b
+     gpx_data as_clob from alph_tracks where id = 65
 )
 select x.name_value, x.link_href_value 
 , f.as_clob
@@ -245,89 +247,96 @@ END;
 /
 
 --- SQL test 
-
-   -- Iterate over each track point in the GPX
-      SELECT
-         EXTRACTvalue(trkpt.column_value, '@lat') AS lat,
---         EXTRACTVALUE(VALUE(trkpt), '@lon') AS lon,
---         EXTRACTVALUE(VALUE(trkpt), 'ele') AS elevation
---         VALUE(trkpt).getClobVal val 
-     trkpt.column_value.getClobVal() val
-       FROM TABLE(
-         XMLSEQUENCE(
-            XMLTYPE('<?xml version="1.0" encoding="UTF-8"?>
-      <gpx version="1.1" creator="Example">
-         <trk>
-            <name>Example Track</name>
-            <trkseg>
-               <trkpt lat="48.20849" lon="16.37208"><ele>160</ele><time>2024-11-10T12:00:00Z</time></trkpt>
-               <trkpt lat="48.20850" lon="16.37210"><ele>162</ele><time>2024-11-10T12:01:00Z</time></trkpt>
-               <trkpt lat="48.20851" lon="16.37212"><ele>165</ele><time>2024-11-10T12:02:00Z</time></trkpt>
-            </trkseg>
-         </trk>
-      </gpx>').EXTRACT('//gpx/trk/trkseg/trkpt')
-         )
-      ) trkpt
-      ;
-      
-select * from xmltable (
-  'ivk/nperiods/nperiod'
-  passing xmltype ( '<ivk>
-  <insurance>
-   <sumins>20596</sumins>
-   <yearsins>56</yearsins>
-   <daysins>156</daysins>
-  </insurance>
- <nperiods>
-  <nperiod datefrom="1965-10-03" dateto="1965-10-03" days="1" />
-  <nperiod datefrom="2005-09-01" dateto="2009-12-31" days="1583" />
-  <nperiod datefrom="2013-01-01" dateto="2013-12-31" days="8" />
- </nperiods>
-</ivk>' )
-  columns 
-    datefrom varchar2(10) path '@datefrom',
-    dateto varchar2(10) path '@dateto',
-    days integer path '@days'
+WITH from_blob as ( 
+    select 
+--    to_clob( blob_content ) as_clob,
+--    b.* from test_blob b
+     gpx_data  from alph_tracks where id = 65
 )
-;
-SELECT *
-FROM xmlTable (
-    '/gpx/trk/trkseg/trkpt'
+      
+SELECT X.*
+FROM 
+from_blob b cross join 
+xmlTable (
+--    '/gpx/trk/trkseg/trkpt'
+    'declare namespace gpx="http://www.topografix.com/GPX/1/1";
+   //gpx:trkpt'
     PASSING xmltype (
-      '<gpx version="1.1" creator="Example">
-         <trk>
-            <name>Example Track</name>
-            <trkseg>
-               <trkpt lat="48.20849" lon="16.37208"><ele>160</ele><time>2024-11-10T12:00:00Z</time></trkpt>
-               <trkpt lat="48.20850" lon="16.37210"><ele>162</ele><time>2024-11-10T12:01:00Z</time></trkpt>
-               <trkpt lat="48.20851" lon="16.37212"><ele>165</ele><time>2024-11-10T12:02:00Z</time></trkpt>
-            </trkseg>
-         </trk>
-      </gpx>'
+--      '<gpx version="1.1" creator="Example">
+--         <trk>
+--            <name>Example Track</name>
+--            <trkseg>
+--               <trkpt lat="48.20849" lon="16.37208"><ele>160</ele><time>2024-11-10T12:00:00Z</time></trkpt>
+--               <trkpt lat="48.20850" lon="16.37210"><ele>162</ele><time>2024-11-10T12:01:00Z</time></trkpt>
+--               <trkpt lat="48.20851" lon="16.37212"><ele>165</ele><time>2024-11-10T12:02:00Z</time></trkpt>
+--            </trkseg>
+--         </trk>
+--      </gpx>'
+        b.gpx_data 
     )
     COLUMNS 
          lon VARCHAR2(10) PATH '@lon'
         ,lat VARCHAR2(10) PATH '@lat'
         ,ele NUMBER(10,5) PATH 'ele'
-)
+        ,id  NUMBER(20) PATH 'id'
+) X
+;
+delete tmp_mountains_json
 ;
 --- working example to extract coordinates from overturbo output 
-select gj.* , sess_id, insert_ts
-from ( 
-    SELECT * 
-    FROM temp_geo_json tmp
-    WHERE   1=1
-     -- tmp.sess_id =  apex_custom_auth.get_session_id
-      --AND layer_id = 1 
-      AND sess_id = 6861802301585
- ) tmp 
-CROSS JOIN  json_table (
-  tmp.json_text ,           '$.elements[*]'
-    columns ( 
-            --js_val VARCHAR2(50) FORMAT JSON PATH '$'
-              id number (38) PATH '$.id' 
-            , lon number (9, 6) PATH '$.lon' 
-            , lat number (9, 6) PATH '$.lat' 
-            , place_name VARCHAR2(200 CHAR) PATH '$.tags.name' 
-    )
-) gj
+INSERT INTO tmp_mountains_json (  name, osm_id 	, ele, lat, lon ) 	
+SELECT                  place_name, id , ele, lat, lon FROM 
+(
+    select gj.*
+    --, count(1) over (partition by null ) cnt
+    --, sess_id, insert_ts
+    from ( 
+    --    SELECT * 
+    --    FROM temp_geo_json tmp
+    --    WHERE   1=1
+    --     -- tmp.sess_id =  apex_custom_auth.get_session_id
+    --      --AND layer_id = 1 
+    --      AND sess_id = 6861802301585
+        select json_data json_text 
+        from json_store 
+        where id = 23 and description = 'Berge über 2000m in Österreich' 
+     ) tmp 
+    CROSS JOIN  json_table (
+      tmp.json_text ,           '$.elements[*]'
+        columns ( 
+                --js_val VARCHAR2(50) FORMAT JSON PATH '$'
+                  id number (38) PATH '$.id' 
+                , lon number (9, 6) PATH '$.lon' 
+                , lat number (9, 6) PATH '$.lat' 
+                , ele number (6, 2) PATH '$.lat' 
+                , place_name VARCHAR2(200 CHAR) PATH '$.tags.name' 
+        )
+    ) gj
+)
+;
+SELECT *
+FROM alph_mountain
+ORDER BY id desc
+;
+WITH ua AS (
+select 'perm' src, name_display, name_normed, altitude, longitude, latitude , soundex( name_display ) sndx 
+from alph_mountain 
+UNION ALL 
+select 'temp' src, name, ' ', ele, lon, lat  , soundex( name ) 
+from tmp_mountains_json  
+), a AS ( 
+SELECT ua.* 
+, lag( src ) over ( partition by null ORDER BY name_display) lag_src 
+FROM ua
+)
+SELECT *
+FROM A
+WHERE lag_src <> src
+ORDER BY lower( name_display )
+;
+select *
+from tmp_mountains_json  
+;
+select *
+from json_store   
+;
