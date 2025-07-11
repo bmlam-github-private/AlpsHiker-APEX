@@ -1,4 +1,4 @@
-start /Users/bmlam/Documents/AlpsHiker-APEX/support_objects/lam/packages/alph_pkg_mountain-impl.sql
+start /Users/bmlam/Documents/AlpsHiker-APEX/support_objects/lam/functions/extract_child_gpx_from_xml.sql
 ;
 start /Users/bmlam/Documents/AlpsHiker-APEX/support_objects/lam/packages/test-alph_pkg_mountain-mark_selected_tracks.sql "7 45 65"
 ;
@@ -17,19 +17,23 @@ order by log_ts desc fetch first 100 rows only
 ;
 
 select ' ' x
+,id tr_id
+    , dbms_lob.getlength( gpx_data ) len 
+    , extract_child_gpx_from_xml( gpx_data ) gpx_child
 , gpx_data 
 -- , sdo_util.to_geojson( sdo_geo )  gj
 --    , DBMS_CRYPTO.HASH(UTL_RAW.CAST_TO_RAW(gpx_data), 1 ) digest
-    , dbms_lob.getlength( gpx_data ) len 
+,  dbms_lob.instr( tr.gpx_data, '<ele'   )  as has_ele
 , tr.*
 from alph_tracks tr
 where 1=1
 --  AND id = 45 
 --  AND sdo_geo IS NOT NULL 
+  AND gpx_data is not null 
 order by null 
+,len 
+fetch first 3 rows only
 -- lower(name_display) desc
-;
-desc alph_tracks
 ;
 select * from v_alph_selected_tracks_agg
 ;
@@ -103,7 +107,7 @@ SELECT seq_id, n001 AS track_id
 FROM apex_collections
 WHERE collection_name = alph_pkg_mountain.get_selected_tracks_collection_name
 ;
-update alph_tracks set crypto_hash_typ1= null where crypto_hash_typ1 is null and gpx_data is not null
+--update alph_tracks set crypto_hash_typ1= null where crypto_hash_typ1 is null and gpx_data is not null
 ;
 WITH agg AS (
     select trk.name_display, s.* 
@@ -251,9 +255,8 @@ WITH from_blob as (
     select 
 --    to_clob( blob_content ) as_clob,
 --    b.* from test_blob b
-     gpx_data  from alph_tracks where id = 65
+     gpx_data  from alph_tracks where id = 45
 )
-      
 SELECT X.*
 FROM 
 from_blob b cross join 
@@ -277,7 +280,7 @@ xmlTable (
     COLUMNS 
          lon VARCHAR2(10) PATH '@lon'
         ,lat VARCHAR2(10) PATH '@lat'
-        ,ele NUMBER(10,5) PATH 'ele'
+        ,ele NUMBER(10,5) PATH '/ele'
         ,id  NUMBER(20) PATH 'id'
 ) X
 ;
@@ -334,9 +337,24 @@ FROM A
 WHERE lag_src <> src
 ORDER BY lower( name_display )
 ;
-select *
-from tmp_mountains_json  
-;
-select *
-from json_store   
-;
+with test_gpx AS (
+    select extract_child_gpx_from_xml( gpx_data ) content 
+    from alph_tracks
+    where id = 45
+)
+		SELECT X.*
+--		FROM alph_tracks tr 
+        FROM test_gpx g
+        CROSS JOIN 
+            xmlTable (
+		--    '/gpx/trk/trkseg/trkpt'
+		    '//trk/trkseg/trkpt'
+		    PASSING xmltype (
+                g.content )
+		    COLUMNS 
+		         lon VARCHAR2(10) PATH '@lon'
+		        ,lat VARCHAR2(10) PATH '@lat'
+		        ,ele VARCHar2(10) PATH 'ele'
+		        ,id  NUMBER(20) PATH 'id'
+		)  X
+		;

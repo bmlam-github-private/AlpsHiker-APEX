@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION extract_gpx_element 
+CREATE OR REPLACE FUNCTION extract_child_gpx_from_xml 
   ( pi_clob         IN CLOB 
    )
 RETURN CLOB 
@@ -17,6 +17,10 @@ AS
   l_piece          VARCHAR2(32767);
   l_result_pass_1      CLOB;
   l_result_pass_2      CLOB;
+  -- 
+  l_tmp_xml_in   XMLType;
+  l_tmp_xml_out   XMLType;
+  l_return  CLOB; 
 BEGIN
   DBMS_OUTPUT.PUT_LINE('Input CLOB length: ' || DBMS_LOB.GETLENGTH(pi_clob));
   -- Find start position of c_start_pattern
@@ -73,7 +77,13 @@ BEGIN
       l_offset := l_offset + l_chunk_size;
     END LOOP;
     --
-    RETURN l_result_pass_2;
+    -- remove link element. Maybe XMLType has a method to extract the gpx child. for now since we have above
+    -- "assembler" code to do it ... 
+    l_tmp_xml_in := XMLType( l_result_pass_2);
+    l_tmp_xml_out := l_tmp_xml_in.deleteXML('/gpx/metadata/link');
+    l_return := l_tmp_xml_out.getClobVal;
+    --
+    RETURN l_return;
   END IF; 
 END;
 /
