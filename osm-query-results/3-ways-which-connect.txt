@@ -1,0 +1,153 @@
+
+[out:json] ;
+			( way(251760397  );
+			way( 329004421  );
+			way( 329004422 );
+             );
+			(._;>;);
+			out body;
+			
+__result__
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.5 1bd436f1",
+  "osm3s": {
+    "timestamp_osm_base": "2025-03-07T15:57:15Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 413973991,
+  "lat": 48.0438156,
+  "lon": 11.5100781
+},
+{
+  "type": "node",
+  "id": 1686221620,
+  "lat": 48.0432765,
+  "lon": 11.5096586,
+  "tags": {
+    "description": "Höllriegelskreuth, Gleis 1",
+    "name": "Höllriegelskreuth",
+    "operator": "DB Netz AG",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "railway:ref": "MHRK",
+    "ref": "1",
+    "train": "yes",
+    "uic_ref": "8002899"
+  }
+},
+{
+  "type": "node",
+  "id": 1712464820,
+  "lat": 48.0424215,
+  "lon": 11.5089939
+},
+{
+  "type": "node",
+  "id": 3358244938,
+  "lat": 48.0437079,
+  "lon": 11.5099933
+},
+{
+  "type": "node",
+  "id": 4423439259,
+  "lat": 48.0436212,
+  "lon": 11.5099260
+},
+{
+  "type": "node",
+  "id": 10051133250,
+  "lat": 48.0429073,
+  "lon": 11.5093716,
+  "tags": {
+    "railway": "signal",
+    "railway:signal:direction": "forward",
+    "railway:signal:minor": "DE-ESO:sh",
+    "railway:signal:minor:form": "light",
+    "railway:signal:minor:height": "normal",
+    "railway:signal:minor:states": "DE-ESO:hp0;DE-ESO:kennlicht",
+    "railway:signal:position": "right",
+    "ref": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 251760397,
+  "nodes": [
+    1686221620,
+    4423439259,
+    3358244938
+  ],
+  "tags": {
+    "electrified": "contact_line",
+    "frequency": "16.7",
+    "gauge": "1435",
+    "maxspeed": "120",
+    "name": "Isartalbahn",
+    "operator": "DB Netz AG",
+    "passenger_lines": "2",
+    "railway": "rail",
+    "railway:preferred_direction": "forward",
+    "railway:pzb": "yes",
+    "ref": "5507",
+    "usage": "main",
+    "voltage": "15000",
+    "wikipedia": "de:Isartalbahn"
+  }
+},
+{
+  "type": "way",
+  "id": 329004421,
+  "nodes": [
+    1712464820,
+    10051133250,
+    1686221620
+  ],
+  "tags": {
+    "electrified": "contact_line",
+    "frequency": "16.7",
+    "gauge": "1435",
+    "maxspeed": "120",
+    "name": "Isartalbahn",
+    "operator": "DB Netz AG",
+    "passenger_lines": "2",
+    "railway": "rail",
+    "railway:preferred_direction": "forward",
+    "railway:pzb": "yes",
+    "ref": "5507",
+    "usage": "main",
+    "voltage": "15000",
+    "wikipedia": "de:Isartalbahn"
+  }
+},
+{
+  "type": "way",
+  "id": 329004422,
+  "nodes": [
+    3358244938,
+    413973991
+  ],
+  "tags": {
+    "electrified": "contact_line",
+    "frequency": "16.7",
+    "gauge": "1435",
+    "maxspeed": "120",
+    "name": "Isartalbahn",
+    "operator": "DB Netz AG",
+    "passenger_lines": "2",
+    "railway": "rail",
+    "railway:preferred_direction": "forward",
+    "railway:pzb": "yes",
+    "ref": "5507",
+    "usage": "main",
+    "voltage": "15000",
+    "wikipedia": "de:Isartalbahn"
+  }
+}
+
+  ]
+}
