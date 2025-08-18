@@ -2,9 +2,7 @@ start /Users/bmlam/Documents/AlpsHiker-APEX/support_objects/lam/functions/extrac
 ;
 start /Users/bmlam/Documents/AlpsHiker-APEX/support_objects/lam/packages/test-alph_pkg_mountain-mark_selected_tracks.sql "7 45 65"
 ;
-sta /Users/bmlam/Documents/AlpsHiker-APEX/support_objects/lam/views/v_alph_selected_tracks.sql
-;
-sta /Users/bmlam/Documents/AlpsHiker-APEX/support_objects/lam/functions/world_tiles_n_by_m.sql
+start /Users/bmlam/Documents/AlpsHiker-APEX/support_objects/lam/views/v_track_point_locations.sql
 ;
 sta /Users/bmlam/Library/CloudStorage/Dropbox/git_clones/mailto-git_clones/lam_personal/hotspots/improve_apex/test-create_apex_session.sql  115 LAM
 ;
@@ -341,8 +339,9 @@ with test_gpx AS (
     select extract_child_gpx_from_xml( gpx_data ) content 
     from alph_tracks
     where id = 45
-)
+), add_seq AS (
 		SELECT X.*
+        , rownum as seq
 --		FROM alph_tracks tr 
         FROM test_gpx g
         CROSS JOIN 
@@ -357,4 +356,23 @@ with test_gpx AS (
 		        ,ele VARCHar2(10) PATH 'ele'
 		        ,id  NUMBER(20) PATH 'id'
 		)  X
+), add_next_loc AS (
+    SELECT aseq.*
+    , lag ( lon ) over (partition by null order by seq ) next_lon 
+    , lag ( lat ) over (partition by null order by seq ) next_lat 
+    FROM add_seq aseq
+)
+SELECT anl.* 
+        ,  SDO_GEOM.SDO_DISTANCE(
+             SDO_GEOMETRY(2001, 8307, SDO_POINT_TYPE(anl.lon, anl.lat, NULL), NULL, NULL)
+           , SDO_GEOMETRY(2001, 8307, SDO_POINT_TYPE(anl.next_lon, anl.next_lat, NULL), NULL, NULL)
+           , 0.005
+       ) AS distance_in_meters
+FROM add_next_loc anl
+WHERE next_lat IS NOT NULL 
 		;
+SELECT * from dba_type_attrs
+WHERE type_name = 'SDO_GEOMETRY'
+;
+SELECT SDO_GEOMETRY(2001, 8307, SDO_POINT_TYPE(10.837854, anl.next_lat, NULL), NULL, NULL)
+from dual;
