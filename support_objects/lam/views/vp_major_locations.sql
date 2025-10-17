@@ -8,6 +8,7 @@ SELECT
 	,latitude         
 	,REMARKS
 FROM alph_major_locations
+WHERE longitude IS NOT NULL AND latitude IS NOT NULL
 /
 
 

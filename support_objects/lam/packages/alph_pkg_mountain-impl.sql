@@ -479,8 +479,21 @@ RETURN VARCHAR2
 AS 
 BEGIN return c_selected_tracks_collection_name;
 END get_selected_tracks_collection_name;
-
-
+--
+FUNCTION get_set_of_landmarks
+( pi_min_alti NUMBER 
+, pi_max_alti NUMBER 
+, pi_north_est  NUMBER 
+, pi_south_est  NUMBER 
+, pi_north_west NUMBER 
+, pi_south_west NUMBER 
+) RETURN landmark_col
+AS 
+    l_return    landmark_col ;
+BEGIN 
+    RETURN l_return;
+END get_set_of_landmarks;
+--
 end; -- PACKAGE 
 /
 

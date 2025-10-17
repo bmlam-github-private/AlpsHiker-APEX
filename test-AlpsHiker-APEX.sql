@@ -17,17 +17,18 @@ order by log_ts desc fetch first 100 rows only
 select ' ' x
 ,id tr_id
     , dbms_lob.getlength( gpx_data ) len 
-    , extract_child_gpx_from_xml( gpx_data ) gpx_child
+,  dbms_lob.instr( tr.gpx_data, '<time'   )  time_pos
+--    , extract_child_gpx_from_xml( gpx_data ) gpx_child
 , gpx_data 
 -- , sdo_util.to_geojson( sdo_geo )  gj
 --    , DBMS_CRYPTO.HASH(UTL_RAW.CAST_TO_RAW(gpx_data), 1 ) digest
-,  dbms_lob.instr( tr.gpx_data, '<ele'   )  as has_ele
 , tr.*
 from alph_tracks tr
 where 1=1
---  AND id = 45 
+--  AND id = 144
 --  AND sdo_geo IS NOT NULL 
   AND gpx_data is not null 
+    AND  dbms_lob.instr( tr.gpx_data, '<time'   )  > 999
 order by null 
 ,len 
 fetch first 3 rows only
@@ -263,16 +264,6 @@ xmlTable (
     'declare namespace gpx="http://www.topografix.com/GPX/1/1";
    //gpx:trkpt'
     PASSING xmltype (
---      '<gpx version="1.1" creator="Example">
---         <trk>
---            <name>Example Track</name>
---            <trkseg>
---               <trkpt lat="48.20849" lon="16.37208"><ele>160</ele><time>2024-11-10T12:00:00Z</time></trkpt>
---               <trkpt lat="48.20850" lon="16.37210"><ele>162</ele><time>2024-11-10T12:01:00Z</time></trkpt>
---               <trkpt lat="48.20851" lon="16.37212"><ele>165</ele><time>2024-11-10T12:02:00Z</time></trkpt>
---            </trkseg>
---         </trk>
---      </gpx>'
         b.gpx_data 
     )
     COLUMNS 
@@ -338,7 +329,9 @@ ORDER BY lower( name_display )
 with test_gpx AS (
     select extract_child_gpx_from_xml( gpx_data ) content 
     from alph_tracks
-    where id = 45
+    --where id = 45 -- has elevation 
+    where id = 21
+    /*104 bad namespace gpxx*/
 ), add_seq AS (
 		SELECT X.*
         , rownum as seq
@@ -354,6 +347,7 @@ with test_gpx AS (
 		         lon VARCHAR2(10) PATH '@lon'
 		        ,lat VARCHAR2(10) PATH '@lat'
 		        ,ele VARCHar2(10) PATH 'ele'
+		        ,time VARCHar2(50) PATH 'time'
 		        ,id  NUMBER(20) PATH 'id'
 		)  X
 ), add_next_loc AS (
@@ -363,11 +357,11 @@ with test_gpx AS (
     FROM add_seq aseq
 )
 SELECT anl.* 
-        ,  SDO_GEOM.SDO_DISTANCE(
-             SDO_GEOMETRY(2001, 8307, SDO_POINT_TYPE(anl.lon, anl.lat, NULL), NULL, NULL)
-           , SDO_GEOMETRY(2001, 8307, SDO_POINT_TYPE(anl.next_lon, anl.next_lat, NULL), NULL, NULL)
-           , 0.005
-       ) AS distance_in_meters
+--        ,  SDO_GEOM.SDO_DISTANCE(
+--             SDO_GEOMETRY(2001, 8307, SDO_POINT_TYPE(anl.lon, anl.lat, NULL), NULL, NULL)
+--           , SDO_GEOMETRY(2001, 8307, SDO_POINT_TYPE(anl.next_lon, anl.next_lat, NULL), NULL, NULL)
+--           , 0.005
+--       ) AS distance_in_meters
 FROM add_next_loc anl
 WHERE next_lat IS NOT NULL 
 		;

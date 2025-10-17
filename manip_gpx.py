@@ -1,16 +1,23 @@
 #! /usr/bin/python3 
 
 # this code by ChatGpt works instantly!
+# Some apps interpreting a gpx track will not chart the distance of a track it does not contain timestamps of each track point
+# One such app is EasyTrails. 
+# To offset that weakness, this script fakes a timestemp to each track point, based on the distance between consecutive points
+# and an assumed constant hiking speed.
+# 
 # in the output time value, there is no trailing letter Z, whereas EasyTrails export has the trailing letter.
 # but does not seem to matter. But for imported track to be searchable in EasyTrails, it took a few minutes"
 
+import sys 
 import gpxpy
 import gpxpy.gpx
 from datetime import datetime, timedelta
 from geopy.distance import geodesic
 
 # Load GPX file
-with open('/Users/bmlam/Downloads/bergfextour_helm-und-sillianer-hutte.gpx', 'r') as f:
+gpx_path=sys.argv[1]
+with open( gpx_path, 'r') as f:
     gpx = gpxpy.parse(f)
 
 # Start time
