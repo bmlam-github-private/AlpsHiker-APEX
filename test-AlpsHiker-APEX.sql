@@ -1,4 +1,4 @@
-start /Users/bmlam/Documents/AlpsHiker-APEX/support_objects/lam/functions/extract_child_gpx_from_xml.sql
+start /Users/bmlam/Documents/AlpsHiker-APEX/support_objects/lam/functions/remove_xml_element.sql
 ;
 start /Users/bmlam/Documents/AlpsHiker-APEX/support_objects/lam/packages/test-alph_pkg_mountain-mark_selected_tracks.sql "7 45 65"
 ;
@@ -7,6 +7,15 @@ start /Users/bmlam/Documents/AlpsHiker-APEX/support_objects/lam/views/v_track_po
 sta /Users/bmlam/Library/CloudStorage/Dropbox/git_clones/mailto-git_clones/lam_personal/hotspots/improve_apex/test-create_apex_session.sql  115 LAM
 ;
 alter session set nls_date_format = 'yyyy.mm.dd hh24:mi:ss'
+;
+
+select 
+, count(distinct overload)
+, listagg( ''''||argument_name||'''||'||argument_name, '||' ) piped_args
+FROM dba_arguments 
+WHERE 1=1
+  and object_name = 'GET_LANDMARKS_AROUND_LOCATION'
+  and package_name  = 'ALPH_PKG_MOUNTAIN'
 ;
 select * from log_table_v2
 where 1=1
@@ -330,7 +339,7 @@ with test_gpx AS (
     select extract_child_gpx_from_xml( gpx_data ) content 
     from alph_tracks
     --where id = 45 -- has elevation 
-    where id = 21
+    where id = 144 --162 gpxx
     /*104 bad namespace gpxx*/
 ), add_seq AS (
 		SELECT X.*
@@ -370,3 +379,23 @@ WHERE type_name = 'SDO_GEOMETRY'
 ;
 SELECT SDO_GEOMETRY(2001, 8307, SDO_POINT_TYPE(10.837854, anl.next_lat, NULL), NULL, NULL)
 from dual;
+
+WITH h1 AS ( 
+    select gpx_data
+    ,dbms_lob.getlength( gpx_data) org_len 
+--    ,remove_xml_element( gpx_data, '/gpx/wpt/extensions' ) elem_stripped
+    ,  extract_child_gpx_from_xml( gpx_data ) extracted 
+    FROM alph_tracks
+    WHERE id = 144
+)
+select 
+--dbms_lob.getlength( elem_stripped ) len_new
+dbms_lob.getlength( extracted ) len_extracted
+, h1.*
+FROM h1
+;
+select id, gpx_data
+from alph_tracks t
+WHERE 1=1
+  AND XMLExists('$d//gpx/@xmlns:ctx' PASSING xmltype(t.gpx_data) AS "d")
+  ;

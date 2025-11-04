@@ -7,7 +7,7 @@ create or replace package body alph_pkg_mountain as
 */
 procedure import_mountain_csv (
 	p_csv_content varchar2
-	,p_ignore_csv BOOLEAN DEFAULT FALSE
+	,p_ignore_csv BOOLEAN  DEFAULT FALSE
 ) as
 	l_row_cnt INTEGER;
 begin
@@ -123,7 +123,7 @@ end import_mountain_csv;
 */ 
 procedure update_location_with_csv (
 	p_csv_content_no_header varchar2
-	,p_ignore_csv BOOLEAN DEFAULT FALSE
+	,p_ignore_csv BOOLEAN  DEFAULT FALSE
 ) as
 l_row_cnt INTEGER;
 begin
@@ -326,7 +326,7 @@ BEGIN
         --, f.as_clob
         from from_blob f
         CROSS JOIN     XMLTable(
-                 XMLNamespaces(DEFAULT 'http://www.topografix.com/GPX/1/1'),
+                 XMLNamespaces( DEFAULT 'http://www.topografix.com/GPX/1/1'),
                  '/gpx'
                  PASSING  xmlType ( f.as_clob )
                  COLUMNS
@@ -420,8 +420,8 @@ END switch_track_selection_status;
 
 PROCEDURE mark_selected_tracks 
     ( p_data VARCHAR2 
-     ,p_replace_current_selected BOOLEAN DEFAULT FALSE   
-     ,p_input_format VARCHAR2 DEFAULT 'BLANK_SEPARATED'
+     ,p_replace_current_selected BOOLEAN  DEFAULT FALSE   
+     ,p_input_format VARCHAR2  DEFAULT 'BLANK_SEPARATED'
     )
 AS 
 BEGIN 
@@ -480,19 +480,150 @@ AS
 BEGIN return c_selected_tracks_collection_name;
 END get_selected_tracks_collection_name;
 --
-FUNCTION get_set_of_landmarks
+
+FUNCTION get_landmarks_within_bounds
 ( pi_min_alti NUMBER 
 , pi_max_alti NUMBER 
-, pi_north_est  NUMBER 
-, pi_south_est  NUMBER 
-, pi_north_west NUMBER 
-, pi_south_west NUMBER 
+, pi_east_most  NUMBER 
+, pi_south_most  NUMBER 
+, pi_west_most NUMBER 
+, pi_north_most NUMBER 
+, pi_max_matches NUMBER 
 ) RETURN landmark_col
 AS 
     l_return    landmark_col ;
 BEGIN 
+    WITH data AS (
+     SELECT m.id mnt_id, m.name_display, m.longitude, m.latitude, m.altitude
+        , name_normed||' '||altitude||'m' AS tool_tip
+    FROM alph_mountain m
+    WHERE 1=1
+      AND ( pi_max_matches IS NULL  OR rownum       <= to_number( pi_max_matches) ) 
+      --
+      AND ( pi_min_alti IS NULL     OR m.altitude   >= to_number( pi_min_alti ) )
+      AND ( pi_max_alti IS NULL     OR altitude     <= to_number( pi_max_alti ) )  
+      --
+      AND ( pi_east_most IS NULL OR 
+               ( 1=1 
+                    AND m.latitude <=   pi_north_most 
+                    AND m.latitude >=   pi_south_most
+                    AND m.longitude >=  pi_west_most 
+                    AND m.longitude <=  pi_east_most 
+               )
+          )  
+    )     
+    SELECT landmark_type 
+        ( unik_key      => 'Mount_'||d.mnt_id 
+         ,place_name    => d.name_display
+         ,longitude     => d.longitude
+         ,latitude      => d.latitude
+         ,altitude      => d.altitude
+         ,tool_tip      => d.tool_tip
+        )
+    BULK COLLECT INTO l_return 
+    FROM data d 
+    ;
+
     RETURN l_return;
-END get_set_of_landmarks;
+END get_landmarks_within_bounds;
+--
+FUNCTION get_landmarks_around_location
+( pi_min_alti NUMBER 
+, pi_max_alti NUMBER 
+, pi_location_id  NUMBER 
+, pi_offset_centi_degree  NUMBER 
+, pi_max_matches NUMBER 
+) RETURN landmark_col
+AS 
+     l_south_most  NUMBER ;
+     l_west_most NUMBER ;
+     l_east_most NUMBER ;
+     l_north_most NUMBER ;
+     l_max_matches NUMBER ;
+
+    l_return    landmark_col ;
+BEGIN 
+    SELECT --id        , l.latitude, l.longitude
+         to_number( pi_offset_centi_degree DEFAULT NULL ON CONVERSION ERROR ) / 100 
+            + l.latitude AS north_most 
+        , l.latitude  - to_number( pi_offset_centi_degree DEFAULT NULL ON CONVERSION ERROR ) / 100 
+                AS south_most 
+        , l.longitude - to_number( pi_offset_centi_degree DEFAULT NULL ON CONVERSION ERROR ) / 100 
+                AS west_most 
+        , to_number( pi_offset_centi_degree DEFAULT NULL ON CONVERSION ERROR ) / 100 
+            + l.longitude AS east_most 
+    INTO l_north_most 
+        ,l_south_most  
+        ,l_west_most  
+        ,l_east_most 
+    FROM vp_alph_major_locations l 
+    WHERE l.id = pi_location_id 
+    ;
+    l_return := get_landmarks_within_bounds
+        ( pi_min_alti  => pi_min_alti
+        , pi_max_alti  => pi_max_alti 
+        , pi_east_most   => l_east_most
+        , pi_south_most   => l_south_most
+        , pi_west_most   => l_west_most
+        , pi_north_most   => l_north_most
+        , pi_max_matches  => pi_max_matches
+        )
+        ;
+
+    RETURN l_return;
+END get_landmarks_around_location;
+
+FUNCTION get_landmarks_around_location_json_sum 
+( pi_min_alti NUMBER 
+, pi_max_alti NUMBER 
+, pi_location_id  NUMBER 
+, pi_offset_centi_degree  NUMBER 
+, pi_max_matches NUMBER 
+) RETURN CLOB
+AS 
+    l_return CLOB;
+BEGIN 
+    with add_cla as ( 
+        select t.*
+        , round( altitude/ 1000 +0.5 ) - 1 AS k_class 
+        from TABLE (
+          alph_pkg_mountain. get_landmarks_around_location
+        ( pi_min_alti => pi_min_alti  
+        , pi_max_alti => pi_max_alti 
+        , pi_location_id  => pi_location_id
+        , pi_offset_centi_degree  => pi_offset_centi_degree 
+        , pi_max_matches => pi_max_matches 
+        ) ) t
+    ), get_min_max_cla AS (
+        select t1.*
+        , count( * ) over(partition by k_class) as tot_in_cla
+        , min( t1.altitude) over(partition by k_class) as min_in_cla
+        , max( t1.altitude) over(partition by k_class) as max_in_cla
+        , min( t1.k_class) over(partition by null) as min_cla
+        , max( t1.k_class) over(partition by null) as max_cla
+        , row_number() OVER ( PARTITION BY k_class ORDER BY altitude ) alti_rank_in_cla 
+        from add_cla t1
+    ) , grouped AS (
+        select k_class
+        , max( tot_in_cla ) tot_in_cla
+        ,listagg( place_name||': '|| altitude, ', ' ) WITHIN GROUP ( ORDER BY altitude) min_max_marks
+        --k_class, tot_in_cla, min_in_cla, max_in_cla
+        from get_min_max_cla t2
+        where t2.alti_rank_in_cla = 1 or t2.alti_rank_in_cla = tot_in_cla
+        group by k_class
+    )
+    select json_arrayagg( 
+        json_object( 
+            'AltitudeClass' VALUE k_class
+            ,'NumberOfMarks' VALUE tot_in_cla
+            ,'LowestHigehts' VALUE min_max_marks
+            ) )
+    INTO l_return
+    FROM grouped 
+    ;
+    RETURN l_return;
+END get_landmarks_around_location_json_sum;
+
 --
 end; -- PACKAGE 
 /

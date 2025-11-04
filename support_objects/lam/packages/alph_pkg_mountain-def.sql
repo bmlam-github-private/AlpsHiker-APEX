@@ -39,6 +39,33 @@ as
 	FUNCTION get_selected_tracks_collection_name 
 	RETURN VARCHAR2 
 	;
+
+	FUNCTION get_landmarks_around_location
+	( pi_min_alti NUMBER 
+	, pi_max_alti NUMBER 
+	, pi_location_id  NUMBER 
+	, pi_offset_centi_degree  NUMBER 
+	, pi_max_matches NUMBER 
+	) RETURN landmark_col
+	;
+	FUNCTION get_landmarks_within_bounds
+	( pi_min_alti NUMBER 
+	, pi_max_alti NUMBER 
+	, pi_east_most  NUMBER 
+	, pi_south_most  NUMBER 
+	, pi_west_most NUMBER 
+	, pi_north_most NUMBER 
+	, pi_max_matches NUMBER 
+	) RETURN landmark_col
+	;
+	FUNCTION get_landmarks_around_location_json_sum 
+	( pi_min_alti NUMBER 
+	, pi_max_alti NUMBER 
+	, pi_location_id  NUMBER 
+	, pi_offset_centi_degree  NUMBER 
+	, pi_max_matches NUMBER 
+	) RETURN CLOB
+	;
 end;
 /
 
